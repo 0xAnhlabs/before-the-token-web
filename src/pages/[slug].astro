@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Base.astro";
+import { loadProjects, getProject, displayCategory } from "../lib/projects.js";
+
+export function getStaticPaths() {
+  return loadProjects().map((p) => ({
+    params: { slug: p.project_row.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const p = getProject(slug);
+if (!p) return Astro.redirect("/");
+
+const r = p.project_row;
+const c = p.revision_content || {};
+const brief = c.brief || {};
+const assessment = c.assessment || {};
+const sources = c.sources || [];
+const disclaimer = c.disclaimer || {};
+---
+<Layout title={`${r.name} - Before The Token`}>
+  <a href="/">&larr; Research</a>
+  <h1>{r.name}</h1>
+  <div>
+    <span class="badge">{r.activity_status}</span>
+    <span class="badge">{r.token_status}</span>
+    <span class="badge">{r.product_stage}</span>
+  </div>
+  <p style="color:var(--muted);font-size:0.85rem">
+    {displayCategory(r.category)}{r.ecosystem ? ` · ${r.ecosystem}` : ""}
+    {r.funding_summary ? ` · ${r.funding_summary}` : ""}
+  </p>
+
+  <section class="module">
+    <h2>What's Cooking</h2>
+    <p>{brief.whats_cooking}</p>
+  </section>
+  <section class="module">
+    <h2>How It Makes Money</h2>
+    <p>{brief.how_it_makes_money}</p>
+  </section>
+  <section class="module">
+    <h2>How It Grows</h2>
+    <p>{brief.how_it_grows}</p>
+  </section>
+  <section class="module">
+    <h2>Why It May Matter</h2>
+    <p>{brief.why_it_may_matter}</p>
+  </section>
+
+  {assessment.warnings?.length > 0 && (
+    <section class="module">
+      <h2>Warnings</h2>
+      <ul>
+        {assessment.warnings.map((w) => <li>{w}</li>)}
+      </ul>
+    </section>
+  )}
+
+  {assessment.watch_next?.length > 0 && (
+    <section class="module">
+      <h2>Watch Next</h2>
+      <ul>
+        {assessment.watch_next.map((w) => <li>{w}</li>)}
+      </ul>
+    </section>
+  )}
+
+  {sources.length > 0 && (
+    <section class="module">
+      <h2>Sources</h2>
+      <ul>
+        {sources.map((s) => (
+          <li>
+            {s.url ? <a href={s.url} target="_blank" rel="noopener">{s.title}</a> : s.title}
+            {s.type ? ` (${s.type})` : ""}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <div class="disclaimer">
+    Listing is information, not endorsement.
+    {disclaimer.not_investment_advice ? " Not investment advice." : ""}
+  </div>
+</Layout>

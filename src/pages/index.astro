@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Base.astro";
+import { loadProjects, displayCategory } from "../lib/projects.js";
+
+const projects = loadProjects();
+const all = projects.map((p) => ({
+  slug: p.project_row.slug,
+  name: p.project_row.name,
+  activity: p.project_row.activity_status,
+  token: p.project_row.token_status,
+  stage: p.project_row.product_stage,
+  category: displayCategory(p.project_row.category),
+  teaser: (p.revision_content?.brief?.whats_cooking || "").slice(0, 160),
+}));
+---
+<Layout title="Before The Token - Research">
+  <h1>Research</h1>
+  <p style="color:var(--muted)">{all.length} project(s) tracked. Neutral, evidence-based, no ranking.</p>
+
+  <input
+    id="q"
+    type="search"
+    placeholder="Search name or description..."
+    style="width:100%;padding:.6rem .8rem;background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:8px;"
+  />
+
+  <div class="filters" id="filters">
+    <select id="f-activity" style="background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
+      <option value="">All activity</option>
+      {[...new Set(all.map((x) => x.activity).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
+    </select>
+    <select id="f-token" style="background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
+      <option value="">All token status</option>
+      {[...new Set(all.map((x) => x.token).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
+    </select>
+    <select id="f-stage" style="background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
+      <option value="">All stage</option>
+      {[...new Set(all.map((x) => x.stage).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
+    </select>
+  </div>
+
+  <div id="list">
+    {all.map((x) => (
+      <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.teaser} ${x.category}`.toLowerCase()}>
+        <div class="name">{x.name}</div>
+        <div>
+          <span class="badge">{x.activity}</span>
+          <span class="badge">{x.token}</span>
+          <span class="badge">{x.stage}</span>
+        </div>
+        <div class="teaser">{x.teaser}</div>
+      </a>
+    ))}
+  </div>
+
+  <script>
+    const q = document.getElementById("q");
+    const fa = document.getElementById("f-activity");
+    const ft = document.getElementById("f-token");
+    const fs = document.getElementById("f-stage");
+    const cards = [...document.querySelectorAll("#list .card")];
+
+    function apply() {
+      const term = q.value.trim().toLowerCase();
+      const a = fa.value, t = ft.value, s = fs.value;
+      cards.forEach((c) => {
+        const hay = c.getAttribute("data-search") || "";
+        const act = c.querySelector(".badge")?.textContent || "";
+        const badges = [...c.querySelectorAll(".badge")].map((b) => b.textContent);
+        const okTerm = !term || hay.includes(term);
+        const okA = !a || badges.includes(a);
+        const okT = !t || badges.includes(t);
+        const okS = !s || badges.includes(s);
+        c.style.display = okTerm && okA && okT && okS ? "" : "none";
+      });
+    }
+    q.addEventListener("input", apply);
+    fa.addEventListener("change", apply);
+    ft.addEventListener("change", apply);
+    fs.addEventListener("change", apply);
+  </script>
+</Layout>

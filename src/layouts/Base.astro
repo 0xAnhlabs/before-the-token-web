@@ -1,0 +1,67 @@
+---
+const { title = "Before The Token" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <style>
+      :root {
+        --bg: #0f1115;
+        --fg: #e6e8eb;
+        --muted: #9aa3ad;
+        --border: #232730;
+        --accent: #6ea8fe;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.6;
+      }
+      .wrap { max-width: 820px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      header.site { border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+      header.site .brand { font-weight: 700; font-size: 1.1rem; }
+      header.site .tag { color: var(--muted); font-size: 0.85rem; }
+      .disclaimer {
+        margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+        color: var(--muted); font-size: 0.8rem;
+      }
+      .badge {
+        display: inline-block; padding: 0.1rem 0.5rem; border-radius: 999px;
+        font-size: 0.75rem; border: 1px solid var(--border); color: var(--muted);
+        margin-right: 0.4rem;
+      }
+      .module { margin-top: 1.5rem; }
+      .module h2 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+      .card {
+        border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem;
+        margin-bottom: 1rem; display: block; color: inherit;
+      }
+      .card:hover { border-color: var(--accent); text-decoration: none; }
+      .card .name { font-weight: 600; }
+      .card .teaser { color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem; }
+      .filters { margin: 1rem 0 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site">
+        <div class="brand"><a href="/">Before The Token</a></div>
+        <div class="tag">Researching crypto projects before the token.</div>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <div class="disclaimer">
+        Listing is information, not endorsement. Not investment advice.
+      </div>
+    </div>
+  </body>
+</html>
