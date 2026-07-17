@@ -43,10 +43,10 @@ const all = projects.map((p) => ({
     {all.map((x) => (
       <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.teaser} ${x.category}`.toLowerCase()}>
         <div class="name">{x.name}</div>
-        <div>
-          <span class="badge">{x.activity}</span>
-          <span class="badge">{x.token}</span>
-          <span class="badge">{x.stage}</span>
+        <div class="badges">
+          <span class="badge green">{x.activity}</span>
+          <span class="badge amber">{x.token}</span>
+          <span class="badge violet">{x.stage}</span>
         </div>
         <div class="teaser">{x.teaser}</div>
       </a>

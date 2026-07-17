@@ -22,10 +22,10 @@ const disclaimer = c.disclaimer || {};
 <Layout title={`${r.name} - Before The Token`}>
   <a href="/">&larr; Research</a>
   <h1>{r.name}</h1>
-  <div>
-    <span class="badge">{r.activity_status}</span>
-    <span class="badge">{r.token_status}</span>
-    <span class="badge">{r.product_stage}</span>
+  <div class="badges">
+    <span class="badge green">{r.activity_status}</span>
+    <span class="badge amber">{r.token_status}</span>
+    <span class="badge violet">{r.product_stage}</span>
   </div>
   <p class="meta">
     {displayCategory(r.category)}{r.ecosystem ? ` · ${r.ecosystem}` : ""}
@@ -70,7 +70,7 @@ const disclaimer = c.disclaimer || {};
   {sources.length > 0 && (
     <section class="module">
       <h2>Sources</h2>
-      <ul>
+      <ul class="sources">
         {sources.map((s) => (
           <li>
             {s.url ? <a href={s.url} target="_blank" rel="noopener">{s.title}</a> : s.title}
