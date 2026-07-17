@@ -27,7 +27,7 @@ const disclaimer = c.disclaimer || {};
     <span class="badge">{r.token_status}</span>
     <span class="badge">{r.product_stage}</span>
   </div>
-  <p style="color:var(--muted);font-size:0.85rem">
+  <p class="meta">
     {displayCategory(r.category)}{r.ecosystem ? ` · ${r.ecosystem}` : ""}
     {r.funding_summary ? ` · ${r.funding_summary}` : ""}
   </p>
