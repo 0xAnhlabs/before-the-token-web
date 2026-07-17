@@ -21,19 +21,19 @@ const all = projects.map((p) => ({
     id="q"
     type="search"
     placeholder="Search name or description..."
-    style="width:100%;padding:.6rem .8rem;background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:8px;"
+    style="width:100%;padding:.6rem .8rem;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;"
   />
 
   <div class="filters" id="filters">
-    <select id="f-activity" style="background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
+    <select id="f-activity" style="background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
       <option value="">All activity</option>
       {[...new Set(all.map((x) => x.activity).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
     </select>
-    <select id="f-token" style="background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
+    <select id="f-token" style="background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
       <option value="">All token status</option>
       {[...new Set(all.map((x) => x.token).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
     </select>
-    <select id="f-stage" style="background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
+    <select id="f-stage" style="background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
       <option value="">All stage</option>
       {[...new Set(all.map((x) => x.stage).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
     </select>
