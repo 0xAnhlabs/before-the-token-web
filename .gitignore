@@ -5,3 +5,5 @@ dist/
 *.local
 .DS_Store
 .astro/
+# auto-generated at build time from Supabase (Vercel vercel-build / local npm run fetch)
+data/projects.json
