@@ -2,17 +2,86 @@
 import Layout from "../layouts/Base.astro";
 import { loadProjects, displayCategory } from "../lib/projects.js";
 
+// product_stage -> display label (taxonomy v1.0)
+const STAGE_LABELS = {
+  concept: "Concept",
+  private_development: "In Dev",
+  private_beta: "Private Beta",
+  testnet: "Testnet",
+  public_beta: "Public Beta",
+  live_product: "Live Product",
+  incentive_driven_live_product: "Live + Incentive",
+  fees_live: "Fees Live",
+  revenue_stage: "Revenue Stage",
+  unknown: "Unknown",
+};
+
+// category -> short glyph for the project icon cell
+function categoryGlyph(cat) {
+  const c = (cat || "").toLowerCase();
+  if (c.includes("perpetual") || c.includes("dex") || c.includes("exchange")) return "◈";
+  if (c.includes("game") || c.includes("chess")) return "♟";
+  if (c.includes("ai") || c.includes("layer") || c.includes("infra")) return "▦";
+  if (c.includes("defi")) return "◉";
+  return "●";
+}
+
+// official website domain -> favicon url (external, visitor loads directly; no upload)
+const PROJECT_DOMAIN = {
+  "genlayer": "genlayer.com",
+  "pixiechess": "pixiechess.xyz",
+  "perpl": "perpl.xyz",
+};
+function logoUrl(slug) {
+  // explicit known domain first, then best-effort auto from slug for future projects
+  const d = PROJECT_DOMAIN[slug] || `${slug}.com`;
+  return `https://www.google.com/s2/favicons?domain=${d}&sz=128`;
+}
+
+// category -> short display label (manual known map + auto fallback before "-")
+const CATEGORY_SHORT = {
+  "perpetual-futures-dex": "Perp DEX",
+  "perpetual futures exchange, defi": "Perp DEX",
+  "perpetual futures dex": "Perp DEX",
+  "ai and blockchain infrastructure - decentralized ai adjudication": "Infrastructure",
+  "web3 gaming - blockchain chess with collectible and tournament mechanics": "Web3 Gaming",
+};
+function shortCategory(cat) {
+  const c = (cat || "").trim();
+  if (CATEGORY_SHORT[c.toLowerCase()]) return CATEGORY_SHORT[c.toLowerCase()];
+  const before = c.split("-")[0].trim();
+  return before || c;
+}
+
+// funding_summary -> short amount only (e.g. "$7.5M"); empty if no value
+function shortFunding(summary) {
+  const s = (summary || "").trim();
+  const m = s.match(/[$€£]\s?\d+(?:\.\d+)?\s?[mbk]/i);
+  return m ? m[0].replace(/\s+/g, "") : "";
+}
+
 const projects = loadProjects();
-const all = projects.map((p) => ({
-  slug: p.project_row.slug,
-  name: p.project_row.name,
-  activity: p.project_row.activity_status,
-  token: p.project_row.token_status,
-  stage: p.project_row.product_stage,
-  category: displayCategory(p.project_row.category),
-  teaser: (p.revision_content?.brief?.whats_cooking || "").slice(0, 160),
-}));
+const all = projects.map((p) => {
+  const row = p.project_row || {};
+  return {
+    slug: row.slug,
+    name: row.name,
+    logo: logoUrl(row.slug),
+    category: row.category || "",
+    categoryLabel: displayCategory(row.category || ""),
+    categoryShort: shortCategory(row.category || ""),
+    funding: row.funding_summary || "",
+    fundingShort: shortFunding(row.funding_summary || ""),
+    stage: row.product_stage || "unknown",
+    stageLabel: STAGE_LABELS[row.product_stage] || row.product_stage || "Unknown",
+    activity: row.activity_status || "",
+    token: row.token_status || "",
+    note: row.note || "",
+    teaser: (p.revision_content?.brief?.whats_cooking || "").slice(0, 160),
+  };
+});
 ---
+
 <Layout title="Before The Token - Research">
   <h1>Research</h1>
   <p style="color:var(--muted)">{all.length} project(s) tracked. Neutral, evidence-based, no ranking.</p>
@@ -20,35 +89,95 @@ const all = projects.map((p) => ({
   <input
     id="q"
     type="search"
-    placeholder="Search name or description..."
-    style="width:100%;padding:.6rem .8rem;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;"
+    placeholder="Search name, category, note..."
+    style="width:100%;padding:.6rem .8rem;background:var(--surface);color:var(--text);border:1px solid var(--border-strong);border-radius:8px;"
   />
 
-  <div class="filters" id="filters">
-    <select id="f-activity" style="background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
-      <option value="">All activity</option>
-      {[...new Set(all.map((x) => x.activity).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
-    </select>
-    <select id="f-token" style="background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
-      <option value="">All token status</option>
-      {[...new Set(all.map((x) => x.token).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
-    </select>
-    <select id="f-stage" style="background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:.4rem;">
-      <option value="">All stage</option>
-      {[...new Set(all.map((x) => x.stage).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
-    </select>
+  <div class="toolbar">
+    <div class="viewtabs">
+      <button class="vtab active" data-view="list">List</button>
+      <button class="vtab" data-view="cards">Cards</button>
+    </div>
+    <div class="filters">
+      <select id="f-activity">
+        <option value="">All activity</option>
+        {[...new Set(all.map((x) => x.activity).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
+      </select>
+      <select id="f-stage">
+        <option value="">All stage</option>
+        {[...new Set(all.map((x) => x.stage).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
+      </select>
+      <select id="f-token">
+        <option value="">All token</option>
+        {[...new Set(all.map((x) => x.token).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
+      </select>
+      <select id="f-sort">
+        <option value="updated">Sort: Updated</option>
+        <option value="name">Sort: Name</option>
+      </select>
+    </div>
   </div>
 
-  <div id="list">
+  <!-- LIST VIEW -->
+  <div class="ptable-wrap">
+  <table class="ptable" id="list-view">
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Category</th>
+        <th>Funding</th>
+        <th>Stage</th>
+        <th>Note</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {all.map((x) => (
+        <tr data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.note} ${x.teaser}`.toLowerCase()}
+            data-activity={x.activity} data-stage={x.stage} data-token={x.token} data-name={x.name.toLowerCase()}>
+          <td class="cell-project">
+            {x.logo ? (
+              <img class="logo" src={x.logo} alt={x.name} width="32" height="32" loading="lazy" onerror={`this.outerHTML='<span class=&quot;glyph&quot;>${categoryGlyph(x.category)}</span>'`} />
+            ) : (
+              <span class="glyph">{categoryGlyph(x.category)}</span>
+            )}
+            <a href={`/${x.slug}`} class="pname">{x.name}</a>
+          </td>
+          <td class="cell-category">{x.categoryShort}</td>
+          <td class="cell-funding">{x.fundingShort ? x.fundingShort : <span class="muted">No disclosed</span>}</td>
+          <td><span class="badge violet">{x.stageLabel}</span></td>
+          <td class="cell-note">{x.note ? x.note : <span class="muted">—</span>}</td>
+          <td class="cell-go"><a href={`/${x.slug}`} class="go" aria-label="Open">→</a></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  </div>
+
+  <!-- CARDS VIEW -->
+  <div id="cards-view" style="display:none">
     {all.map((x) => (
-      <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.teaser} ${x.category}`.toLowerCase()}>
-        <div class="name">{x.name}</div>
-        <div class="badges">
-          <span class="badge green">{x.activity}</span>
-          <span class="badge amber">{x.token}</span>
-          <span class="badge violet">{x.stage}</span>
+      <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.note} ${x.teaser}`.toLowerCase()}
+         data-activity={x.activity} data-stage={x.stage} data-token={x.token} data-name={x.name.toLowerCase()}>
+        <div class="chead">
+          {x.logo ? (
+            <img class="avatar-img" src={x.logo} alt={x.name} width="34" height="34" loading="lazy" onerror={`this.outerHTML='<span class=&quot;avatar&quot;>${categoryGlyph(x.category)}</span>'`} />
+          ) : (
+            <span class="avatar">{categoryGlyph(x.category)}</span>
+          )}
+          <div>
+            <div class="ctitle">{x.name}</div>
+            <div class="card-cat">{x.categoryShort}</div>
+          </div>
         </div>
-        <div class="teaser">{x.teaser}</div>
+        <div class="ctags">
+          <span class="ctag">{x.stageLabel}</span>
+        </div>
+        <div class="card-note">{x.note}</div>
+        <div class="cfoot">
+          <span class="cfund">{x.fundingShort ? x.fundingShort : "No disclosed"}</span>
+          <span class="go">Open →</span>
+        </div>
       </a>
     ))}
   </div>
@@ -56,27 +185,55 @@ const all = projects.map((p) => ({
   <script>
     const q = document.getElementById("q");
     const fa = document.getElementById("f-activity");
-    const ft = document.getElementById("f-token");
     const fs = document.getElementById("f-stage");
-    const cards = [...document.querySelectorAll("#list .card")];
+    const ft = document.getElementById("f-token");
+    const sortSel = document.getElementById("f-sort");
+
+    const listView = document.getElementById("list-view");
+    const cardsView = document.getElementById("cards-view");
+    const listRows = [...listView.querySelectorAll("tbody tr")];
+    const cards = [...cardsView.querySelectorAll(".card")];
+    const vbtns = [...document.querySelectorAll(".vtab")];
+
+    function setView(v) {
+      const isList = v === "list";
+      listView.style.display = isList ? "" : "none";
+      cardsView.style.display = isList ? "none" : "";
+      vbtns.forEach((b) => b.classList.toggle("active", b.dataset.view === v));
+      apply();
+    }
+    vbtns.forEach((b) => b.addEventListener("click", () => setView(b.dataset.view)));
+
+    function matches(el) {
+      const term = q.value.trim().toLowerCase();
+      const a = fa.value, s = fs.value, t = ft.value;
+      const hay = el.getAttribute("data-search") || "";
+      const act = el.getAttribute("data-activity") || "";
+      const stg = el.getAttribute("data-stage") || "";
+      const tk = el.getAttribute("data-token") || "";
+      return (!term || hay.includes(term)) && (!a || act === a) && (!s || stg === s) && (!t || tk === t);
+    }
+
+    function sortAll() {
+      const by = sortSel.value;
+      const cmp = (e) => by === "name" ? e.getAttribute("data-name") : 0;
+      // list
+      const tbody = listView.querySelector("tbody");
+      const lr = [...tbody.querySelectorAll("tr")];
+      lr.sort((x, y) => (by === "name" ? x.getAttribute("data-name").localeCompare(y.getAttribute("data-name")) : 0));
+      lr.forEach((r) => tbody.appendChild(r));
+      // cards
+      const cc = [...cardsView.children];
+      cc.sort((x, y) => (by === "name" ? x.getAttribute("data-name").localeCompare(y.getAttribute("data-name")) : 0));
+      cc.forEach((c) => cardsView.appendChild(c));
+    }
 
     function apply() {
-      const term = q.value.trim().toLowerCase();
-      const a = fa.value, t = ft.value, s = fs.value;
-      cards.forEach((c) => {
-        const hay = c.getAttribute("data-search") || "";
-        const act = c.querySelector(".badge")?.textContent || "";
-        const badges = [...c.querySelectorAll(".badge")].map((b) => b.textContent);
-        const okTerm = !term || hay.includes(term);
-        const okA = !a || badges.includes(a);
-        const okT = !t || badges.includes(t);
-        const okS = !s || badges.includes(s);
-        c.style.display = okTerm && okA && okT && okS ? "" : "none";
-      });
+      listRows.forEach((r) => (r.style.display = matches(r) ? "" : "none"));
+      cards.forEach((c) => (c.style.display = matches(c) ? "" : "none"));
     }
-    q.addEventListener("input", apply);
-    fa.addEventListener("change", apply);
-    ft.addEventListener("change", apply);
-    fs.addEventListener("change", apply);
+
+    [q, fa, fs, ft, sortSel].forEach((el) => el.addEventListener("input", () => { sortAll(); apply(); }));
+    setView("list");
   </script>
 </Layout>

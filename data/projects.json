@@ -12,7 +12,8 @@
         "activity_status": "active",
         "token_status": "token_planned",
         "funding_summary": "$7.5M reported seed funding",
-        "key_backers": "North Island Ventures, Arrington Capital, Node Capital, Tykhe Block Ventures, Magnus Capital"
+        "key_backers": "North Island Ventures, Arrington Capital, Node Capital, Tykhe Block Ventures, Magnus Capital",
+        "note": ""
       },
       "revision_meta": {
         "revision_id": "f6b73fc6-a320-4c9f-8cc1-77a522834806",
@@ -87,7 +88,8 @@
         "activity_status": "",
         "token_status": "",
         "funding_summary": "$5.2M reported seed funding",
-        "key_backers": "Paradigm, SeedClub, Trevor McFedries, Jordi Hays"
+        "key_backers": "Paradigm, SeedClub, Trevor McFedries, Jordi Hays",
+        "note": ""
       },
       "revision_meta": {
         "revision_id": "85b16175-9087-4d8b-b856-39fa2020bcea",
@@ -141,7 +143,8 @@
         "activity_status": "active",
         "token_status": "token_unconfirmed",
         "funding_summary": "Not independently confirmed; reporting-aggregator total raised shows $9.25M",
-        "key_backers": "Dragonfly Capital, Brevan Howard, Mirana Ventures, L1 Digital, HashKey Capital"
+        "key_backers": "Dragonfly Capital, Brevan Howard, Mirana Ventures, L1 Digital, HashKey Capital",
+        "note": ""
       },
       "revision_meta": {
         "revision_id": "101432d6-8e77-44d7-9711-33b135af6841",
