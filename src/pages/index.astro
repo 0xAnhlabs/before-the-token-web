@@ -2,20 +2,6 @@
 import Layout from "../layouts/Base.astro";
 import { loadProjects, displayCategory } from "../lib/projects.js";
 
-// product_stage -> display label (taxonomy v1.0)
-const STAGE_LABELS = {
-  concept: "Concept",
-  private_development: "In Dev",
-  private_beta: "Private Beta",
-  testnet: "Testnet",
-  public_beta: "Public Beta",
-  live_product: "Live Product",
-  incentive_driven_live_product: "Live + Incentive",
-  fees_live: "Fees Live",
-  revenue_stage: "Revenue Stage",
-  unknown: "Unknown",
-};
-
 // category -> short glyph for the project icon cell
 function categoryGlyph(cat) {
   const c = (cat || "").toLowerCase();
@@ -60,9 +46,15 @@ function shortFunding(summary) {
   return m ? m[0].replace(/\s+/g, "") : "";
 }
 
+// slug-style value -> "Normal Words" (space instead of underscore)
+function humanize(s) {
+  return (s || "").replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 const projects = loadProjects();
 const all = projects.map((p) => {
   const row = p.project_row || {};
+  const stageRaw = row.product_stage || "unknown";
   return {
     slug: row.slug,
     name: row.name,
@@ -72,10 +64,11 @@ const all = projects.map((p) => {
     categoryShort: shortCategory(row.category || ""),
     funding: row.funding_summary || "",
     fundingShort: shortFunding(row.funding_summary || ""),
-    stage: row.product_stage || "unknown",
-    stageLabel: STAGE_LABELS[row.product_stage] || row.product_stage || "Unknown",
+    // derive clean stage (strip incentive prefix) + incentive flag from product_stage
+    incentive: stageRaw.includes("incentive"),
+    stage: stageRaw.replace("incentive_driven_", ""),
+    stageLabel: humanize(stageRaw.replace("incentive_driven_", "")),
     activity: row.activity_status || "",
-    token: row.token_status || "",
     note: row.note || "",
     teaser: (p.revision_content?.brief?.whats_cooking || "").slice(0, 160),
   };
@@ -101,15 +94,16 @@ const all = projects.map((p) => {
     <div class="filters">
       <select id="f-activity">
         <option value="">All activity</option>
-        {[...new Set(all.map((x) => x.activity).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
+        {[...new Set(all.map((x) => x.activity).filter(Boolean))].map((v) => <option value={v}>{humanize(v)}</option>)}
       </select>
       <select id="f-stage">
         <option value="">All stage</option>
-        {[...new Set(all.map((x) => x.stage).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
+        {[...new Set(all.map((x) => x.stage).filter(Boolean))].map((v) => <option value={v}>{humanize(v)}</option>)}
       </select>
-      <select id="f-token">
-        <option value="">All token</option>
-        {[...new Set(all.map((x) => x.token).filter(Boolean))].map((v) => <option value={v}>{v}</option>)}
+      <select id="f-incentive">
+        <option value="">All incentive</option>
+        <option value="yes">Incentive</option>
+        <option value="no">No incentive</option>
       </select>
       <select id="f-sort">
         <option value="updated">Sort: Updated</option>
@@ -134,7 +128,7 @@ const all = projects.map((p) => {
     <tbody>
       {all.map((x) => (
         <tr data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.note} ${x.teaser}`.toLowerCase()}
-            data-activity={x.activity} data-stage={x.stage} data-token={x.token} data-name={x.name.toLowerCase()}>
+            data-activity={x.activity} data-stage={x.stage} data-incentive={x.incentive ? "yes" : "no"} data-name={x.name.toLowerCase()}>
           <td class="cell-project">
             {x.logo ? (
               <img class="logo" src={x.logo} alt={x.name} width="32" height="32" loading="lazy" onerror={`this.outerHTML='<span class=&quot;glyph&quot;>${categoryGlyph(x.category)}</span>'`} />
@@ -158,7 +152,7 @@ const all = projects.map((p) => {
   <div id="cards-view" style="display:none">
     {all.map((x) => (
       <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.note} ${x.teaser}`.toLowerCase()}
-         data-activity={x.activity} data-stage={x.stage} data-token={x.token} data-name={x.name.toLowerCase()}>
+         data-activity={x.activity} data-stage={x.stage} data-incentive={x.incentive ? "yes" : "no"} data-name={x.name.toLowerCase()}>
         <div class="chead">
           {x.logo ? (
             <img class="avatar-img" src={x.logo} alt={x.name} width="34" height="34" loading="lazy" onerror={`this.outerHTML='<span class=&quot;avatar&quot;>${categoryGlyph(x.category)}</span>'`} />
@@ -186,7 +180,7 @@ const all = projects.map((p) => {
     const q = document.getElementById("q");
     const fa = document.getElementById("f-activity");
     const fs = document.getElementById("f-stage");
-    const ft = document.getElementById("f-token");
+    const fi = document.getElementById("f-incentive");
     const sortSel = document.getElementById("f-sort");
 
     const listView = document.getElementById("list-view");
@@ -206,17 +200,16 @@ const all = projects.map((p) => {
 
     function matches(el) {
       const term = q.value.trim().toLowerCase();
-      const a = fa.value, s = fs.value, t = ft.value;
+      const a = fa.value, s = fs.value, i = fi.value;
       const hay = el.getAttribute("data-search") || "";
       const act = el.getAttribute("data-activity") || "";
       const stg = el.getAttribute("data-stage") || "";
-      const tk = el.getAttribute("data-token") || "";
-      return (!term || hay.includes(term)) && (!a || act === a) && (!s || stg === s) && (!t || tk === t);
+      const inc = el.getAttribute("data-incentive") || "";
+      return (!term || hay.includes(term)) && (!a || act === a) && (!s || stg === s) && (!i || inc === i);
     }
 
     function sortAll() {
       const by = sortSel.value;
-      const cmp = (e) => by === "name" ? e.getAttribute("data-name") : 0;
       // list
       const tbody = listView.querySelector("tbody");
       const lr = [...tbody.querySelectorAll("tr")];
@@ -233,7 +226,7 @@ const all = projects.map((p) => {
       cards.forEach((c) => (c.style.display = matches(c) ? "" : "none"));
     }
 
-    [q, fa, fs, ft, sortSel].forEach((el) => el.addEventListener("input", () => { sortAll(); apply(); }));
+    [q, fa, fs, fi, sortSel].forEach((el) => el.addEventListener("input", () => { sortAll(); apply(); }));
     setView("list");
   </script>
 </Layout>

@@ -18,71 +18,109 @@ const brief = c.brief || {};
 const assessment = c.assessment || {};
 const sources = c.sources || [];
 const disclaimer = c.disclaimer || {};
+
+// official website domain -> favicon url (external; visitor loads directly)
+const PROJECT_DOMAIN = {
+  "genlayer": "genlayer.com",
+  "pixiechess": "pixiechess.xyz",
+  "perpl": "perpl.xyz",
+};
+function logoUrl(s) {
+  const d = PROJECT_DOMAIN[s] || `${s}.com`;
+  return `https://www.google.com/s2/favicons?domain=${d}&sz=128`;
+}
+
+// related / recent: other projects (exclude current)
+const related = loadProjects()
+  .filter((x) => x.project_row.slug !== slug)
+  .slice(0, 6)
+  .map((x) => ({ slug: x.project_row.slug, name: x.project_row.name, logo: logoUrl(x.project_row.slug) }));
 ---
+
 <Layout title={`${r.name} - Before The Token`}>
-  <a href="/">&larr; Research</a>
-  <h1>{r.name}</h1>
-  <div class="badges">
-    <span class="badge green">{r.activity_status}</span>
-    <span class="badge amber">{r.token_status}</span>
-    <span class="badge violet">{r.product_stage}</span>
-  </div>
-  <p class="meta">
-    {displayCategory(r.category)}{r.ecosystem ? ` · ${r.ecosystem}` : ""}
-    {r.funding_summary ? ` · ${r.funding_summary}` : ""}
-  </p>
-
-  <section class="module">
-    <h2>What's Cooking</h2>
-    <p>{brief.whats_cooking}</p>
-  </section>
-  <section class="module">
-    <h2>How It Makes Money</h2>
-    <p>{brief.how_it_makes_money}</p>
-  </section>
-  <section class="module">
-    <h2>How It Grows</h2>
-    <p>{brief.how_it_grows}</p>
-  </section>
-  <section class="module">
-    <h2>Why It May Matter</h2>
-    <p>{brief.why_it_may_matter}</p>
-  </section>
-
-  {assessment.warnings?.length > 0 && (
-    <section class="module">
-      <h2>Warnings</h2>
-      <ul>
-        {assessment.warnings.map((w) => <li>{w}</li>)}
-      </ul>
-    </section>
-  )}
-
-  {assessment.watch_next?.length > 0 && (
-    <section class="module">
-      <h2>Watch Next</h2>
-      <ul>
-        {assessment.watch_next.map((w) => <li>{w}</li>)}
-      </ul>
-    </section>
-  )}
-
-  {sources.length > 0 && (
-    <section class="module">
-      <h2>Sources</h2>
-      <ul class="sources">
-        {sources.map((s) => (
-          <li>
-            {s.url ? <a href={s.url} target="_blank" rel="noopener">{s.title}</a> : s.title}
-            {s.type ? ` (${s.type})` : ""}
-          </li>
+  <div class="dwrap">
+    <!-- left rail: back + recent -->
+    <aside class="drail">
+      <button class="dback" onclick="if (history.length > 1) history.back(); else location.href='/';">&larr; Back</button>
+      <div class="drail-h">Recent research</div>
+      <nav class="drec">
+        {related.map((x) => (
+          <a class="drec-card" href={`/${x.slug}`}>
+            <img class="drec-logo" src={x.logo} alt={x.name} width="28" height="28" loading="lazy" onerror={`this.outerHTML='<span class=&quot;drec-glyph&quot;>${x.name[0]}</span>'`} />
+            <span class="drec-name">{x.name}</span>
+          </a>
         ))}
-      </ul>
-    </section>
-  )}
+      </nav>
+    </aside>
 
-  <div class="disclaimer">
-    Listing is information, not endorsement.
-    {disclaimer.not_investment_advice ? " Not investment advice." : ""}
+    <!-- center: content -->
+    <div class="dmain">
+    <div class="dhead">
+      <img class="dlogo" src={logoUrl(slug)} alt={r.name} width="48" height="48" loading="lazy" onerror={`this.outerHTML='<span class=&quot;dlogo-glyph&quot;>${r.name[0]}</span>'`} />
+      <div>
+        <h1>{r.name}</h1>
+        <div class="dpills">
+          <span class="dpill">{displayCategory(r.category)}</span>
+          {r.funding_summary ? <span class="dpill">{r.funding_summary}</span> : ""}
+        </div>
+      </div>
+    </div>
+
+      <section class="module">
+        <h2><span class="mnum">01</span>What's Cooking</h2>
+        {brief.whats_cooking.split("\n\n").map((para) => <p>{para}</p>)}
+      </section>
+      <section class="module">
+        <h2><span class="mnum">02</span>How It Makes Money</h2>
+        {brief.how_it_makes_money.split("\n\n").map((para) => <p>{para}</p>)}
+      </section>
+      <section class="module">
+        <h2><span class="mnum">03</span>How It Grows</h2>
+        {brief.how_it_grows.split("\n\n").map((para) => <p>{para}</p>)}
+      </section>
+      <section class="module">
+        <h2><span class="mnum">04</span>Why It May Matter</h2>
+        {brief.why_it_may_matter.split("\n\n").map((para) => <p>{para}</p>)}
+      </section>
+
+      {assessment.warnings?.length > 0 && (
+        <section class="module">
+          <h2>Warnings</h2>
+          <ul>
+            {assessment.warnings.map((w) => <li>{w}</li>)}
+          </ul>
+        </section>
+      )}
+
+      {assessment.watch_next?.length > 0 && (
+        <section class="module">
+          <h2>Watch Next</h2>
+          <ul>
+            {assessment.watch_next.map((w) => <li>{w}</li>)}
+          </ul>
+        </section>
+      )}
+
+      {sources.filter((s) => s.url && s.url.trim()).length > 0 && (
+        <section class="module">
+          <details class="src-details">
+            <summary>Sources</summary>
+            <ul class="sources">
+              {sources.filter((s) => s.url && s.url.trim()).map((s) => (
+                <li><a href={s.url} target="_blank" rel="noopener">{s.title}</a></li>
+              ))}
+            </ul>
+          </details>
+        </section>
+      )}
+
+      <div class="disclaimer">
+        Listing is information, not endorsement.
+        {disclaimer.not_investment_advice ? " Not investment advice." : ""}
+      </div>
+    </div>
+
+    <!-- right column reserved -->
+    <aside class="dright"></aside>
   </div>
 </Layout>

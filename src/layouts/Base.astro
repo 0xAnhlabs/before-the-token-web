@@ -7,6 +7,7 @@ const { title = "Before The Token" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;510;590&display=swap" rel="stylesheet" />
@@ -58,7 +59,9 @@ const { title = "Before The Token" } = Astro.props;
         display: flex; align-items: center; justify-content: space-between;
       }
       header.nav .brand { font-weight: 590; font-size: 1.05rem; letter-spacing: -0.3px; color: var(--text); }
-      header.nav .brand a { color: var(--text); }
+      header.nav .brand a { display: flex; align-items: center; gap: 0.55rem; color: var(--text); text-decoration: none; }
+      header.nav .brand-logo { height: 38px; width: auto; display: block; border-radius: 9px; }
+      header.nav .brand-text { font-weight: 590; font-size: 1.15rem; letter-spacing: -0.3px; }
       header.nav .tag { color: var(--muted); font-size: 0.82rem; }
 
       .wrap { max-width: var(--maxw); margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
@@ -81,9 +84,12 @@ const { title = "Before The Token" } = Astro.props;
       .badge.amber { color: var(--amber); border-color: rgba(217,131,36,0.28); background: rgba(217,131,36,0.09); }
       .badge.violet { color: var(--accent); border-color: rgba(91,94,240,0.28); background: rgba(91,94,240,0.09); }
 
-      .module { margin-top: 2.25rem; }
-      .module h2 { font-size: 1.05rem; color: var(--text); }
-      .module p { color: var(--text-2); font-size: 0.98rem; }
+      .module { margin-top: 0; padding: 1.6rem 0; border-top: 1px solid var(--border); }
+      .module:first-of-type { border-top: 0; padding-top: 1.6rem; }
+      .module h2 { font-size: 1.05rem; color: var(--text); display: flex; align-items: center; gap: 0.6rem; }
+      .mnum { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.78rem; font-weight: 590; letter-spacing: 0; }
+      .module p { color: var(--text-2); font-size: 0.98rem; line-height: 1.7; margin: 0.5rem 0 0; }
+      .module p + p { margin-top: 1rem; }
 
       /* card grid (Cards view) - 4 per row, job-card style */
       #cards-view { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 0.5rem; }
@@ -188,13 +194,38 @@ const { title = "Before The Token" } = Astro.props;
       .muted { color: var(--faint); }
       .note { margin-top: 0.5rem; color: var(--text-2); font-size: 0.9rem; }
 
+      /* detail page: 3-col centered layout */
+      .wrap:has(.dwrap) { max-width: 1440px; margin: 0; }
+      .dwrap { display: grid; grid-template-columns: 1fr minmax(0, 2.4fr) 1fr; gap: 0; max-width: 1400px; margin: 0 auto; }
+      .drail { align-self: stretch; padding-left: 1.5rem; padding-right: 1.5rem; border-right: 1px solid var(--border); }
+      .drail-h { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; margin: 1.4rem 0 0.6rem; }
+      .drec { display: flex; flex-direction: column; gap: 0.5rem; }
+      .drec-card { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.5rem 0.65rem; transition: border-color .15s, box-shadow .15s, transform .15s; }
+      .drec-card:hover { text-decoration: none; border-color: var(--border-strong); box-shadow: var(--shadow); transform: translateY(-1px); }
+      .drec-logo { width: 1.75rem; height: 1.75rem; border-radius: 7px; object-fit: contain; background: var(--surface-2); border: 1px solid var(--border); padding: 2px; flex: none; }
+      .drec-glyph { width: 1.75rem; height: 1.75rem; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; background: rgba(91,94,240,0.10); color: var(--accent); font-weight: 590; flex: none; }
+      .drec-name { color: var(--text-2); font-size: 0.9rem; font-weight: 510; }
+      .dback { background: transparent; border: 1px solid var(--border-strong); color: var(--text-2); font-family: inherit; font-size: 0.85rem; font-weight: 510; padding: 0.35rem 0.7rem; border-radius: 8px; cursor: pointer; transition: background .15s, border-color .15s; }
+      .dback:hover { background: var(--surface-2); border-color: var(--accent); color: var(--accent); }
+      .dmain { min-width: 0; padding: 0 2rem; }
+      .dhead { display: flex; align-items: center; gap: 1rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--border); }
+      .dlogo { width: 3rem; height: 3rem; border-radius: 10px; object-fit: contain; background: var(--surface-2); border: 1px solid var(--border); padding: 3px; flex: none; }
+      .dlogo-glyph { width: 3rem; height: 3rem; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; background: rgba(91,94,240,0.10); color: var(--accent); font-size: 1.3rem; font-weight: 590; flex: none; }
+      .dhead h1 { margin: 0 0 0.4rem; }
+      .dpills { display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-start; }
+      .dpill { display: inline-block; padding: 0.28rem 0.7rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 510; border: 1px solid var(--border-strong); color: var(--text-2); background: var(--surface-2); }
+      .dright { align-self: stretch; min-height: 1px; padding-left: 1.5rem; border-left: 1px solid var(--border); }
+      .src-details > summary { cursor: pointer; list-style: none; user-select: none; font-weight: 590; font-size: 1.05rem; color: var(--text); margin: 0 0 0.5rem; }
+      .src-details > summary::-webkit-details-marker { display: none; }
+      .src-details > summary::before { content: "▸ "; color: var(--muted); }
+      .src-details[open] > summary::before { content: "▾ "; }
+
     </style>
   </head>
   <body>
     <header class="nav">
       <div class="inner">
-        <div class="brand"><a href="/">Before The Token</a></div>
-        <div class="tag">Research, before the token.</div>
+        <div class="brand"><a href="/"><img src="/favicon.png" alt="Before The Token" class="brand-logo" /><span class="brand-text">Before the token</span></a></div>
       </div>
     </header>
     <div class="wrap">
