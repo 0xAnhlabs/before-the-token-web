@@ -19,15 +19,10 @@ const assessment = c.assessment || {};
 const sources = c.sources || [];
 const disclaimer = c.disclaimer || {};
 
-// official website domain -> favicon url (external; visitor loads directly)
-const PROJECT_DOMAIN = {
-  "genlayer": "genlayer.com",
-  "pixiechess": "pixiechess.xyz",
-  "perpl": "perpl.xyz",
-};
+// local logos in /public/logos (downloaded, no external dependency)
 function logoUrl(s) {
-  const d = PROJECT_DOMAIN[s] || `${s}.com`;
-  return `https://www.google.com/s2/favicons?domain=${d}&sz=128`;
+  const ext = s === "perpl" ? "svg" : "png";
+  return `/logos/${s}.${ext}`;
 }
 
 // related / recent: other projects (exclude current)
@@ -56,13 +51,27 @@ const related = loadProjects()
     <!-- center: content -->
     <div class="dmain">
     <div class="dhead">
-      <img class="dlogo" src={logoUrl(slug)} alt={r.name} width="48" height="48" loading="lazy" onerror={`this.outerHTML='<span class=&quot;dlogo-glyph&quot;>${r.name[0]}</span>'`} />
-      <div>
-        <h1>{r.name}</h1>
-        <div class="dpills">
-          <span class="dpill">{displayCategory(r.category)}</span>
-          {r.funding_summary ? <span class="dpill">{r.funding_summary}</span> : ""}
+      <div class="dhead-left">
+        <img class="dlogo" src={logoUrl(slug)} alt={r.name} width="56" height="56" loading="lazy" onerror={`this.outerHTML='<span class=&quot;dlogo-glyph&quot;>${r.name[0]}</span>'`} />
+        <div class="dhead-main">
+          <h1>{r.name}</h1>
+          <div class="dpills">
+            <span class="dpill">{displayCategory(r.category)}</span>
+            {r.funding_summary ? <span class="dpill">{r.funding_summary}</span> : ""}
+          </div>
         </div>
+      </div>
+      <div class="dlink">
+        {r.website_url && (
+          <a href={r.website_url} target="_blank" rel="noopener" title="Website" aria-label="Website">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          </a>
+        )}
+        {r.x_url && (
+          <a href={r.x_url} target="_blank" rel="noopener" title="X" aria-label="X">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-6.9L4.8 22H1.7l8-9.2L1 2h7l4.8 6.3L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg>
+          </a>
+        )}
       </div>
     </div>
 
@@ -114,13 +123,8 @@ const related = loadProjects()
         </section>
       )}
 
-      <div class="disclaimer">
-        Listing is information, not endorsement.
-        {disclaimer.not_investment_advice ? " Not investment advice." : ""}
-      </div>
-    </div>
 
-    <!-- right column reserved -->
+      </div>  <!-- close .dmain -->
     <aside class="dright"></aside>
   </div>
 </Layout>
