@@ -208,9 +208,14 @@ const { title = "Before The Token" } = Astro.props;
       .dback { background: transparent; border: 1px solid var(--border-strong); color: var(--text-2); font-family: inherit; font-size: 0.85rem; font-weight: 510; padding: 0.35rem 0.7rem; border-radius: 8px; cursor: pointer; transition: background .15s, border-color .15s; }
       .dback:hover { background: var(--surface-2); border-color: var(--accent); color: var(--accent); }
       .dmain { min-width: 0; padding: 0 2rem; }
-      .dhead { display: flex; align-items: center; gap: 1rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--border); }
-      .dlogo { width: 3rem; height: 3rem; border-radius: 10px; object-fit: contain; background: var(--surface-2); border: 1px solid var(--border); padding: 3px; flex: none; }
-      .dlogo-glyph { width: 3rem; height: 3rem; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; background: rgba(91,94,240,0.10); color: var(--accent); font-size: 1.3rem; font-weight: 590; flex: none; }
+      .dhead { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--border); }
+      .dhead-left { display: flex; align-items: center; gap: 0.9rem; min-width: 0; }
+      .dhead-main { min-width: 0; }
+      .dlink { display: flex; align-items: center; gap: 0.5rem; flex: none; align-self: flex-start; color: var(--text-2); }
+      .dlink a { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 8px; border: 1px solid var(--border); color: var(--text-2); transition: border-color .15s, color .15s, background .15s; }
+      .dlink a:hover { border-color: var(--accent); color: var(--accent); background: rgba(91,94,240,0.06); }
+      .dlogo { width: 3.5rem; height: 3.5rem; border-radius: 12px; object-fit: contain; background: var(--surface-2); border: 1px solid var(--border); padding: 3px; flex: none; }
+      .dlogo-glyph { width: 3.5rem; height: 3.5rem; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; background: rgba(91,94,240,0.10); color: var(--accent); font-size: 1.5rem; font-weight: 590; flex: none; }
       .dhead h1 { margin: 0 0 0.4rem; }
       .dpills { display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-start; }
       .dpill { display: inline-block; padding: 0.28rem 0.7rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 510; border: 1px solid var(--border-strong); color: var(--text-2); background: var(--surface-2); }
@@ -218,9 +223,29 @@ const { title = "Before The Token" } = Astro.props;
       .src-details > summary { cursor: pointer; list-style: none; user-select: none; font-weight: 590; font-size: 1.05rem; color: var(--text); margin: 0 0 0.5rem; }
       .src-details > summary::-webkit-details-marker { display: none; }
       .src-details > summary::before { content: "▸ "; color: var(--muted); }
-      .src-details[open] > summary::before { content: "▾ "; }
+      .dright { align-self: stretch; min-height: 1px; padding-left: 1.5rem; border-left: 1px solid var(--border); }
 
-    </style>
+            /* mobile: collapse 3-col detail layout to single column */
+            @media (max-width: 900px) {
+              .wrap:has(.dwrap) { max-width: var(--maxw); margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+              .dwrap { display: block; }
+              .drail, .dright { display: none; }
+              .dmain { padding: 0 0.25rem; }
+              .dhead { flex-direction: column; align-items: flex-start; gap: 0.5rem; padding-bottom: 1.2rem; }
+              .dhead-left { width: 100%; }
+              .dhead h1 { font-size: 1.45rem; }
+              .dlogo { width: 2.8rem; height: 2.8rem; }
+              .dpills { flex-direction: row; flex-wrap: wrap; gap: 0.35rem; align-items: flex-start; }
+              .module { padding: 1.2rem 0; }
+              .module:first-of-type { padding-top: 1.2rem; }
+              .module h2 { font-size: 1rem; }
+              .mnum { width: 1.5rem; height: 1.5rem; font-size: 0.7rem; }
+              .module p { font-size: 0.95rem; line-height: 1.65; }
+              .module p + p { margin-top: 0.8rem; }
+              .disclaimer { margin-top: 2.5rem; padding-top: 1rem; font-size: 0.75rem; }
+            }
+
+          </style>
   </head>
   <body>
     <header class="nav">
