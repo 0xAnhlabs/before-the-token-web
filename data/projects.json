@@ -13,15 +13,17 @@
         "token_status": "token_planned",
         "funding_summary": "$7.5M reported seed funding",
         "key_backers": "North Island Ventures, Arrington Capital, Node Capital, Tykhe Block Ventures, Magnus Capital",
-        "note": ""
+        "note": "",
+        "website_url": "https://www.genlayer.com",
+        "x_url": "https://x.com/GenLayer"
       },
       "revision_meta": {
-        "revision_id": "f6b73fc6-a320-4c9f-8cc1-77a522834806",
-        "revision_number": 1,
-        "schema_version": "v1",
-        "taxonomy_version": "v1.0",
-        "published_at": "2026-07-17T08:50:49.229765+00:00",
-        "updated_at": "2026-07-17T08:50:51.722191+00:00"
+        "revision_id": null,
+        "revision_number": null,
+        "schema_version": null,
+        "taxonomy_version": null,
+        "published_at": null,
+        "updated_at": null
       },
       "revision_content": {
         "brief": {
@@ -80,61 +82,6 @@
     },
     {
       "project_row": {
-        "name": "Pixie Chess",
-        "slug": "pixiechess",
-        "category": "Web3 gaming - blockchain chess with collectible and tournament mechanics",
-        "ecosystem": "Base / EVM-compatible",
-        "product_stage": "live_product",
-        "activity_status": "",
-        "token_status": "",
-        "funding_summary": "$5.2M reported seed funding",
-        "key_backers": "Paradigm, SeedClub, Trevor McFedries, Jordi Hays",
-        "note": ""
-      },
-      "revision_meta": {
-        "revision_id": "85b16175-9087-4d8b-b856-39fa2020bcea",
-        "revision_number": 1,
-        "schema_version": "v1",
-        "taxonomy_version": "v1.0",
-        "published_at": "2026-07-17T08:50:45.188835+00:00",
-        "updated_at": "2026-07-17T08:50:48.089652+00:00"
-      },
-      "revision_content": {
-        "brief": {
-          "how_it_grows": "Pixie Chess targets chess players, collectors and tournament participants through special-ability pieces, competitive formats, prize pools and simplified onboarding. Auctions, packs and piece burning are designed to create repeat collection and tournament-entry loops. Early traction evidence is limited beyond campaign activity, and there is no clear indication yet of recurring retention beyond collectible demand or prize-seeking play.",
-          "whats_cooking": "Pixie Chess is a blockchain-based chess game on Base where players collect tokenized pieces with abilities beyond standard chess rules. New pieces are released daily through auctions and packs, and players can burn pieces to activate them in tournaments or keep them for ladder play. The game supports Quickplay, private matches and tournaments, with email, social or Base-compatible wallet onboarding. Core mechanics are live and documented, but independent player and usage metrics are not yet available.",
-          "why_it_may_matter": "Pixie Chess may be relevant to chess players and on-chain game designers exploring whether collectible ownership can add meaningful strategy to a skill-based game. Its special-ability pieces, burn-to-enter tournaments and player-funded prize pools create a concrete experiment combining chess, trading-card mechanics and blockchain assets. Key questions are whether the game remains competitive rather than pay-to-win, whether new players can enter affordably and whether tournaments generate recurring participation. Watch for active players, repeat play, tournament cadence and independently observable on-chain activity.",
-          "how_it_makes_money": "Player spending enters through piece auctions and packs, and official docs state that money spent on pieces directly funds tournament prize pools. This currently appears closer to a player-funded competition economy than demonstrated team or protocol revenue. Secondary coverage reports an initial prize vault funded by piece sales and a team contribution. It remains unclear whether Pixie Chess retains fees, royalties or another protocol revenue share."
-        },
-        "sources": [
-          {
-            "url": "https://www.pixiechess.xyz/docs/introduction",
-            "type": "official_docs",
-            "title": "Pixie Chess Docs"
-          },
-          {
-            "url": "https://www.blockchaingamer.biz/features/14400/updated-blockchain-game-investment-funding-list",
-            "type": "independent_gaming_industry_news",
-            "title": "Secondary coverage"
-          },
-          {
-            "url": "",
-            "type": "unknown",
-            "title": "Indirect/aggregator X reference"
-          }
-        ],
-        "assessment": {
-          "warnings": [],
-          "watch_next": []
-        },
-        "disclaimer": {
-          "not_investment_advice": true,
-          "listing_is_not_endorsement": true
-        }
-      }
-    },
-    {
-      "project_row": {
         "name": "Perpl",
         "slug": "perpl",
         "category": "perpetual-futures-dex",
@@ -144,15 +91,17 @@
         "token_status": "token_unconfirmed",
         "funding_summary": "Not independently confirmed; reporting-aggregator total raised shows $9.25M",
         "key_backers": "Dragonfly Capital, Brevan Howard, Mirana Ventures, L1 Digital, HashKey Capital",
-        "note": ""
+        "note": "",
+        "website_url": "https://perpl.xyz",
+        "x_url": "https://x.com/perpltrade"
       },
       "revision_meta": {
-        "revision_id": "101432d6-8e77-44d7-9711-33b135af6841",
-        "revision_number": 1,
-        "schema_version": "v1",
-        "taxonomy_version": "v1.0",
-        "published_at": "2026-07-14T17:25:57.440972+00:00",
-        "updated_at": "2026-07-14T17:25:57.440972+00:00"
+        "revision_id": null,
+        "revision_number": null,
+        "schema_version": null,
+        "taxonomy_version": null,
+        "published_at": null,
+        "updated_at": null
       },
       "revision_content": {
         "brief": {
@@ -267,6 +216,63 @@
             "Net protocol take after insurance or external rebates.",
             "Post-incentive durability or organic retention."
           ]
+        },
+        "disclaimer": {
+          "not_investment_advice": true,
+          "listing_is_not_endorsement": true
+        }
+      }
+    },
+    {
+      "project_row": {
+        "name": "Pixie Chess",
+        "slug": "pixiechess",
+        "category": "Web3 gaming - blockchain chess with collectible and tournament mechanics",
+        "ecosystem": "Base / EVM-compatible",
+        "product_stage": "live_product",
+        "activity_status": "",
+        "token_status": "",
+        "funding_summary": "$5.2M reported seed funding",
+        "key_backers": "Paradigm, SeedClub, Trevor McFedries, Jordi Hays",
+        "note": "",
+        "website_url": "https://pixiechess.xyz",
+        "x_url": "https://x.com/PixieChess"
+      },
+      "revision_meta": {
+        "revision_id": null,
+        "revision_number": null,
+        "schema_version": null,
+        "taxonomy_version": null,
+        "published_at": null,
+        "updated_at": null
+      },
+      "revision_content": {
+        "brief": {
+          "how_it_grows": "Pixie Chess targets chess players, collectors and tournament participants through special-ability pieces, competitive formats, prize pools and simplified onboarding. Auctions, packs and piece burning are designed to create repeat collection and tournament-entry loops. Early traction evidence is limited beyond campaign activity, and there is no clear indication yet of recurring retention beyond collectible demand or prize-seeking play.",
+          "whats_cooking": "Pixie Chess is a blockchain-based chess game on Base where players collect tokenized pieces with abilities beyond standard chess rules. New pieces are released daily through auctions and packs, and players can burn pieces to activate them in tournaments or keep them for ladder play. The game supports Quickplay, private matches and tournaments, with email, social or Base-compatible wallet onboarding. Core mechanics are live and documented, but independent player and usage metrics are not yet available.",
+          "why_it_may_matter": "Pixie Chess may be relevant to chess players and on-chain game designers exploring whether collectible ownership can add meaningful strategy to a skill-based game. Its special-ability pieces, burn-to-enter tournaments and player-funded prize pools create a concrete experiment combining chess, trading-card mechanics and blockchain assets. Key questions are whether the game remains competitive rather than pay-to-win, whether new players can enter affordably and whether tournaments generate recurring participation. Watch for active players, repeat play, tournament cadence and independently observable on-chain activity.",
+          "how_it_makes_money": "Player spending enters through piece auctions and packs, and official docs state that money spent on pieces directly funds tournament prize pools. This currently appears closer to a player-funded competition economy than demonstrated team or protocol revenue. Secondary coverage reports an initial prize vault funded by piece sales and a team contribution. It remains unclear whether Pixie Chess retains fees, royalties or another protocol revenue share."
+        },
+        "sources": [
+          {
+            "url": "https://www.pixiechess.xyz/docs/introduction",
+            "type": "official_docs",
+            "title": "Pixie Chess Docs"
+          },
+          {
+            "url": "https://www.blockchaingamer.biz/features/14400/updated-blockchain-game-investment-funding-list",
+            "type": "independent_gaming_industry_news",
+            "title": "Secondary coverage"
+          },
+          {
+            "url": "",
+            "type": "unknown",
+            "title": "Indirect/aggregator X reference"
+          }
+        ],
+        "assessment": {
+          "warnings": [],
+          "watch_next": []
         },
         "disclaimer": {
           "not_investment_advice": true,
