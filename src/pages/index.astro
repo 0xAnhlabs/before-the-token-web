@@ -21,7 +21,7 @@ const PROJECT_DOMAIN = {
 function logoUrl(slug) {
   // explicit known domain first, then best-effort auto from slug for future projects
   const d = PROJECT_DOMAIN[slug] || `${slug}.com`;
-  return `https://www.google.com/s2/favicons?domain=${d}&sz=128`;
+  return `https://www.google.com/s2/favicons?domain=${d}&sz=256`;
 }
 
 // category -> short display label (manual known map + auto fallback before "-")
