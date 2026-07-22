@@ -19,10 +19,15 @@ const assessment = c.assessment || {};
 const sources = c.sources || [];
 const disclaimer = c.disclaimer || {};
 
-// local logos in /public/logos (downloaded, no external dependency)
-function logoUrl(s) {
-  const ext = s === "perpl" ? "svg" : "png";
-  return `/logos/${s}.${ext}`;
+// Favicon via Google service, unified with list view
+const PROJECT_DOMAIN = {
+  genlayer: "genlayer.com",
+  pixiechess: "pixiechess.xyz",
+  perpl: "perpl.xyz",
+};
+function logoUrl(slug) {
+  const domain = PROJECT_DOMAIN[slug] || `${slug}.com`;
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
 }
 
 // related / recent: other projects (exclude current)
