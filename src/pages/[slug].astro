@@ -19,6 +19,8 @@ const assessment = c.assessment || {};
 const sources = c.sources || [];
 const disclaimer = c.disclaimer || {};
 
+const SITE_URL = "https://beforethetoken.vercel.app";
+
 // Favicon via Google service, unified with list view
 const PROJECT_DOMAIN = {
   genlayer: "genlayer.com",
@@ -30,6 +32,14 @@ function logoUrl(slug) {
   return `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
 }
 
+const PROJECT_SHORT_DESC = ((brief.whats_cooking || "")
+  .split("\n\n")
+  .map((s) => s.trim())
+  .find((s) => s) || `${r.name}: ${displayCategory(r.category)} project.`)
+  .slice(0, 150);
+const PROJECT_IMAGE = logoUrl(slug);
+const PROJECT_URL = `${SITE_URL}/${slug}`;
+
 // related / recent: other projects (exclude current)
 const related = loadProjects()
   .filter((x) => x.project_row.slug !== slug)
@@ -38,6 +48,17 @@ const related = loadProjects()
 ---
 
 <Layout title={`${r.name} - Before The Token`}>
+  <head slot="head">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={PROJECT_URL} />
+    <meta property="og:title" content={r.name} />
+    <meta property="og:description" content={PROJECT_SHORT_DESC} />
+    <meta property="og:image" content={PROJECT_IMAGE} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={r.name} />
+    <meta name="twitter:description" content={PROJECT_SHORT_DESC} />
+    <meta name="twitter:image" content={PROJECT_IMAGE} />
+  </head>
   <div class="dwrap">
     <!-- left rail: back + recent -->
     <aside class="drail">
