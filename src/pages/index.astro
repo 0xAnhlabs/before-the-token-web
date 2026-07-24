@@ -227,6 +227,8 @@ const all = projects.map((p) => {
     }
 
     [q, fa, fs, fi, sortSel].forEach((el) => el.addEventListener("input", () => { sortAll(); apply(); }));
-    setView("list");
+    // default to Cards on mobile (the wide list table is hidden there)
+    const isMobile = window.matchMedia("(max-width: 900px)").matches;
+    setView(isMobile ? "cards" : "list");
   </script>
 </Layout>

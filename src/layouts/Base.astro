@@ -195,6 +195,13 @@ const { title = "Before The Token" } = Astro.props;
       .muted { color: var(--faint); }
       .note { margin-top: 0.5rem; color: var(--text-2); font-size: 0.9rem; }
 
+      /* mobile: force Cards view, hide the wide list table (would be clipped) */
+      @media (max-width: 900px) {
+        #list-view { display: none !important; }
+        #cards-view { display: grid !important; }
+        .vtab[data-view="list"] { display: none; }
+      }
+
       /* detail page: 3-col centered layout */
       .wrap:has(.dwrap) { max-width: 1440px; margin: 0; }
       .dwrap { display: grid; grid-template-columns: 1fr minmax(0, 2.4fr) 1fr; gap: 0; max-width: 1400px; margin: 0 auto; }
