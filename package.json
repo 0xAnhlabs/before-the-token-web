@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "fetch": "python3 scripts/fetch_data.py",
     "build": "astro build",
-    "vercel-build": "astro build",
+    "vercel-build": "python3 scripts/fetch_data.py && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
