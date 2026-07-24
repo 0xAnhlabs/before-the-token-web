@@ -21,16 +21,13 @@ const disclaimer = c.disclaimer || {};
 
 const SITE_URL = "https://beforethetoken.vercel.app";
 
-// Favicon via Google service, unified with list view
-const PROJECT_DOMAIN = {
-  genlayer: "genlayer.com",
-  pixiechess: "pixiechess.xyz",
-  perpl: "perpl.xyz",
-  arcus: "arcus.xyz",
-  "tori-finance": "tori.finance",
-};
-function logoUrl(slug) {
-  const domain = PROJECT_DOMAIN[slug] || `${slug}.com`;
+// Favicon via Google service, derived from the project's official website_url (DB source of truth).
+function logoUrl(websiteUrl, slug) {
+  let domain = "";
+  if (websiteUrl) {
+    try { domain = new URL(websiteUrl).hostname.replace(/^www\./, ""); } catch (e) { domain = ""; }
+  }
+  if (!domain) domain = `${slug}.com`;
   return `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
 }
 
@@ -39,14 +36,14 @@ const PROJECT_SHORT_DESC = ((brief.whats_cooking || "")
   .map((s) => s.trim())
   .find((s) => s) || `${r.name}: ${displayCategory(r.category)} project.`)
   .slice(0, 150);
-const PROJECT_IMAGE = logoUrl(slug);
+const PROJECT_IMAGE = logoUrl(r.website_url, slug);
 const PROJECT_URL = `${SITE_URL}/${slug}`;
 
 // related / recent: other projects (exclude current)
 const related = loadProjects()
   .filter((x) => x.project_row.slug !== slug)
   .slice(0, 6)
-  .map((x) => ({ slug: x.project_row.slug, name: x.project_row.name, logo: logoUrl(x.project_row.slug) }));
+  .map((x) => ({ slug: x.project_row.slug, name: x.project_row.name, logo: logoUrl(x.project_row.website_url, x.project_row.slug) }));
 ---
 
 <Layout title={`${r.name} - Before The Token`}>
@@ -80,7 +77,7 @@ const related = loadProjects()
     <div class="dmain">
     <div class="dhead">
       <div class="dhead-left">
-        <img class="dlogo" src={logoUrl(slug)} alt={r.name} width="56" height="56" loading="lazy" onerror={`this.outerHTML='<span class=&quot;dlogo-glyph&quot;>${r.name[0]}</span>'`} />
+        <img class="dlogo" src={logoUrl(r.website_url, slug)} alt={r.name} width="56" height="56" loading="lazy" onerror={`this.outerHTML='<span class=&quot;dlogo-glyph&quot;>${r.name[0]}</span>'`} />
         <div class="dhead-main">
           <h1>{r.name}</h1>
           <div class="dpills">

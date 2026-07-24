@@ -13,17 +13,13 @@ function categoryGlyph(cat) {
 }
 
 // official website domain -> favicon url (external, visitor loads directly; no upload)
-const PROJECT_DOMAIN = {
-  "genlayer": "genlayer.com",
-  "pixiechess": "pixiechess.xyz",
-  "perpl": "perpl.xyz",
-  "arcus": "arcus.xyz",
-  "tori-finance": "tori.finance",
-};
-function logoUrl(slug) {
-  // explicit known domain first, then best-effort auto from slug for future projects
-  const d = PROJECT_DOMAIN[slug] || `${slug}.com`;
-  return `https://www.google.com/s2/favicons?domain=${d}&sz=256`;
+function logoUrl(websiteUrl, slug) {
+  let domain = "";
+  if (websiteUrl) {
+    try { domain = new URL(websiteUrl).hostname.replace(/^www\./, ""); } catch (e) { domain = ""; }
+  }
+  if (!domain) domain = `${slug}.com`;
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
 }
 
 // category -> short display label (manual known map + auto fallback before "-")
@@ -60,7 +56,7 @@ const all = projects.map((p) => {
   return {
     slug: row.slug,
     name: row.name,
-    logo: logoUrl(row.slug),
+    logo: logoUrl(row.website_url, row.slug),
     category: row.category || "",
     categoryLabel: displayCategory(row.category || ""),
     categoryShort: shortCategory(row.category || ""),
