@@ -126,7 +126,7 @@ const all = projects.map((p) => {
     <tbody>
       {all.map((x) => (
         <tr data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.note} ${x.teaser}`.toLowerCase()}
-            data-activity={x.activity} data-stage={x.stage} data-incentive={x.incentive ? "yes" : "no"} data-name={x.name.toLowerCase()}>
+            data-activity={x.activity} data-stage={x.stage} data-incentive={x.incentive ? "yes" : "no"} data-name={x.name.toLowerCase()} data-updated={x.updated_at}>
           <td class="cell-project">
             {x.logo ? (
               <img class="logo" src={x.logo} alt={x.name} width="32" height="32" loading="lazy" onerror={`this.outerHTML='<span class=&quot;glyph&quot;>${categoryGlyph(x.category)}</span>'`} />
@@ -150,7 +150,7 @@ const all = projects.map((p) => {
   <div id="cards-view" style="display:none">
     {all.map((x) => (
       <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.note} ${x.teaser}`.toLowerCase()}
-         data-activity={x.activity} data-stage={x.stage} data-incentive={x.incentive ? "yes" : "no"} data-name={x.name.toLowerCase()}>
+         data-activity={x.activity} data-stage={x.stage} data-incentive={x.incentive ? "yes" : "no"} data-name={x.name.toLowerCase()} data-updated={x.updated_at}>
         <div class="chead">
           {x.logo ? (
             <img class="avatar-img" src={x.logo} alt={x.name} width="34" height="34" loading="lazy" onerror={`this.outerHTML='<span class=&quot;avatar&quot;>${categoryGlyph(x.category)}</span>'`} />
@@ -208,14 +208,21 @@ const all = projects.map((p) => {
 
     function sortAll() {
       const by = sortSel.value;
+      const cmp = (x, y) => {
+        if (by === "name") return x.getAttribute("data-name").localeCompare(y.getAttribute("data-name"));
+        // updated: newest first
+        const dx = x.getAttribute("data-updated") || "";
+        const dy = y.getAttribute("data-updated") || "";
+        return dy.localeCompare(dx);
+      };
       // list
       const tbody = listView.querySelector("tbody");
       const lr = [...tbody.querySelectorAll("tr")];
-      lr.sort((x, y) => (by === "name" ? x.getAttribute("data-name").localeCompare(y.getAttribute("data-name")) : 0));
+      lr.sort(cmp);
       lr.forEach((r) => tbody.appendChild(r));
       // cards
       const cc = [...cardsView.children];
-      cc.sort((x, y) => (by === "name" ? x.getAttribute("data-name").localeCompare(y.getAttribute("data-name")) : 0));
+      cc.sort(cmp);
       cc.forEach((c) => cardsView.appendChild(c));
     }
 

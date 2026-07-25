@@ -30,7 +30,7 @@ def fetch_all(anon):
     rows, offset = [], 0
     while True:
         q = urllib.parse.urlencode({
-            "select": "*", "order": "name.asc",
+            "select": "*", "order": "updated_at.desc",
             "limit": "1000", "offset": str(offset),
         })
         req = urllib.request.Request(f"{BASE}?{q}", headers={
@@ -59,6 +59,8 @@ def build_project_row(row):
         "note": row.get("note", "") or "",
         "website_url": (row.get("website_url", "") or "").strip(),
         "x_url": (row.get("x_url", "") or "").strip(),
+        "updated_at": row.get("updated_at", "") or "",
+        "published_at": row.get("published_at", "") or "",
     }
 
 
