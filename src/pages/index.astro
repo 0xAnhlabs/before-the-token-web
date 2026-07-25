@@ -139,7 +139,7 @@ const all = projects.map((p) => {
           <td class="cell-category">{x.categoryShort}</td>
           <td class="cell-funding">{x.fundingShort ? x.fundingShort : <span class="muted">No disclosed</span>}</td>
           <td><span class="badge violet">{x.stageLabel}</span></td>
-          <td class="cell-note">{x.note ? x.note : <span class="muted">—</span>}</td>
+          <td class="cell-note">{x.note ? x.note : <span class="muted">No note</span>}</td>
           <td class="cell-go"><a href={`/${x.slug}`} class="go" aria-label="Open">→</a></td>
         </tr>
       ))}

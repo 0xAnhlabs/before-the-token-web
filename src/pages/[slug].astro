@@ -48,6 +48,8 @@ const related = loadProjects()
 
 <Layout title={`${r.name} - Before The Token`}>
   <head slot="head">
+    <meta name="description" content={PROJECT_SHORT_DESC} />
+    <link rel="canonical" href={PROJECT_URL} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={PROJECT_URL} />
     <meta property="og:title" content={r.name} />
@@ -102,19 +104,19 @@ const related = loadProjects()
 
       <section class="module">
         <h2><span class="mnum">01</span>What's Cooking</h2>
-        {brief.whats_cooking.split("\n\n").map((para) => <p>{para}</p>)}
+        {(brief.whats_cooking || "").split("\n\n").map((para) => <p>{para}</p>)}
       </section>
       <section class="module">
         <h2><span class="mnum">02</span>How It Makes Money</h2>
-        {brief.how_it_makes_money.split("\n\n").map((para) => <p>{para}</p>)}
+        {(brief.how_it_makes_money || "").split("\n\n").map((para) => <p>{para}</p>)}
       </section>
       <section class="module">
         <h2><span class="mnum">03</span>How It Grows</h2>
-        {brief.how_it_grows.split("\n\n").map((para) => <p>{para}</p>)}
+        {(brief.how_it_grows || "").split("\n\n").map((para) => <p>{para}</p>)}
       </section>
       <section class="module">
         <h2><span class="mnum">04</span>Why It May Matter</h2>
-        {brief.why_it_may_matter.split("\n\n").map((para) => <p>{para}</p>)}
+        {(brief.why_it_may_matter || "").split("\n\n").map((para) => <p>{para}</p>)}
       </section>
 
       {assessment.warnings?.length > 0 && (
