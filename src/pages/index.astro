@@ -68,6 +68,7 @@ const all = projects.map((p) => {
     stageLabel: humanize(stageRaw.replace("incentive_driven_", "")),
     activity: row.activity_status || "",
     note: row.note || "",
+    updated_at: row.updated_at || "",
     teaser: (p.revision_content?.brief?.whats_cooking || "").slice(0, 160),
   };
 });
