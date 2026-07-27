@@ -102,6 +102,9 @@ def main():
     with open(PULSE_MD) as f:
         raw = f.read()
     parsed = parse_entries(raw)
+    # newest-appended (bottom of file) should surface first; stable sort below
+    # keeps this order for entries that share the same date.
+    parsed.reverse()
     out_items = []
     for i, e in enumerate(parsed):
         ptype = (e.get("type") or "note").lower()
@@ -110,6 +113,12 @@ def main():
         slug = normalize_slug(e.get("project"), slug_map)
         date = (e.get("date") or "").strip()
         text = " ".join((e.get("text") or "").split())
+        # extract a trailing "Source: <url>" into a clickable source_url field
+        m = re.search(r"(?i)\bsource:\s*(https?://\S+)\s*$", text)
+        source_url = ""
+        if m:
+            source_url = m.group(1)
+            text = text[:m.start()].strip()
         pid = f"{slug or 'p'}-{date or 'nd'}-{i+1}"
         out_items.append({
             "id": pid,
@@ -118,8 +127,10 @@ def main():
             "project": e.get("project", ""),
             "date": date,
             "text": text,
+            "source_url": source_url,
         })
-    # sort by date desc (newest first), entries without date last
+    # sort by date desc (newest first), entries without date last;
+    # equal dates keep the reversed (newest-appended-first) order
     out_items.sort(key=lambda x: x["date"] or "0000-00-00", reverse=True)
     out = {"count": len(out_items), "pulse": out_items}
     with open(OUT, "w") as f:

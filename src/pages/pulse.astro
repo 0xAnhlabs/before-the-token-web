@@ -28,6 +28,11 @@ function projName(slug) { return projectNames[slug] || slug; }
             {x.date && <span class="pdate">{x.date}</span>}
           </div>
           <p class="ptext">{x.text}</p>
+          {x.source_url && (
+            <p class="psource">
+              Source: <a href={x.source_url} target="_blank" rel="noopener noreferrer">{x.source_url}</a>
+            </p>
+          )}
         </article>
       ))}
     </div>
@@ -47,4 +52,7 @@ function projName(slug) { return projectNames[slug] || slug; }
   .pproj:hover { color: var(--accent); text-decoration: none; }
   .pdate { color: var(--faint); font-size: 0.78rem; margin-left: auto; }
   .ptext { color: var(--text-2); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+  .psource { font-size: 0.82rem; margin: 0.55rem 0 0; color: var(--faint); }
+  .psource a { color: var(--accent); text-decoration: none; word-break: break-all; }
+  .psource a:hover { text-decoration: underline; }
 </style>
