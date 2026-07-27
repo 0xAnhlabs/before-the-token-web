@@ -57,6 +57,7 @@ def build_project_row(row):
         "funding_summary": row.get("funding_summary", "") or "",
         "key_backers": row.get("key_backers", "") or "",
         "note": row.get("note", "") or "",
+        "sector": (row.get("sector", "") or "").strip(),
         "website_url": (row.get("website_url", "") or "").strip(),
         "x_url": (row.get("x_url", "") or "").strip(),
         "updated_at": row.get("updated_at", "") or "",

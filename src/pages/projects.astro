@@ -60,6 +60,7 @@ const all = projects.map((p) => {
     category: row.category || "",
     categoryLabel: displayCategory(row.category || ""),
     categoryShort: shortCategory(row.category || ""),
+    sector: (row.sector || "").split(",").map((s) => s.trim()).filter(Boolean),
     funding: row.funding_summary || "",
     fundingShort: shortFunding(row.funding_summary || ""),
     // derive clean stage (strip incentive prefix) + incentive flag from product_stage
@@ -91,18 +92,14 @@ const all = projects.map((p) => {
       <button class="vtab" data-view="cards">Cards</button>
     </div>
     <div class="filters">
-      <select id="f-activity">
-        <option value="">All activity</option>
-        {[...new Set(all.map((x) => x.activity).filter(Boolean))].map((v) => <option value={v}>{humanize(v)}</option>)}
-      </select>
-      <select id="f-stage">
-        <option value="">All stage</option>
-        {[...new Set(all.map((x) => x.stage).filter(Boolean))].map((v) => <option value={v}>{humanize(v)}</option>)}
-      </select>
-      <select id="f-incentive">
-        <option value="">All incentive</option>
-        <option value="yes">Incentive</option>
-        <option value="no">No incentive</option>
+      <select id="f-sector">
+        <option value="">All sector</option>
+        <option value="DeFi">DeFi</option>
+        <option value="AI">AI</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Infrastructure">Infrastructure</option>
+        <option value="RWA">RWA</option>
+        <option value="Other">Other</option>
       </select>
       <select id="f-sort">
         <option value="updated">Sort: Updated</option>
@@ -126,7 +123,7 @@ const all = projects.map((p) => {
     <tbody>
       {all.map((x) => (
         <tr data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.teaser}`.toLowerCase()}
-            data-activity={x.activity} data-stage={x.stage} data-incentive={x.incentive ? "yes" : "no"} data-name={x.name.toLowerCase()} data-updated={x.updated_at}>
+            data-sector={x.sector.join(",")} data-name={x.name.toLowerCase()} data-updated={x.updated_at}>
           <td class="cell-project">
             {x.logo ? (
               <img class="logo" src={x.logo} alt={x.name} width="32" height="32" loading="lazy" onerror={`this.outerHTML='<span class=&quot;glyph&quot;>${categoryGlyph(x.category)}</span>'`} />
@@ -149,7 +146,7 @@ const all = projects.map((p) => {
   <div id="cards-view" style="display:none">
     {all.map((x) => (
       <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.teaser}`.toLowerCase()}
-         data-activity={x.activity} data-stage={x.stage} data-incentive={x.incentive ? "yes" : "no"} data-name={x.name.toLowerCase()} data-updated={x.updated_at}>
+       data-sector={x.sector.join(",")} data-name={x.name.toLowerCase()} data-updated={x.updated_at}>
         <div class="chead">
           {x.logo ? (
             <img class="avatar-img" src={x.logo} alt={x.name} width="34" height="34" loading="lazy" onerror={`this.outerHTML='<span class=&quot;avatar&quot;>${categoryGlyph(x.category)}</span>'`} />
@@ -174,9 +171,7 @@ const all = projects.map((p) => {
 
   <script>
     const q = document.getElementById("q");
-    const fa = document.getElementById("f-activity");
-    const fs = document.getElementById("f-stage");
-    const fi = document.getElementById("f-incentive");
+    const fsec = document.getElementById("f-sector");
     const sortSel = document.getElementById("f-sort");
 
     const listView = document.getElementById("list-view");
@@ -196,12 +191,10 @@ const all = projects.map((p) => {
 
     function matches(el) {
       const term = q.value.trim().toLowerCase();
-      const a = fa.value, s = fs.value, i = fi.value;
+      const sec = fsec.value;
       const hay = el.getAttribute("data-search") || "";
-      const act = el.getAttribute("data-activity") || "";
-      const stg = el.getAttribute("data-stage") || "";
-      const inc = el.getAttribute("data-incentive") || "";
-      return (!term || hay.includes(term)) && (!a || act === a) && (!s || stg === s) && (!i || inc === i);
+      const secs = (el.getAttribute("data-sector") || "").split(",").map((s) => s.trim()).filter(Boolean);
+      return (!term || hay.includes(term)) && (!sec || secs.includes(sec));
     }
 
     function sortAll() {
@@ -229,7 +222,7 @@ const all = projects.map((p) => {
       cards.forEach((c) => (c.style.display = matches(c) ? "" : "none"));
     }
 
-    [q, fa, fs, fi, sortSel].forEach((el) => el.addEventListener("input", () => { sortAll(); apply(); }));
+    [q, fsec, sortSel].forEach((el) => el.addEventListener("input", () => { sortAll(); apply(); }));
     // default to Cards on mobile (the wide list table is hidden there)
     const isMobile = window.matchMedia("(max-width: 900px)").matches;
     setView(isMobile ? "cards" : "list");
