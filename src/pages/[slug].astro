@@ -64,7 +64,7 @@ const related = loadProjects()
     <!-- left rail: back + recent -->
     <aside class="drail">
       <button class="dback" onclick="if (history.length > 1) history.back(); else location.href='/';">&larr; Back</button>
-      <div class="drail-h">Recent research</div>
+      <div class="drail-h">Recent projects</div>
       <nav class="drec">
         {related.map((x) => (
           <a class="drec-card" href={`/${x.slug}`}>
