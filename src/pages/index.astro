@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Base.astro";
-import { loadProjects, displayCategory } from "../lib/projects.js";
+import { loadProjects, displayCategory, loadPulse, loadResearch } from "../lib/projects.js";
 
 function categoryGlyph(cat) {
   const c = (cat || "").toLowerCase();
@@ -54,9 +54,20 @@ const all = projects.map((p) => {
 // New projects: most recently updated
 const newProjects = [...all].sort((a, b) => (b.updated_at || "").localeCompare(a.updated_at || "")).slice(0, 6);
 
-// Editor's choice: manual editorial picks (editable list). Not a ranking signal.
-const EDITOR_CHOICE = ["perpl", "arcus"];
-const editorChoice = EDITOR_CHOICE.map((s) => all.find((x) => x.slug === s)).filter(Boolean);
+// Recent pulse (latest first, capped)
+const pulseRecent = [...loadPulse()]
+  .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+  .slice(0, 6)
+  .map((x) => ({
+    id: x.id, type: x.type, date: x.date || "",
+    text: (x.text || "").slice(0, 120),
+    slug: x.project_slug || "",
+    name: (all.find((p) => p.slug === x.project_slug) || {}).name || x.project_slug || "",
+  }));
+
+// Projects with research (from research index; hidden if none yet)
+const researchSlugs = loadResearch().map((r) => (r.slug || "").toLowerCase()).filter(Boolean);
+const researchProjects = all.filter((x) => researchSlugs.includes(x.slug.toLowerCase())).slice(0, 6);
 ---
 
 <Layout title="Before The Token" active="home">
@@ -91,14 +102,35 @@ const editorChoice = EDITOR_CHOICE.map((s) => all.find((x) => x.slug === s)).fil
     </div>
   </section>
 
-  {editorChoice.length > 0 && (
+  <section class="home-section">
+    <div class="home-head">
+      <h2>Pulse</h2>
+      <a href="/pulse" class="seeall">See all</a>
+    </div>
+    {pulseRecent.length > 0 ? (
+      <div class="home-pulse">
+        {pulseRecent.map((x) => (
+          <a class="pcard" href={`/pulse#${x.id}`}>
+            <span class={`ptype ${x.type}`}>{x.type}</span>
+            {x.name && <span class="pname">{x.name}</span>}
+            {x.date && <span class="pdate">{x.date}</span>}
+            <span class="ptext">{x.text}</span>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <p class="empty">No pulse yet.</p>
+    )}
+  </section>
+
+  {researchProjects.length > 0 && (
     <section class="home-section">
       <div class="home-head">
-        <h2>Editor's choice</h2>
-        <span class="home-note">editorial pick, not a ranking</span>
+        <h2>Projects with research</h2>
+        <a href="/research" class="seeall">Research library</a>
       </div>
       <div class="home-grid">
-        {editorChoice.map((x) => (
+        {researchProjects.map((x) => (
           <a class="hcard" href={`/${x.slug}`}>
             {x.logo ? (
               <img class="hlogo" src={x.logo} alt={x.name} width="34" height="34" loading="lazy" onerror={`this.outerHTML='<span class=&quot;hglyph&quot;>${categoryGlyph(x.categoryShort)}</span>'`} />
@@ -106,7 +138,7 @@ const editorChoice = EDITOR_CHOICE.map((s) => all.find((x) => x.slug === s)).fil
               <span class="hglyph">{categoryGlyph(x.categoryShort)}</span>
             )}
             <div class="hname">{x.name}</div>
-            <div class="hcat">{x.fundingShort ? x.fundingShort : x.categoryShort}</div>
+            <div class="hcat">{x.categoryShort}</div>
           </a>
         ))}
       </div>
@@ -146,4 +178,15 @@ const editorChoice = EDITOR_CHOICE.map((s) => all.find((x) => x.slug === s)).fil
   .home-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
   .hlink { color: var(--accent); font-weight: 510; text-decoration: none; }
   .hlink:hover { text-decoration: underline; }
+  .home-pulse { display: flex; flex-direction: column; gap: 0.6rem; }
+  .pcard { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem; text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.7rem 0.9rem; box-shadow: var(--shadow); transition: border-color .15s, box-shadow .15s, transform .15s; }
+  .pcard:hover { text-decoration: none; border-color: var(--border-strong); box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+  .pcard .ptype { font-size: 0.66rem; font-weight: 590; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.14rem 0.5rem; border-radius: 9999px; }
+  .pcard .ptype.signal { color: var(--green); border: 1px solid rgba(15,157,107,0.28); background: rgba(15,157,107,0.09); }
+  .pcard .ptype.insight { color: var(--accent); border: 1px solid rgba(91,94,240,0.28); background: rgba(91,94,240,0.09); }
+  .pcard .ptype.question { color: var(--amber); border: 1px solid rgba(217,131,36,0.28); background: rgba(217,131,36,0.09); }
+  .pcard .ptype.note { color: var(--muted); border: 1px solid var(--border-strong); background: var(--surface-2); }
+  .pcard .pname { font-weight: 590; color: var(--text); font-size: 0.9rem; }
+  .pcard .pdate { color: var(--faint); font-size: 0.76rem; }
+  .pcard .ptext { color: var(--text-2); font-size: 0.9rem; line-height: 1.5; flex-basis: 100%; }
 </style>
