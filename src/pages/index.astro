@@ -45,6 +45,7 @@ const all = projects.map((p) => {
   const stageRaw = row.product_stage || "unknown";
   return {
     slug: row.slug, name: row.name, logo: logoUrl(row.website_url, row.slug),
+    category: row.category || "",
     categoryShort: shortCategory(row.category || ""), fundingShort: shortFunding(row.funding_summary || ""),
     stageLabel: humanize(stageRaw.replace("incentive_driven_", "")),
     updated_at: row.updated_at || "",
@@ -60,7 +61,7 @@ const pulseRecent = [...loadPulse()]
   .slice(0, 6)
   .map((x) => ({
     id: x.id, type: x.type, date: x.date || "",
-    text: (x.text || "").slice(0, 120),
+    text: (x.text || ""),
     slug: x.project_slug || "",
     name: (all.find((p) => p.slug === x.project_slug) || {}).name || x.project_slug || "",
   }));
@@ -89,14 +90,25 @@ const researchProjects = all.filter((x) => researchSlugs.includes(x.slug.toLower
     </div>
     <div class="home-grid">
       {newProjects.map((x) => (
-        <a class="hcard" href={`/${x.slug}`}>
-          {x.logo ? (
-            <img class="hlogo" src={x.logo} alt={x.name} width="34" height="34" loading="lazy" onerror={`this.outerHTML='<span class=&quot;hglyph&quot;>${categoryGlyph(x.categoryShort)}</span>'`} />
-          ) : (
-            <span class="hglyph">{categoryGlyph(x.categoryShort)}</span>
-          )}
-          <div class="hname">{x.name}</div>
-          <div class="hcat">{x.categoryShort}</div>
+        <a class="card" href={`/${x.slug}`}>
+          <div class="chead">
+            {x.logo ? (
+              <img class="avatar-img" src={x.logo} alt={x.name} width="34" height="34" loading="lazy" onerror={`this.outerHTML='<span class=&quot;avatar&quot;>${categoryGlyph(x.category)}</span>'`} />
+            ) : (
+              <span class="avatar">{categoryGlyph(x.category)}</span>
+            )}
+            <div>
+              <div class="ctitle">{x.name}</div>
+              <div class="card-cat">{x.categoryShort}</div>
+            </div>
+          </div>
+          <div class="ctags">
+            <span class="ctag">{x.stageLabel}</span>
+          </div>
+          <div class="cfoot">
+            <span class="cfund">{x.fundingShort ? x.fundingShort : "No disclosed"}</span>
+            <span class="go">Open →</span>
+          </div>
         </a>
       ))}
     </div>
@@ -188,5 +200,5 @@ const researchProjects = all.filter((x) => researchSlugs.includes(x.slug.toLower
   .pcard .ptype.note { color: var(--muted); border: 1px solid var(--border-strong); background: var(--surface-2); }
   .pcard .pname { font-weight: 590; color: var(--text); font-size: 0.9rem; }
   .pcard .pdate { color: var(--faint); font-size: 0.76rem; }
-  .pcard .ptext { color: var(--text-2); font-size: 0.9rem; line-height: 1.5; flex-basis: 100%; }
+  .pcard .ptext { color: var(--text-2); font-size: 0.9rem; line-height: 1.5; flex-basis: 100%; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 </style>
