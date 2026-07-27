@@ -71,7 +71,7 @@ const researchSlugs = loadResearch().map((r) => (r.slug || "").toLowerCase()).fi
 const researchProjects = all.filter((x) => researchSlugs.includes(x.slug.toLowerCase())).slice(0, 6);
 ---
 
-<Layout title="Before The Token" active="home">
+<Layout title="Before The Token" description="Before The Token - an information platform, database, and research hub dedicated to crypto projects before they launch a token. Track pre-token projects, funding, and early signals." active="home">
   <section class="hero">
     <h1>Before The Token</h1>
     <p class="lead">
