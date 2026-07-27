@@ -1,0 +1,29 @@
+{
+  "count": 3,
+  "pulse": [
+    {
+      "id": "arcus-2026-07-27-1",
+      "type": "signal",
+      "project_slug": "arcus",
+      "project": "Arcus",
+      "date": "2026-07-27",
+      "text": "Arcus added a new CLOB partner; on-chain liquidity improved noticeably."
+    },
+    {
+      "id": "perpl-2026-07-26-2",
+      "type": "insight",
+      "project_slug": "perpl",
+      "project": "Perpl",
+      "date": "2026-07-26",
+      "text": "Perpl has run a live perp product for a while without a token, unusual for a perp DEX."
+    },
+    {
+      "id": "genlayer-2026-07-25-3",
+      "type": "question",
+      "project_slug": "genlayer",
+      "project": "GenLayer",
+      "date": "2026-07-25",
+      "text": "How does GenLayer's LLM-based adjudication handle unambiguous on-chain disputes?"
+    }
+  ]
+}

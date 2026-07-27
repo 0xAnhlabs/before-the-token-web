@@ -1,9 +1,50 @@
 ---
 import Layout from "../layouts/Base.astro";
+import { loadPulse, loadProjects } from "../lib/projects.js";
+
+const pulse = loadPulse();
+const projectNames = {};
+loadProjects().forEach((p) => { projectNames[p.project_row.slug] = p.project_row.name; });
+
+const TYPE_LABEL = { signal: "Signal", insight: "Insight", question: "Question", note: "Note" };
+function projName(slug) { return projectNames[slug] || slug; }
 ---
 
 <Layout title="Before The Token - Pulse" active="pulse">
   <h1>Pulse</h1>
-  <p class="lead">Live signals, insights, and open questions on tracked projects. Coming soon.</p>
-  <p class="empty">Nothing on the pulse yet.</p>
+  <p class="lead">Live signals, insights, and open questions on tracked projects.</p>
+
+  {pulse.length === 0 ? (
+    <p class="empty">Nothing on the pulse yet.</p>
+  ) : (
+    <div class="pulse-feed">
+      {pulse.map((x) => (
+        <article class="pitem" id={x.id}>
+          <div class="pitem-top">
+            <span class={`ptype ${x.type}`}>{TYPE_LABEL[x.type] || x.type}</span>
+            {x.project_slug && (
+              <a class="pproj" href={`/${x.project_slug}`}>{projName(x.project_slug)}</a>
+            )}
+            {x.date && <span class="pdate">{x.date}</span>}
+          </div>
+          <p class="ptext">{x.text}</p>
+        </article>
+      ))}
+    </div>
+  )}
 </Layout>
+
+<style>
+  .pulse-feed { display: flex; flex-direction: column; gap: 0.9rem; margin-top: 1.5rem; }
+  .pitem { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; box-shadow: var(--shadow); scroll-margin-top: 5.5rem; }
+  .pitem-top { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+  .ptype { font-size: 0.68rem; font-weight: 590; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.18rem 0.55rem; border-radius: 9999px; }
+  .ptype.signal { color: var(--green); border: 1px solid rgba(15,157,107,0.28); background: rgba(15,157,107,0.09); }
+  .ptype.insight { color: var(--accent); border: 1px solid rgba(91,94,240,0.28); background: rgba(91,94,240,0.09); }
+  .ptype.question { color: var(--amber); border: 1px solid rgba(217,131,36,0.28); background: rgba(217,131,36,0.09); }
+  .ptype.note { color: var(--muted); border: 1px solid var(--border-strong); background: var(--surface-2); }
+  .pproj { font-weight: 590; color: var(--text); font-size: 0.92rem; text-decoration: none; }
+  .pproj:hover { color: var(--accent); text-decoration: none; }
+  .pdate { color: var(--faint); font-size: 0.78rem; margin-left: auto; }
+  .ptext { color: var(--text-2); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+</style>
