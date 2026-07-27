@@ -11,7 +11,7 @@ text: Tori Finance launched strUSD, a yield-bearing token backed by institutiona
 ---
 ---
 type: signal
-project: Tori Finance
+project: Perpl
 date: 2026-07-27
-text: Test run of btt_pulse.py one-call publish (will be removed).
+text: Perpl opened public testnet trading with USDC settle and gas-free perps; early takers earn mPoints. Source: https://x.com/perpl--onchain/status/1946822770386878716
 ---
