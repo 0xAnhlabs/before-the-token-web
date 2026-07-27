@@ -236,9 +236,11 @@ const { title = "Before The Token" } = Astro.props;
             /* mobile: collapse 3-col detail layout to single column */
             @media (max-width: 900px) {
               .wrap:has(.dwrap) { max-width: var(--maxw); margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
-              .dwrap { display: block; }
-              .drail, .dright { display: none; }
-              .dmain { padding: 0 0.25rem; }
+              .dwrap { display: flex; flex-direction: column; }
+              .drail { order: 2; display: block; border-right: none; border-top: 1px solid var(--border); padding: 1.5rem 0 0; margin-top: 1.5rem; }
+              .dback { display: none; }
+              .dright { display: none; }
+              .dmain { order: 1; padding: 0 0.25rem; }
               .dhead { flex-direction: column; align-items: flex-start; gap: 0.5rem; padding-bottom: 1.2rem; }
               .dhead-left { width: 100%; }
               .dhead h1 { font-size: 1.45rem; }
