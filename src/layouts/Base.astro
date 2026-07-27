@@ -236,7 +236,19 @@ const { title = "Before The Token", active = "" } = Astro.props;
       .src-details > summary { cursor: pointer; list-style: none; user-select: none; font-weight: 590; font-size: 1.05rem; color: var(--text); margin: 0 0 0.5rem; }
       .src-details > summary::-webkit-details-marker { display: none; }
       .src-details > summary::before { content: "▸ "; color: var(--muted); }
-      .dright { align-self: stretch; min-height: 1px; padding-left: 1.5rem; border-left: 1px solid var(--border); }
+      .pulse-box { position: sticky; top: 5.5rem; }
+      .pulse-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.4rem; }
+      .pulse-card { display: flex; flex-direction: column; gap: 0.2rem; text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.55rem 0.7rem; transition: border-color .15s, box-shadow .15s, transform .15s; }
+      .pulse-card:hover { text-decoration: none; border-color: var(--border-strong); box-shadow: var(--shadow); transform: translateY(-1px); }
+      .ptype { align-self: flex-start; font-size: 0.66rem; font-weight: 590; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.12rem 0.5rem; border-radius: 9999px; }
+      .ptype.signal { color: var(--green); border: 1px solid rgba(15,157,107,0.28); background: rgba(15,157,107,0.09); }
+      .ptype.insight { color: var(--accent); border: 1px solid rgba(91,94,240,0.28); background: rgba(91,94,240,0.09); }
+      .ptype.question { color: var(--amber); border: 1px solid rgba(217,131,36,0.28); background: rgba(217,131,36,0.09); }
+      .ptype.note { color: var(--muted); border: 1px solid var(--border-strong); background: var(--surface-2); }
+      .ptext { color: var(--text-2); font-size: 0.85rem; line-height: 1.45; }
+      .pdate { color: var(--faint); font-size: 0.72rem; }
+      .pulse-more { display: inline-block; margin-top: 0.7rem; color: var(--accent); font-size: 0.82rem; font-weight: 510; text-decoration: none; }
+      .pulse-more:hover { text-decoration: underline; }
 
             /* mobile: collapse 3-col detail layout to single column */
             @media (max-width: 900px) {
@@ -244,7 +256,7 @@ const { title = "Before The Token", active = "" } = Astro.props;
               .dwrap { display: flex; flex-direction: column; }
               .drail { order: 2; display: block; border-right: none; border-top: 1px solid var(--border); padding: 1.5rem 0 0; margin-top: 1.5rem; }
               .dback { display: none; }
-              .dright { display: none; }
+              .dright { order: 3; display: block; border-left: none; border-top: 1px solid var(--border); padding: 1.5rem 0 0; margin-top: 1.5rem; }
               .dmain { order: 1; padding: 0 0.25rem; }
               .dhead { flex-direction: column; align-items: flex-start; gap: 0.5rem; padding-bottom: 1.2rem; }
               .dhead-left { width: 100%; }

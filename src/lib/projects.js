@@ -23,3 +23,15 @@ const CATEGORY_LABELS = {
 export function displayCategory(raw) {
   return CATEGORY_LABELS[raw] || raw;
 }
+
+// Load Pulse entries (compiled from vault markdown at build). Returns [] if file absent.
+const PULSE_PATH = path.resolve(__dirname, "../../data/pulse.json");
+export function loadPulse() {
+  if (!fs.existsSync(PULSE_PATH)) return [];
+  try {
+    const raw = JSON.parse(fs.readFileSync(PULSE_PATH, "utf-8"));
+    return raw.pulse || raw.projects || [];
+  } catch (e) {
+    return [];
+  }
+}

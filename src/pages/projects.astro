@@ -120,13 +120,12 @@ const all = projects.map((p) => {
         <th>Category</th>
         <th>Funding</th>
         <th>Stage</th>
-        <th>Note</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       {all.map((x) => (
-        <tr data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.note} ${x.teaser}`.toLowerCase()}
+        <tr data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.teaser}`.toLowerCase()}
             data-activity={x.activity} data-stage={x.stage} data-incentive={x.incentive ? "yes" : "no"} data-name={x.name.toLowerCase()} data-updated={x.updated_at}>
           <td class="cell-project">
             {x.logo ? (
@@ -139,7 +138,6 @@ const all = projects.map((p) => {
           <td class="cell-category">{x.categoryShort}</td>
           <td class="cell-funding">{x.fundingShort ? x.fundingShort : <span class="muted">No disclosed</span>}</td>
           <td><span class="badge violet">{x.stageLabel}</span></td>
-          <td class="cell-note">{x.note ? x.note : <span class="muted">No note</span>}</td>
           <td class="cell-go"><a href={`/${x.slug}`} class="go" aria-label="Open">→</a></td>
         </tr>
       ))}
@@ -150,7 +148,7 @@ const all = projects.map((p) => {
   <!-- CARDS VIEW -->
   <div id="cards-view" style="display:none">
     {all.map((x) => (
-      <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.note} ${x.teaser}`.toLowerCase()}
+      <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.teaser}`.toLowerCase()}
          data-activity={x.activity} data-stage={x.stage} data-incentive={x.incentive ? "yes" : "no"} data-name={x.name.toLowerCase()} data-updated={x.updated_at}>
         <div class="chead">
           {x.logo ? (
@@ -166,7 +164,6 @@ const all = projects.map((p) => {
         <div class="ctags">
           <span class="ctag">{x.stageLabel}</span>
         </div>
-        <div class="card-note">{x.note}</div>
         <div class="cfoot">
           <span class="cfund">{x.fundingShort ? x.fundingShort : "No disclosed"}</span>
           <span class="go">Open →</span>

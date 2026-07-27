@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Base.astro";
-import { loadProjects, getProject, displayCategory } from "../lib/projects.js";
+import { loadProjects, getProject, displayCategory, loadPulse } from "../lib/projects.js";
 
 export function getStaticPaths() {
   return loadProjects().map((p) => ({
@@ -44,6 +44,13 @@ const related = loadProjects()
   .filter((x) => x.project_row.slug !== slug)
   .slice(0, 6)
   .map((x) => ({ slug: x.project_row.slug, name: x.project_row.name, logo: logoUrl(x.project_row.website_url, x.project_row.slug) }));
+
+// pulse: entries linked to this project (compiled from vault at build)
+const pulse = loadPulse()
+  .filter((x) => (x.project_slug || x.slug || "") === slug)
+  .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+  .slice(0, 8)
+  .map((x) => ({ id: x.id || x.slug, type: x.type || "note", date: x.date || "", text: (x.text || "").slice(0, 140) }));
 ---
 
 <Layout title={`${r.name} - Before The Token`}>
@@ -152,6 +159,22 @@ const related = loadProjects()
 
 
       </div>  <!-- close .dmain -->
-    <aside class="dright"></aside>
+      {pulse.length > 0 && (
+        <aside class="dright">
+          <div class="pulse-box">
+            <div class="drail-h">Pulse</div>
+            <nav class="pulse-list">
+              {pulse.map((x) => (
+                <a class="pulse-card" href={`/pulse#${x.id}`}>
+                  <span class={`ptype ${x.type}`}>{x.type}</span>
+                  <span class="ptext">{x.text}</span>
+                  {x.date && <span class="pdate">{x.date}</span>}
+                </a>
+              ))}
+            </nav>
+            <a class="pulse-more" href="/pulse">All pulse →</a>
+          </div>
+        </aside>
+      )}
   </div>
 </Layout>
