@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+
 const { title = "Before The Token", description = "Before The Token - information platform, database, and research hub for crypto projects before they launch a token.", active = "" } = Astro.props;
 ---
 <!doctype html>
@@ -299,6 +301,7 @@ const { title = "Before The Token", description = "Before The Token - informatio
             }
 
           </style>
+    <Analytics />
   </head>
   <body>
     <header class="nav">
