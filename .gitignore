@@ -7,3 +7,5 @@ dist/
 .astro/
 # auto-generated at build time from Supabase (Vercel vercel-build / local npm run fetch)
 data/projects.json
+# auto-generated at build time from content/pulse/pulse.md (Vercel vercel-build)
+data/pulse.json
