@@ -14,5 +14,5 @@ text: Tori Finance launched strUSD, a yield-bearing token backed by institutiona
 type: signal
 project: Perpl
 date: 2026-07-28
-text: billion total volume traded on Perpl feels pretty good, don't get me wrong. But now I wonder what trillion would feel like. Source: https://x.com/perpltrade/status/2081751981949898894
+text: $1 billion total volume traded on Perpl feels pretty good, don't get me wrong. But now I wonder what $1 trillion would feel like. Source: https://x.com/perpltrade/status/2081751981949898894
 ---
