@@ -60,6 +60,7 @@ const all = projects.map((p) => {
     category: row.category || "",
     categoryLabel: displayCategory(row.category || ""),
     categoryShort: shortCategory(row.category || ""),
+    ecosystem: (row.ecosystem || "").trim(),
     sector: (row.sector || "").split(",").map((s) => s.trim()).filter(Boolean),
     funding: row.funding_summary || "",
     fundingShort: shortFunding(row.funding_summary || ""),
@@ -101,6 +102,17 @@ const all = projects.map((p) => {
         <option value="RWA">RWA</option>
         <option value="Other">Other</option>
       </select>
+      <select id="f-ecosystem">
+        <option value="">All ecosystem</option>
+        <option value="Solana">Solana</option>
+        <option value="Base">Base</option>
+        <option value="Ethereum">Ethereum</option>
+        <option value="BNB Chain">BNB Chain</option>
+        <option value="Monad">Monad</option>
+        <option value="Robinhood Chain">Robinhood Chain</option>
+        <option value="EVM-compatible">EVM-compatible</option>
+        <option value="Multi-chain">Multi-chain</option>
+      </select>
       <select id="f-incentive">
         <option value="">All incentive</option>
         <option value="1">Incentive</option>
@@ -120,6 +132,7 @@ const all = projects.map((p) => {
       <tr>
         <th>Project</th>
         <th>Category</th>
+        <th>Ecosystem</th>
         <th>Funding</th>
         <th>Stage</th>
         <th></th>
@@ -127,8 +140,8 @@ const all = projects.map((p) => {
     </thead>
     <tbody>
       {all.map((x) => (
-        <tr data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.teaser}`.toLowerCase()}
-            data-sector={x.sector.join(",")} data-name={x.name.toLowerCase()} data-updated={x.updated_at} data-incentive={x.incentive ? "1" : "0"}>
+        <tr data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.ecosystem} ${x.teaser}`.toLowerCase()}
+            data-sector={x.sector.join(",")} data-ecosystem={x.ecosystem} data-name={x.name.toLowerCase()} data-updated={x.updated_at} data-incentive={x.incentive ? "1" : "0"}>
           <td class="cell-project">
             {x.logo ? (
               <img class="logo" src={x.logo} alt={x.name} width="32" height="32" loading="lazy" onerror={`this.outerHTML='<span class=&quot;glyph&quot;>${categoryGlyph(x.category)}</span>'`} />
@@ -138,6 +151,7 @@ const all = projects.map((p) => {
             <a href={`/${x.slug}`} class="pname">{x.name}</a>
           </td>
           <td class="cell-category">{x.categoryShort}</td>
+          <td class="cell-ecosystem">{x.ecosystem || <span class="muted">—</span>}</td>
           <td class="cell-funding">{x.fundingShort ? x.fundingShort : <span class="muted">No disclosed</span>}</td>
           <td><span class="badge violet">{x.stageLabel}</span></td>
           <td class="cell-go"><a href={`/${x.slug}`} class="go" aria-label="Open">→</a></td>
@@ -150,8 +164,8 @@ const all = projects.map((p) => {
   <!-- CARDS VIEW -->
   <div id="cards-view" style="display:none">
     {all.map((x) => (
-      <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.teaser}`.toLowerCase()}
-       data-sector={x.sector.join(",")} data-name={x.name.toLowerCase()} data-updated={x.updated_at} data-incentive={x.incentive ? "1" : "0"}>
+      <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.ecosystem} ${x.teaser}`.toLowerCase()}
+       data-sector={x.sector.join(",")} data-ecosystem={x.ecosystem} data-name={x.name.toLowerCase()} data-updated={x.updated_at} data-incentive={x.incentive ? "1" : "0"}>
         <div class="chead">
           {x.logo ? (
             <img class="avatar-img" src={x.logo} alt={x.name} width="34" height="34" loading="lazy" onerror={`this.outerHTML='<span class=&quot;avatar&quot;>${categoryGlyph(x.category)}</span>'`} />
@@ -165,6 +179,7 @@ const all = projects.map((p) => {
         </div>
         <div class="ctags">
           <span class="ctag">{x.stageLabel}</span>
+          {x.ecosystem ? <span class="ctag eco">{x.ecosystem}</span> : null}
         </div>
         <div class="cfoot">
           <span class="cfund">{x.fundingShort ? x.fundingShort : "No disclosed"}</span>
@@ -177,6 +192,7 @@ const all = projects.map((p) => {
   <script>
     const q = document.getElementById("q");
     const fsec = document.getElementById("f-sector");
+    const feco = document.getElementById("f-ecosystem");
     const finc = document.getElementById("f-incentive");
     const sortSel = document.getElementById("f-sort");
 
@@ -198,12 +214,15 @@ const all = projects.map((p) => {
     function matches(el) {
       const term = q.value.trim().toLowerCase();
       const sec = fsec.value;
+      const eco = feco.value;
       const inc = finc.value;
       const hay = el.getAttribute("data-search") || "";
       const secs = (el.getAttribute("data-sector") || "").split(",").map((s) => s.trim()).filter(Boolean);
+      const elEco = (el.getAttribute("data-ecosystem") || "").trim();
       const isInc = el.getAttribute("data-incentive") === "1";
       const incOk = !inc || (inc === "1" ? isInc : !isInc);
-      return (!term || hay.includes(term)) && (!sec || secs.includes(sec)) && incOk;
+      const ecoOk = !eco || elEco === eco;
+      return (!term || hay.includes(term)) && (!sec || secs.includes(sec)) && ecoOk && incOk;
     }
 
     function sortAll() {
@@ -231,7 +250,7 @@ const all = projects.map((p) => {
       cards.forEach((c) => (c.style.display = matches(c) ? "" : "none"));
     }
 
-    [q, fsec, finc, sortSel].forEach((el) => el.addEventListener("input", () => { sortAll(); apply(); }));
+    [q, fsec, feco, finc, sortSel].forEach((el) => el.addEventListener("input", () => { sortAll(); apply(); }));
     // default to Cards on mobile (the wide list table is hidden there)
     const isMobile = window.matchMedia("(max-width: 900px)").matches;
     setView(isMobile ? "cards" : "list");
