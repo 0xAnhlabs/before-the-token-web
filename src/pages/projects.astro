@@ -101,6 +101,11 @@ const all = projects.map((p) => {
         <option value="RWA">RWA</option>
         <option value="Other">Other</option>
       </select>
+      <select id="f-incentive">
+        <option value="">All incentive</option>
+        <option value="1">Incentive</option>
+        <option value="0">No incentive</option>
+      </select>
       <select id="f-sort">
         <option value="updated">Sort: Updated</option>
         <option value="name">Sort: Name</option>
@@ -123,7 +128,7 @@ const all = projects.map((p) => {
     <tbody>
       {all.map((x) => (
         <tr data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.teaser}`.toLowerCase()}
-            data-sector={x.sector.join(",")} data-name={x.name.toLowerCase()} data-updated={x.updated_at}>
+            data-sector={x.sector.join(",")} data-name={x.name.toLowerCase()} data-updated={x.updated_at} data-incentive={x.incentive ? "1" : "0"}>
           <td class="cell-project">
             {x.logo ? (
               <img class="logo" src={x.logo} alt={x.name} width="32" height="32" loading="lazy" onerror={`this.outerHTML='<span class=&quot;glyph&quot;>${categoryGlyph(x.category)}</span>'`} />
@@ -146,7 +151,7 @@ const all = projects.map((p) => {
   <div id="cards-view" style="display:none">
     {all.map((x) => (
       <a class="card" href={`/${x.slug}`} data-search={`${x.name} ${x.categoryShort} ${x.categoryLabel} ${x.teaser}`.toLowerCase()}
-       data-sector={x.sector.join(",")} data-name={x.name.toLowerCase()} data-updated={x.updated_at}>
+       data-sector={x.sector.join(",")} data-name={x.name.toLowerCase()} data-updated={x.updated_at} data-incentive={x.incentive ? "1" : "0"}>
         <div class="chead">
           {x.logo ? (
             <img class="avatar-img" src={x.logo} alt={x.name} width="34" height="34" loading="lazy" onerror={`this.outerHTML='<span class=&quot;avatar&quot;>${categoryGlyph(x.category)}</span>'`} />
@@ -172,6 +177,7 @@ const all = projects.map((p) => {
   <script>
     const q = document.getElementById("q");
     const fsec = document.getElementById("f-sector");
+    const finc = document.getElementById("f-incentive");
     const sortSel = document.getElementById("f-sort");
 
     const listView = document.getElementById("list-view");
@@ -192,9 +198,12 @@ const all = projects.map((p) => {
     function matches(el) {
       const term = q.value.trim().toLowerCase();
       const sec = fsec.value;
+      const inc = finc.value;
       const hay = el.getAttribute("data-search") || "";
       const secs = (el.getAttribute("data-sector") || "").split(",").map((s) => s.trim()).filter(Boolean);
-      return (!term || hay.includes(term)) && (!sec || secs.includes(sec));
+      const isInc = el.getAttribute("data-incentive") === "1";
+      const incOk = !inc || (inc === "1" ? isInc : !isInc);
+      return (!term || hay.includes(term)) && (!sec || secs.includes(sec)) && incOk;
     }
 
     function sortAll() {
@@ -222,7 +231,7 @@ const all = projects.map((p) => {
       cards.forEach((c) => (c.style.display = matches(c) ? "" : "none"));
     }
 
-    [q, fsec, sortSel].forEach((el) => el.addEventListener("input", () => { sortAll(); apply(); }));
+    [q, fsec, finc, sortSel].forEach((el) => el.addEventListener("input", () => { sortAll(); apply(); }));
     // default to Cards on mobile (the wide list table is hidden there)
     const isMobile = window.matchMedia("(max-width: 900px)").matches;
     setView(isMobile ? "cards" : "list");
