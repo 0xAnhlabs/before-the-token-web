@@ -6,6 +6,17 @@ const { title = "Before The Token", description = "Before The Token - informatio
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      // Apply saved theme before paint to avoid flash (FOUC)
+      (function () {
+        try {
+          var t = localStorage.getItem('btt-theme');
+          if (t === 'dark' || t === 'light') {
+            document.documentElement.setAttribute('data-theme', t);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="google-site-verification" content="_bHdfWanxyWP_bKfugj8tTLmH9bp_c4kLqIfWqM7psg" />
@@ -34,6 +45,50 @@ const { title = "Before The Token", description = "Before The Token - informatio
         --shadow-hover: 0 2px 6px rgba(16,24,40,.08), 0 10px 24px rgba(16,24,40,.10);
         --radius: 12px;
         --maxw: 1040px;
+        --nav-bg: rgba(255,255,255,0.82);
+      }
+      /* Dark mode: automatic via OS preference, or forced by [data-theme] toggle */
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #0e0f13;
+          --panel: #16181d;
+          --surface: #16181d;
+          --surface-2: #1d2027;
+          --text: #e8eaed;
+          --text-2: #c2c7d0;
+          --muted: #9aa1ab;
+          --faint: #6b7280;
+          --accent: #7c7ef5;
+          --accent-hover: #9092ff;
+          --green: #3ddc97;
+          --amber: #f0a85a;
+          --border: #262a31;
+          --border-strong: #343a44;
+          --shadow: 0 1px 2px rgba(0,0,0,.30), 0 4px 12px rgba(0,0,0,.40);
+          --shadow-hover: 0 2px 6px rgba(0,0,0,.40), 0 10px 24px rgba(0,0,0,.50);
+          --nav-bg: rgba(20,22,28,0.82);
+          header.nav .navtoggle, header.nav .theme-toggle { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.16); }
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #0e0f13;
+        --panel: #16181d;
+        --surface: #16181d;
+        --surface-2: #1d2027;
+        --text: #e8eaed;
+        --text-2: #c2c7d0;
+        --muted: #9aa1ab;
+        --faint: #6b7280;
+        --accent: #7c7ef5;
+        --accent-hover: #9092ff;
+        --green: #3ddc97;
+        --amber: #f0a85a;
+        --border: #262a31;
+        --border-strong: #343a44;
+        --shadow: 0 1px 2px rgba(0,0,0,.30), 0 4px 12px rgba(0,0,0,.40);
+        --shadow-hover: 0 2px 6px rgba(0,0,0,.40), 0 10px 24px rgba(0,0,0,.50);
+        --nav-bg: rgba(20,22,28,0.82);
+        header.nav .navtoggle, header.nav .theme-toggle { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.16); }
       }
       * { box-sizing: border-box; }
       html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
@@ -51,9 +106,7 @@ const { title = "Before The Token", description = "Before The Token - informatio
 
       header.nav {
         position: sticky; top: 0; z-index: 10;
-        background: rgba(255,255,255,0.82);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        background: var(--nav-bg);
         border-bottom: 1px solid var(--border);
       }
       header.nav .inner {
@@ -71,6 +124,51 @@ const { title = "Before The Token", description = "Before The Token - informatio
         transition: background .15s, border-color .15s;
       }
       header.nav .navtoggle:hover { background: var(--surface-2); border-color: var(--accent); color: var(--accent); }
+      header.nav .nav-right { display: flex; align-items: center; gap: 0.6rem; flex: none; flex-shrink: 0; margin-left: auto; }
+      header.nav .brand { min-width: 0; }
+      header.nav .theme-toggle {
+        position: relative;
+        display: inline-flex; align-items: center;
+        width: 3.4rem; height: 1.7rem; flex: none;
+        border-radius: 9999px; cursor: pointer;
+        border: 1px solid var(--border-strong);
+        background: var(--toggle-bg, #e6e8ec);
+        padding: 0; overflow: hidden;
+        transition: background .2s;
+      }
+      header.nav .theme-toggle .knob {
+        position: absolute; top: 50%; left: 0.18rem;
+        transform: translateY(-50%);
+        width: 1.3rem; height: 1.3rem; border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(16,24,40,.25);
+        display: flex; align-items: center; justify-content: center;
+        transition: left .22s ease, background .2s;
+      }
+      header.nav .theme-toggle .ico {
+        width: 0.85rem; height: 0.85rem; display: block;
+      }
+      /* LIGHT state (default): track light, knob RIGHT, sun icon */
+      header.nav .theme-toggle .knob {
+        background: #fff;
+      }
+      header.nav .theme-toggle .knob .ico { color: #5b5ef0; }
+      header.nav .theme-toggle .ico-sun { display: block; }
+      header.nav .theme-toggle .ico-moon { display: none; }
+      header.nav .theme-toggle {
+        background: var(--toggle-bg, #e6e8ec);
+        border-color: var(--border-strong);
+      }
+      header.nav .theme-toggle .knob { left: calc(100% - 1.3rem - 0.18rem); }
+      /* DARK state (.on): track dark, knob LEFT, moon icon */
+      header.nav .theme-toggle.on {
+        background: #1a1d21;
+        border-color: #343a44;
+      }
+      header.nav .theme-toggle.on .knob { left: 0.18rem; background: #2a2e36; }
+      header.nav .theme-toggle.on .ico-sun { display: none; }
+      header.nav .theme-toggle.on .ico-moon { display: block; }
+      header.nav .theme-toggle.on .knob .ico { color: #f0a85a; }
       header.nav .brand { font-weight: 590; font-size: 1.05rem; letter-spacing: -0.3px; color: var(--text); }
       header.nav .brand a { display: flex; align-items: center; gap: 0.55rem; color: var(--text); text-decoration: none; }
       header.nav .brand-logo { height: 38px; width: auto; display: block; border-radius: 9px; }
@@ -81,6 +179,8 @@ const { title = "Before The Token", description = "Before The Token - informatio
       header.nav .navlinks a:hover { color: var(--text); text-decoration: none; }
       header.nav .navlinks a.active { color: var(--accent); }
       @media (max-width: 640px) {
+        header.nav .inner { gap: 0; justify-content: space-between; }
+        header.nav .nav-right { margin-left: auto; flex: none; flex-shrink: 0; }
         header.nav .navtoggle { display: inline-flex; }
         header.nav .navlinks {
           display: none;
@@ -306,13 +406,21 @@ const { title = "Before The Token", description = "Before The Token - informatio
     <header class="nav">
       <div class="inner">
         <div class="brand"><a href="/"><img src="/favicon.png" alt="Before The Token" class="brand-logo" /><span class="brand-text">Before the token</span></a></div>
-        <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false">☰</button>
-        <nav class="navlinks" id="navlinks">
+        <div class="nav-right">
+          <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false">☰</button>
+          <nav class="navlinks" id="navlinks">
           <a href="/" class={active === "home" ? "active" : ""}>Home</a>
           <a href="/projects" class={active === "projects" ? "active" : ""}>Projects</a>
           <a href="/research" class={active === "research" ? "active" : ""}>Research</a>
           <a href="/pulse" class={active === "pulse" ? "active" : ""}>Pulse</a>
         </nav>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode" role="switch">
+            <span class="knob">
+              <svg class="ico ico-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+              <svg class="ico ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>
+            </span>
+          </button>
+        </div>
       </div>
     </header>
     <script>
@@ -332,6 +440,31 @@ const { title = "Before The Token", description = "Before The Token - informatio
         document.addEventListener('click', function (e) {
           if (!nav.contains(e.target) && e.target !== btn) close();
         });
+      })();
+
+      // Theme toggle: slides dark <-> light, persists manual choice.
+      (function () {
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+        function currentTheme() {
+          var attr = document.documentElement.getAttribute('data-theme');
+          if (attr) return attr;
+          // No manual override: follow OS preference
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        function sync() {
+          var isDark = currentTheme() === 'dark';
+          toggle.classList.toggle('on', isDark);
+          toggle.setAttribute('aria-checked', isDark ? 'true' : 'false');
+          toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        }
+        toggle.addEventListener('click', function () {
+          var next = currentTheme() === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try { localStorage.setItem('btt-theme', next); } catch (e) {}
+          sync();
+        });
+        sync();
       })();
     </script>
     <div class="wrap">
