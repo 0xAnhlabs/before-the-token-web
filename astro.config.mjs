@@ -5,5 +5,10 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   output: "static",
   site: "https://beforethetoken.vercel.app",
-  integrations: [sitemap()],
+  integrations: [sitemap({
+    // Generate single sitemap.xml (not index) for Google compatibility
+    changefreq: "weekly",
+    priority: 0.7,
+  })],
+  trailingSlash: "always",
 });

@@ -1,0 +1,2 @@
+# Redirect sitemap-index.xml to sitemap.xml for Google
+/sitemap.xml  /sitemap-index.xml  301

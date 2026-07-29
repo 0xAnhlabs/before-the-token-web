@@ -1,0 +1,35 @@
+{
+  "seen": [
+    "useravatarhttpspbstwimgcomprofile_images2065346474150334465pxa9j",
+    "useravatarhttpspbstwimgcomprofile_images2072368645465075712hnljb",
+    "useravatarhttpspbstwimgcomprofile_images2011221321754034176aabmf",
+    "useravatarhttpspbstwimgcomprofile_images1922560738641772547qwvqu"
+  ],
+  "candidates": [
+    {
+      "slug": "genlayer",
+      "gist": "* [![user avatar](https://pbs.twimg.com/profile_images/2011221321754034176/AaBmFyfD_normal.jpg)](/GenLayer)    [GenLayer](https://x.com/GenLayer)    [@GenLayer]",
+      "url": "",
+      "idx": 1
+    },
+    {
+      "slug": "arcus",
+      "gist": "* [![user avatar](https://pbs.twimg.com/profile_images/2072368645465075712/HNlJbJsX_normal.png)](/arcus_xyz)    [Arcus](https://x.com/arcus_xyz)    [@arcus\\_xyz",
+      "url": "",
+      "idx": 2
+    },
+    {
+      "slug": "perpl",
+      "gist": "* [![user avatar](https://pbs.twimg.com/profile_images/2065346474150334465/pxa9JMcL_normal.jpg)](/perpltrade)    [Perpl](https://x.com/perpltrade)    [@perpltra",
+      "url": "",
+      "idx": 3
+    },
+    {
+      "slug": "termix",
+      "gist": "* [![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_normal.png)](/termix_ai)    [TermiX](https://x.com/termix_ai)    [@termix\\_a",
+      "url": "",
+      "idx": 4
+    }
+  ],
+  "candidates_date": "2026-07-28"
+}
