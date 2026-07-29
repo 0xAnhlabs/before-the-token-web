@@ -22,9 +22,3 @@ project: BULK
 date: 2026-07-29
 text: BULK published BIP 1 outlining a deployer-owned perpetual contract model with minimal upfront cost to launch a market, a two-phase lifecycle from rapid experimentation to capital-efficient maturation, and explicit economics for deployers who build frontends and drive volume. Source: https://x.com/bulktrade/status/2082090186268090491?s=20
 ---
----
-type: signal
-project: BULK
-date: 2026-07-29
-text: BULK published BIP 1 outlining a deployer-owned perpetual contract model with minimal upfront cost to launch a market, a two-phase lifecycle from rapid experimentation to capital-efficient maturation, and explicit economics for deployers who build frontends and drive volume. Source: https://x.com/bulktrade/status/2082090186268090491?s=20
----
