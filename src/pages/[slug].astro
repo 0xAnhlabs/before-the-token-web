@@ -21,6 +21,15 @@ const disclaimer = c.disclaimer || {};
 
 const SITE_URL = "https://beforethetoken.vercel.app";
 
+// published text for detail header (fallback updated_at)
+const PUBLISHED_TEXT = (() => {
+  const raw = r.published_at || r.updated_at || "";
+  if (!raw) return "";
+  const d = new Date(raw);
+  if (isNaN(d)) return "";
+  return `Published ${d.toLocaleDateString("en-US",{year:"numeric",month:"short",day:"numeric"})}`;
+})();
+
 // Favicon via Google service, derived from the project's official website_url (DB source of truth).
 function logoUrl(websiteUrl, slug) {
   let domain = "";
@@ -89,6 +98,7 @@ const pulse = loadPulse()
         <img class="dlogo" src={logoUrl(r.website_url, slug)} alt={r.name} width="56" height="56" loading="lazy" onerror={`this.outerHTML='<span class=&quot;dlogo-glyph&quot;>${r.name[0]}</span>'`} />
         <div class="dhead-main">
           <h1>{r.name}</h1>
+          {PUBLISHED_TEXT && <span class="dmeta">{PUBLISHED_TEXT}</span>}
           <div class="dpills">
             <span class="dpill">{displayCategory(r.category)}</span>
             {r.funding_summary ? <span class="dpill">{r.funding_summary}</span> : ""}
