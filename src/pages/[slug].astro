@@ -37,6 +37,9 @@ function logoUrl(websiteUrl, slug) {
     try { domain = new URL(websiteUrl).hostname.replace(/^www\./, ""); } catch (e) { domain = ""; }
   }
   if (!domain) domain = `${slug}.com`;
+  if (domain.endsWith(".com") && domain !== `${slug}.com`) {
+    try { domain = new URL(`https://${slug}.xyz`).hostname; } catch (e) {}
+  }
   return `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
 }
 
@@ -127,13 +130,25 @@ const pulse = loadPulse()
       {brief.team && (
         <section class="module team-section">
           <h2><strong>Team</strong></h2>
-          {(brief.team || "Not publicly identified.").split("\n\n").map((para) => <p>{para}</p>)}
+          {(() => {
+            const raw = (brief.team || "").replace(/^Team:\s*/, "").trim();
+            const items = raw.split(";").map((s) => s.trim()).filter(Boolean);
+            return (
+              <ul class="team-list">
+                {items.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            );
+          })()}
           {(c.team_sources?.length || 0) > 0 && (
             <details class="team-sources">
               <summary>Team sources</summary>
               <ul>
-                {c.team_sources.map((s) => (
-                  <li><a href={s.url} target="_blank" rel="noopener">{s.title}</a></li>
+                {c.team_sources.map((s, idx) => (
+                  <li key={idx}>
+                    <a href={s.url} target="_blank" rel="noopener">{s.title}</a>
+                  </li>
                 ))}
               </ul>
             </details>

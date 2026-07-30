@@ -16,6 +16,9 @@ function logoUrl(websiteUrl, slug) {
     try { domain = new URL(websiteUrl).hostname.replace(/^www\./, ""); } catch (e) { domain = ""; }
   }
   if (!domain) domain = `${slug}.com`;
+  if (domain.endsWith(".com") && domain !== `${slug}.com`) {
+    try { domain = new URL(`https://${slug}.xyz`).hostname; } catch (e) {}
+  }
   return `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
 }
 const CATEGORY_SHORT = {
