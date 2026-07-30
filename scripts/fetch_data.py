@@ -50,7 +50,7 @@ def fetch_all(anon):
 def build_project_row(row):
     slug = row.get("slug", "")
     logo_override = {
-        "axis": "https://pbs.twimg.com/profile_images/2049479264869945344/7ci5RquN_400x400.png",
+        "axis": "https://pbs.twimg.com/profile_images/2049479264869945344/7ci5RquN.png",
     }
     return {
         "name": row.get("name", ""),
