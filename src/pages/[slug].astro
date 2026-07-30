@@ -48,14 +48,14 @@ const PROJECT_SHORT_DESC = ((brief.whats_cooking || "")
   .map((s) => s.trim())
   .find((s) => s) || `${r.name}: ${displayCategory(r.category)} project.`)
   .slice(0, 150);
-const PROJECT_IMAGE = logoUrl(r.website_url, slug);
+const PROJECT_IMAGE = (r.logo_url && r.logo_url.trim()) ? r.logo_url : logoUrl(r.website_url, slug);
 const PROJECT_URL = `${SITE_URL}/${slug}`;
 
 // related / recent: other projects (exclude current)
 const related = loadProjects()
   .filter((x) => x.project_row.slug !== slug)
   .slice(0, 6)
-  .map((x) => ({ slug: x.project_row.slug, name: x.project_row.name, logo: logoUrl(x.project_row.website_url, x.project_row.slug) }));
+  .map((x) => ({ slug: x.project_row.slug, name: x.project_row.name, logo: (x.project_row.logo_url && x.project_row.logo_url.trim()) ? x.project_row.logo_url : logoUrl(x.project_row.website_url, x.project_row.slug) }));
 
 // pulse: entries linked to this project (compiled from vault at build)
 const pulse = loadPulse()

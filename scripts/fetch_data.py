@@ -48,9 +48,15 @@ def fetch_all(anon):
 
 
 def build_project_row(row):
+    slug = row.get("slug", "")
+    logo_override = {
+        "axis": "https://pbs.twimg.com/profile_images/2049479264869945344/7ci5RquN_400x400.png",
+    }
     return {
-        "name": row.get("name", ""), "slug": row.get("slug", ""),
-        "category": row.get("category", ""), "ecosystem": row.get("ecosystem", "") or "",
+        "name": row.get("name", ""),
+        "slug": slug,
+        "category": row.get("category", ""),
+        "ecosystem": row.get("ecosystem", "") or "",
         "product_stage": row.get("product_stage", ""),
         "activity_status": row.get("activity_status", ""),
         "token_status": row.get("token_status", ""),
@@ -60,6 +66,7 @@ def build_project_row(row):
         "sector": (row.get("sector", "") or "").strip(),
         "website_url": (row.get("website_url", "") or "").strip(),
         "x_url": (row.get("x_url", "") or "").strip(),
+        "logo_url": logo_override.get(slug, ""),
         "updated_at": row.get("updated_at", "") or "",
         "published_at": row.get("published_at", "") or "",
     }

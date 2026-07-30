@@ -47,9 +47,12 @@ const all = projects.map((p) => {
   const row = p.project_row || {};
   const stageRaw = row.product_stage || "unknown";
   return {
-    slug: row.slug, name: row.name, logo: logoUrl(row.website_url, row.slug),
+    slug: row.slug || "",
+    name: row.name || "",
+    logo: row.logo_url && row.logo_url.trim() ? row.logo_url : logoUrl(row.website_url, row.slug),
     category: row.category || "",
-    categoryShort: shortCategory(row.category || ""), fundingShort: shortFunding(row.funding_summary || ""),
+    categoryShort: shortCategory(row.category || ""),
+    fundingShort: shortFunding(row.funding_summary || ""),
     stageLabel: humanize(stageRaw.replace("incentive_driven_", "")),
     updated_at: row.updated_at || "",
   };

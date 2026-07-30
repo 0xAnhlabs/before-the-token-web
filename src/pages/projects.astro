@@ -59,7 +59,7 @@ const all = projects.map((p) => {
   return {
     slug: row.slug,
     name: row.name,
-    logo: logoUrl(row.website_url, row.slug),
+    logo: row.logo_url && row.logo_url.trim() ? row.logo_url : logoUrl(row.website_url, row.slug),
     category: row.category || "",
     categoryLabel: displayCategory(row.category || ""),
     categoryShort: shortCategory(row.category || ""),
