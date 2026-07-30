@@ -32,6 +32,9 @@ const PUBLISHED_TEXT = (() => {
 
 // Favicon via Google service, derived from the project's official website_url (DB source of truth).
 function logoUrl(websiteUrl, slug) {
+  if ((slug || "").toLowerCase() === "axis") {
+    return "https://pbs.twimg.com/profile_images/2049479264869945344/7ci5RquN_400x400.png";
+  }
   let domain = "";
   if (websiteUrl) {
     try { domain = new URL(websiteUrl).hostname.replace(/^www\./, ""); } catch (e) { domain = ""; }
