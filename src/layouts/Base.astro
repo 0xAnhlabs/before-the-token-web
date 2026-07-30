@@ -402,7 +402,11 @@ const { title = "Before The Token", description = "Before The Token - informatio
               .module p + p { margin-top: 0.8rem; }
               .disclaimer { margin-top: 2.5rem; padding-top: 1rem; font-size: 0.75rem; }
             }
-
+          .disclaimer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--faint); font-size: 0.8rem; }
+          .site-footer { margin-top: 1.2rem; display: flex; gap: 1rem; }
+          .site-footer a { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 510; padding: 0.35rem 0.7rem; border-radius: 9999px; border: 1px solid var(--border); background: var(--surface); transition: border-color .15s, color .15s, background .15s; }
+          .site-footer a:hover { border-color: var(--accent); color: var(--accent); background: rgba(91,94,240,0.06); text-decoration: none; }
+          .social-icon { width: 1rem; height: 1rem; flex: none; display: inline-block; }
           </style>
   </head>
   <body>
@@ -474,6 +478,16 @@ const { title = "Before The Token", description = "Before The Token - informatio
       <main>
         <slot />
       </main>
+      <footer class="site-footer">
+        <a href="https://x.com/0xAnhLabs" target="_blank" rel="noopener" aria-label="X" title="Follow on X">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-6.9L4.8 22H1.7l8-9.2L1 2h7l4.8 6.3L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg>
+          <span>Follow us</span>
+        </a>
+        <a href="https://t.me/beforethetoken" target="_blank" rel="noopener" aria-label="Telegram" title="Join Telegram channel">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          <span>Join Telegram</span>
+        </a>
+      </footer>
       <div class="disclaimer">
         Listing is information, not endorsement. Not investment advice.
       </div>
