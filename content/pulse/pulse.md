@@ -16,9 +16,17 @@ project: Perpl
 date: 2026-07-28
 text: $1 billion total volume traded on Perpl feels pretty good, don't get me wrong. But now I wonder what $1 trillion would feel like. Source: https://x.com/perpltrade/status/2081751981949898894
 ---
+
 ---
 type: signal
 project: BULK
 date: 2026-07-29
 text: BULK published BIP 1 outlining a deployer-owned perpetual contract model with minimal upfront cost to launch a market, a two-phase lifecycle from rapid experimentation to capital-efficient maturation, and explicit economics for deployers who build frontends and drive volume. Source: https://x.com/bulktrade/status/2082090186268090491?s=20
+---
+
+---
+type: signal
+project: Axis
+date: 2026-07-29
+text: The Origin Vault is open with a $50M cap on Ethereum L1, accepting USDT or USDC deposits and advertising verifiable 10-20% base APY plus 2x Coordinates during early participation. The campaign is framed as access to "the Grid" via axis.to/origin. Why it matters: this is the project's first live yield product, and durability will hinge on actual net yield, not headline APY. Source: https://x.com/AxisFDN/status/2082467111859859902
 ---
