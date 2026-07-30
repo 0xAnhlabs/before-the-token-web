@@ -99,9 +99,6 @@ const pulse = loadPulse()
         <div class="dhead-main">
           <h1>{r.name}</h1>
           {PUBLISHED_TEXT && <span class="dmeta">{PUBLISHED_TEXT}</span>}
-          {r.updated_at && r.updated_at !== r.published_at && (
-            <span class="dupdated">Updated {(() => { const d = new Date(r.updated_at); return isNaN(d) ? "" : d.toLocaleDateString("en-US",{year:"numeric",month:"short",day:"numeric"}); })()}</span>
-          )}
           <div class="dpills">
             <span class="dpill">{displayCategory(r.category)}</span>
             {r.funding_summary ? <span class="dpill">{r.funding_summary}</span> : ""}
@@ -188,6 +185,14 @@ const pulse = loadPulse()
         </section>
       )}
 
+      <div class="dupdated-wrap">
+        <span class="dupdated">Updated {(() => {
+          const raw = r.updated_at || "";
+          if (!raw) return "";
+          const d = new Date(raw);
+          return isNaN(d) ? "" : d.toLocaleDateString("en-US",{year:"numeric",month:"short",day:"numeric"});
+        })()}</span>
+      </div>
 
       </div>  <!-- close .dmain -->
       {pulse.length > 0 && (
