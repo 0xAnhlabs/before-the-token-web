@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+
 const { title = "Before The Token", description = "Before The Token - information platform, database, and research hub for crypto projects before they launch a token.", active = "" } = Astro.props;
 ---
 <!doctype html>
@@ -408,6 +410,7 @@ const { title = "Before The Token", description = "Before The Token - informatio
           .site-footer a:hover { border-color: var(--accent); color: var(--accent); background: rgba(91,94,240,0.06); text-decoration: none; }
           .social-icon { width: 1rem; height: 1rem; flex: none; display: inline-block; }
           </style>
+    <Analytics />
   </head>
   <body>
     <header class="nav">
