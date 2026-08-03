@@ -1,6 +1,6 @@
 ---
 title: "Axis vs Tori Finance: Two Pre-Token Yield Protocols, Two Different Bets"
-status: draft
+status: published
 date: 2026-08-03
 summary: "Both Axis and Tori Finance are DeFi yield protocols live before a native token. Their similarity stops there. One is building a market-neutral arbitrage engine with an early-access vault campaign. The other is packaging institutional FX carry into a retail stablecoin yield product with day-one DeFi integrations."
 ---
