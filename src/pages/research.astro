@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Base.astro";
-import { loadResearch } from "../lib/research.mjs";
+import { loadResearch } from "../lib/projects.js";
 
-const published = await loadResearch();
+const published = loadResearch();
 ---
 
 <Layout

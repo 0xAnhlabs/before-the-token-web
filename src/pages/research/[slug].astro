@@ -1,10 +1,10 @@
 ---
 import Layout from "../../layouts/Base.astro";
-import { loadResearch, findResearch } from "../../lib/research.mjs";
+import { loadResearch, findResearch } from "../../lib/projects.js";
 
 export function getStaticPaths() {
   try {
-    const all = loadResearch(true);
+    const all = loadResearch();
     return all.map((item) => ({
       params: { slug: item.slug },
       props: { item },
@@ -15,7 +15,7 @@ export function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const all = loadResearch(true);
+const all = loadResearch();
 const item = findResearch(slug || "");
 ---
 

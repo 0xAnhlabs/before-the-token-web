@@ -37,14 +37,20 @@ export function loadPulse() {
 }
 
 // Load Research index (compiled from vault markdown at build). Returns [] if file absent.
-// Expected shape: { research: [ { slug, title, date } ] } or { projects: [...] }
+// Expected shapes: { published: [...] } / { items: [...] } / { research: [...] } / { projects: [...] }
 const RESEARCH_PATH = path.resolve(__dirname, "../../data/research.json");
 export function loadResearch() {
   if (!fs.existsSync(RESEARCH_PATH)) return [];
   try {
     const raw = JSON.parse(fs.readFileSync(RESEARCH_PATH, "utf-8"));
-    return raw.research || raw.projects || [];
+    return raw.published || raw.items || raw.research || raw.projects || [];
   } catch (e) {
     return [];
   }
+}
+export function findResearch(slug) {
+  if (!slug) return null;
+  const key = slug.toLowerCase();
+  const items = loadResearch();
+  return items.find((item) => (item.slug || "").toLowerCase() === key) || null;
 }

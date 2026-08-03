@@ -67,7 +67,12 @@ def main():
     }
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
-    print(f"Wrote {len(items)} research item(s) ({len(published)} published) to {OUT}")
+    js_out = OUT.replace(".json", ".js")
+    with open(js_out, "w", encoding="utf-8") as f:
+        f.write("export default ")
+        json.dump(out, f, ensure_ascii=False)
+        f.write(";\n")
+    print(f"Wrote {len(items)} research item(s) ({len(published)} published) to {OUT} and {js_out}")
 
 
 if __name__ == "__main__":
