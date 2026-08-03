@@ -259,12 +259,12 @@ const { title = "Before The Token", description = "Before The Token - informatio
       .card .card-note { color: var(--muted); font-size: 0.85rem; margin-top: 0.7rem; line-height: 1.5; flex: 1; }
       .card .card-note:empty { margin-top: 0; }
       .card .cspacer { flex: 1; }
-      .card .cfoot { display: flex; align-items: center; justify-content: space-between; margin-top: 0.9rem; gap: 0.5rem; }
+      .card .cfoot { display: flex; flex-direction: column; gap: 0.5rem; margin-top: auto; padding-top: 0.9rem; }
       .card .cfund { font-weight: 590; font-size: 0.92rem; color: var(--text); }
       .card .cfoot .go {
         width: 100%; justify-content: center;
         font-size: 0.82rem; font-weight: 510; color: #fff; background: var(--accent);
-        border-radius: 8px; padding: 0.4rem 0.8rem; transition: background .15s;
+        border-radius: 8px; padding: 0.4rem 0.8rem; transition: background .15s; display: inline-flex; align-items: center;
       }
       .card .cfoot .go:hover { background: var(--accent-hover); text-decoration: none; }
 
