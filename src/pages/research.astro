@@ -1,9 +1,31 @@
 ---
 import Layout from "../layouts/Base.astro";
+import { loadResearch } from "../lib/research.mjs";
+
+const published = await loadResearch();
 ---
 
-<Layout title="Before The Token - Research" description="Deep-dive research on crypto projects before they launch a token. Read the analysis, mechanisms, and early signals on Before The Token." active="research">
+<Layout
+  title="Before The Token - Research"
+  description="Deep-dive research on crypto projects before they launch a token."
+  active="research"
+>
   <h1>Research</h1>
-  <p class="lead">Deep-dive research on tracked projects. Coming soon.</p>
-  <p class="empty">No research published yet.</p>
+  <p class="lead">Deep-dive analysis on tracked projects.</p>
+
+  {published.length === 0 ? (
+    <p class="empty">No research published yet.</p>
+  ) : (
+    <div class="research-list">
+      {published.map((item) => (
+        <a class="research-card" href={`/research/${item.slug}`}>
+          <div class="research-meta">
+            <span class="research-date">{item.date || ""}</span>
+          </div>
+          <h2 class="research-title">{item.title}</h2>
+          <p class="research-summary">{item.summary || ""}</p>
+        </a>
+      ))}
+    </div>
+  )}
 </Layout>

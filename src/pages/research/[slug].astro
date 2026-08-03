@@ -1,0 +1,56 @@
+---
+import Layout from "../../layouts/Base.astro";
+import { loadResearch, findResearch } from "../../lib/research.mjs";
+
+export function getStaticPaths() {
+  try {
+    const all = loadResearch(true);
+    return all.map((item) => ({
+      params: { slug: item.slug },
+      props: { item },
+    }));
+  } catch (e) {
+    return [];
+  }
+}
+
+const { slug } = Astro.params;
+const all = loadResearch(true);
+const item = findResearch(slug || "");
+---
+
+<Layout
+  title={item ? `Before The Token - ${item.title}` : "Before The Token - Research"}
+  description={item?.summary || "Research article"}
+  active="research"
+>
+  {item ? (
+    <article class="research-article">
+      <header class="research-head">
+        <h1>{item.title}</h1>
+        <div class="research-meta">
+          {item.date ? <span class="research-date">{item.date}</span> : null}
+          <span class="research-status status-{item.status}">{item.status}</span>
+        </div>
+      </header>
+      <div class="research-body">
+        <slot />
+        <div
+          set:html={item.body
+            .split("\n\n")
+            .map((p) => `<p>${p.replace(/\n/g, "<br />")}</p>`)
+            .join("")}
+        />
+      </div>
+      <p class="research-back">
+        <a href="/research">&larr; Back to Research</a>
+      </p>
+    </article>
+  ) : (
+    <div>
+      <h1>Not found</h1>
+      <p class="empty">Research article not found.</p>
+      <p><a href="/research">Back to Research</a></p>
+    </div>
+  )}
+</Layout>

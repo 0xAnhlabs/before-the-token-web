@@ -1,959 +1,741 @@
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2FAccountableData)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FAccountableData)
+# Pulse Scan Raw - 2026-07-31
 
+Source: btt_pulse_check.py --emit-urls + web_extract (3 batches, char_limit=2500 each)
+
+## URL 1: https://x.com/AccountableData
+ 
+[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2FAccountableData)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FAccountableData)
+ 
 [![](https://pbs.twimg.com/profile_banners/1750185205221007360/1750940315/1500x500)](/AccountableData/header_photo)
-
+ 
 [![user avatar](https://pbs.twimg.com/profile_images/1910248229968490496/TZd8HlZa_400x400.jpg)](/AccountableData/photo)
-
+ 
 Accountable
-
+ 
 The new standard for real-time financial verification.
-
+ 
 [accountable.capital](https://t.co/H8bS0tXxty)
-
+ 
 Joined January 2024
-
+ 
 [64
-
+ 
 Following](/AccountableData/following)[60.9K
-
+ 
 Followers](/AccountableData/verified_followers)
-
+ 
 [RepliesReplies](/AccountableData)[ArticlesArticles](/AccountableData)[MediaMedia](/AccountableData)
-
-Don't miss what's happening
-
-People on X are the first to know.
-
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2FAccountableData)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FAccountableData)
-
+ 
 * Pinned
-
+ 
   [![user avatar](https://pbs.twimg.com/profile_images/1910248229968490496/TZd8HlZa_normal.jpg)](/AccountableData)
-
+ 
   [Accountable](https://x.com/AccountableData)
-
+ 
   [@AccountableData](https://x.com/AccountableData)
-
-  [18h](/AccountableData/status/2082089762723135656)
-
-  [![Article cover image](https://pbs.twimg.com/media/HOT3ygEXIAAJlIu.jpg)
-
-  Article
-
-  Institutional Onchain Credit Reaches a Publicly Traded Borrower for the First Time
-
-  A new vault is now live on Accountable's YieldApp: an onchain credit facility managed by @k3\_capital, extending a structured credit line to [@galaxyhq](https://x.com/galaxyhq) in AUSD on [@monad](https://x.com/monad). It is the...](/i/article/2082089762723135656)
-
-  [1.7K](/AccountableData/status/2082089762723135656/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/1910248229968490496/TZd8HlZa_normal.jpg)](/AccountableData)
-
-  [Accountable](https://x.com/AccountableData)
-
-  [@AccountableData](https://x.com/AccountableData)
-
-  [Jul 27](/AccountableData/status/2081758385318379782)
-
-  The k3 x Galaxy Lending Vault is now live on YieldApp. [@k3\_capital](https://x.com/k3_capital) manages an onchain credit facility lending to [@galaxyhq](https://x.com/galaxyhq), with AUSD from [@withAUSD](https://x.com/withAUSD) on [@monad](https://x.com/monad). Capital flows are independently verified by Accountable's Data Verification Network.
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2081711020662239233/img/QZZCKlcfC9PdQfSW.jpg)
-
+ 
+  [12h](/AccountableData/status/2082832979097686182)
+ 
+  Introducing Proof of Solvency v2. PoS dashboards have been delivering verifiable data to the public since day one. Now, visibility extends further, into the verification setup behind every number on the dashboard ↓
+ 
+  ![](https://pbs.twimg.com/amplify_video_thumb/2082826226054410240/img/60G_R1XC4dtjnu4G.jpg)
+ 
   00:00
-
-  [21K](/AccountableData/status/2081758385318379782/quotes)
+ 
+  [3K](/AccountableData/status/2082832979097686182/quotes)
 * [![user avatar](https://pbs.twimg.com/profile_images/1910248229968490496/TZd8HlZa_normal.jpg)](/AccountableData)
-
+ 
   [Accountable](https://x.com/AccountableData)
-
+ 
   [@AccountableData](https://x.com/AccountableData)
-
+ 
+  [Jul 29](/AccountableData/status/2082525488971476999)
+ 
+  [... middle omitted ...]
+ 
+* [![user avatar](https://pbs.twimg.com/profile_images/1910248229968490496/TZd8HlZa_normal.jpg)](/AccountableData)
+ 
+  [Accountable](https://x.com/AccountableData)
+ 
+  [@AccountableData](https://x.com/AccountableData)
+ 
   [Jul 23](/AccountableData/status/2080319980206219321)
+ 
+  We're hiring a QA Engineer: -> Remote, EU-based -> Web3 and DeFi experience -> Fast delivery cycles Apply: [wellfound.com/company/accoun...](https://wellfound.com/company/accountable-7)
+ 
+  [![](https://pbs.twimg.com/media/HN7H94UXkAAIE7g?format=webp&name=medium)](/AccountableData/status/2080319980206219321/photo-1)
 
-  We're hiring a QA Engineer: → Remote, EU-based → Web3 and DeFi experience → Fast delivery cycles Apply: [wellfound.com/company/accoun…](https://wellfound.com/company/accountable-7)
+---
 
-  [![](https://pbs.twimg.com/media/HN7H94UXkAAIE7g?format=webp&name=medium)](/AccountableData/status/2080319980206219321/photo/1)
+## URL 2: https://x.com/AxisFDN
+ 
+[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2FAxisFDN)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FAxisFDN)
+ 
+[![](https://pbs.twimg.com/profile_banners/1915028331743031296/1784536641/1500x500)](/AxisFDN/header_photo)
+ 
+[![user avatar](https://pbs.twimg.com/profile_images/2049479264869945344/7ci5RquN_400x400.png)](/AxisFDN/photo)
+ 
+Axis
+ 
+The Origin Vault is open: [axis.to/origin](http://axis.to/origin) Backed by [@galaxyhq](https://x.com/galaxyhq), [@FalconXGlobal](https://x.com/FalconXGlobal), [@okx](https://x.com/okx).
+ 
+[axis.to](https://t.co/cnHkaAHk1g)
+ 
+Joined April 2025
+ 
+[27
+ 
+Following](/AxisFDN/following)[6,753
+ 
+Followers](/AxisFDN/verified_followers)
+ 
+[RepliesReplies](/AxisFDN)[ArticlesArticles](/AxisFDN)[MediaMedia](/AxisFDN)
+ 
+* Pinned
+ 
+  [![user avatar](https://pbs.twimg.com/profile_images/2049479264869945344/7ci5RquN_normal.png)](/AxisFDN)
+ 
+  [Axis](https://x.com/AxisFDN)
+ 
+  [@AxisFDN](https://x.com/AxisFDN)
+ 
+  [20h](/AxisFDN/status/2082467111859859902)
+ 
+  The Origin Vault is open. $50M cap. Deposit USDT or USDC on Ethereum L1. Accrue 2x Coordinates. Verifiable 10-20% base APY. Get on the Grid. [axis.to/origin](http://axis.to/origin)
+ 
+  ![](https://pbs.twimg.com/amplify_video_thumb/2082464090740449280/img/ezW60PL11EDLhGY7.jpg)
+ 
+  00:00
+ 
+  [109K](/AxisFDN/status/2082467111859859902/quotes)
+* [![user avatar](https://pbs.twimg.com/profile_images/2049479264869945344/7ci5RquN_normal.png)](/AxisFDN)
+ 
+  [Axis](https://x.com/AxisFDN)
+ 
+  [@AxisFDN](https://x.com/AxisFDN)
+ 
+  [20h](/AxisFDN/status/2082474120541786126)
+ 
+  $25M Marked on the Grid in 30 minutes. The Origin Vault caps at $50M. Deposit USDT or USDC, get a 2x Multiplier, and feed the engine that synchronizes markets. Get on the Grid. [axis.to/origin](http://axis.to/origin)
+ 
+  [... middle omitted ...]
+ 
+* [![user avatar](https://pbs.twimg.com/profile_images/2049479264869945344/7ci5RquN_normal.png)](/AxisFDN)
+ 
+  [Axis](https://x.com/AxisFDN)
+ 
+  [@AxisFDN](https://x.com/AxisFDN)
+ 
+  [Jul 15](/AxisFDN/status/2077377662780047641)
+ 
+  Introducing the Axis Origin Vault. The Axis delta-neutral arbitrage engine is opening to all of you. Deposit USDT and earn a verifiable 10-20% base APY. The cap is $50m. Early depositors get a 2x multiplier. Mark your position on July 29.
+ 
+  ![](https://pbs.twimg.com/amplify_video_thumb/2077375779470536704/img/ZezZaPSPoikqCQCP.jpg)
+ 
+  00:00
+ 
+  [11K](/AxisFDN/status/2081770309502341251/quotes)
 
-  [1.5K](/AccountableData/status/2080319980206219321/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/1910248229968490496/TZd8HlZa_normal.jpg)](/AccountableData)
+---
 
-  [Accountable](https://x.com/AccountableData)
-
-  [@AccountableData](https://x.com/AccountableData)
-
-  [Jul 23](/AccountableData/status/2080298862065979691)
-
-  Good to see disclosure standards for token markets picking up participants. Accountable is in Cohort 2 of the Transparency Alliance.
-
-  [![user avatar](https://pbs.twimg.com/profile_images/2046995450369056768/Kc9TPN3n_normal.jpg)](/Blockworks)
-
-  [Blockworks](https://x.com/Blockworks)
-
-  [@Blockworks](https://x.com/Blockworks)
-
-  [Jul 23](/Blockworks/status/2080292062600323308)
-
-  The Transparency Alliance grows to 70+ participants. Making the Token Transparency Framework the benchmark for disclosure across token markets.
-
-  [![](https://pbs.twimg.com/media/HN6umyoaUAAnETg?format=webp&name=medium)](/Blockworks/status/2080292062600323308/photo/1)
-
-  [1.7K](/AccountableData/status/2080298862065979691/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/1910248229968490496/TZd8HlZa_normal.jpg)](/AccountableData)
-
-  [Accountable](https://x.com/AccountableData)
-
-  [@AccountableData](https://x.com/AccountableData)
-
-  [Jul 21](/AccountableData/status/2079593698556256537)
-
-  YieldApp is now live on [@BinanceWallet](https://x.com/BinanceWallet). Accountable's yield marketplace is listed as a dApp within Binance Wallet's browser, giving users direct access to DVN-verified opportunities across supported EVM chains.
-
-  [![](https://pbs.twimg.com/media/HNwzX7rW0AAJvii?format=webp&name=medium)](/AccountableData/status/2079593698556256537/photo/1)
-
-  [1.7K](/AccountableData/status/2079593698556256537/quotes)
-* # See @AccountableData's full profile
-
-  [Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FAccountableData)
-
-  [Log in](https://x.com/i/jf/onboarding/web?redirect_after_login=%2FAccountableData)
+## URL 3: https://x.com/GenLayer
+ 
 [Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2FGenLayer)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FGenLayer)
-
+ 
 [![](https://pbs.twimg.com/profile_banners/1745823491989897216/1749742633/1500x500)](/GenLayer/header_photo)
-
+ 
 [![user avatar](https://pbs.twimg.com/profile_images/2011221321754034176/AaBmFyfD_400x400.jpg)](/GenLayer/photo)
-
+ 
 GenLayer
-
+ 
 The adjudication Layer for the Agentic Era Join us: [portal.genlayer.foundation](http://portal.genlayer.foundation/) | X by [@GenLayerFDN](https://x.com/GenLayerFDN)
-
-[genlayer.com](https://t.co/4tbLZnhFHD)
-
+ 
 Joined January 2024
-
+ 
 [67
-
+ 
 Following](/GenLayer/following)[81.2K
-
+ 
 Followers](/GenLayer/verified_followers)
-
+ 
 [RepliesReplies](/GenLayer)[ArticlesArticles](/GenLayer)[MediaMedia](/GenLayer)
-
-Don't miss what's happening
-
-People on X are the first to know.
-
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2FGenLayer)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FGenLayer)
-
+ 
 * Pinned
-
+ 
   [![user avatar](https://pbs.twimg.com/profile_images/2011221321754034176/AaBmFyfD_normal.jpg)](/GenLayer)
-
+ 
   [GenLayer](https://x.com/GenLayer)
-
+ 
   [@GenLayer](https://x.com/GenLayer)
-
+ 
   [Jul 2](/GenLayer/status/2072651372760064377)
-
+ 
   By 2030, AI agents will move nearly $9 trillion. Every one of those transactions can end in a disagreement, and almost nobody is preparing for it. That's why we built GenLayer, the adjudication layer for contracts that can actually think and start judging what's fair.
-
+ 
   ![](https://pbs.twimg.com/amplify_video_thumb/2072650934354579456/img/tVZUl5Gos_eFnD7_.jpg)
-
+ 
   00:00
-
-  [620K](/GenLayer/status/2072651372760064377/quotes)
+ 
+  [623K](/GenLayer/status/2072651372760064377/quotes)
 * [![user avatar](https://pbs.twimg.com/profile_images/2011221321754034176/AaBmFyfD_normal.jpg)](/GenLayer)
-
+ 
   [GenLayer](https://x.com/GenLayer)
-
+ 
   [@GenLayer](https://x.com/GenLayer)
-
-  [19h](/GenLayer/status/2081741213162426821)
-
-  [3.9K](/GenLayer/status/2081741213162426821/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2011221321754034176/AaBmFyfD_normal.jpg)](/GenLayer)
-
-  [GenLayer](https://x.com/GenLayer)
-
-  [@GenLayer](https://x.com/GenLayer)
-
-  [Jul 26](/GenLayer/status/2081492260286235080)
-
-  GenLayer Co-Founder & CEO [@kstellana](https://x.com/kstellana) will be live today answering your questions. Set a reminder & send your question 👇
-
-  [![](https://pbs.twimg.com/media/HOLxyMcXIAAhXs_?format=webp&name=medium)](/GenLayer/status/2081492260286235080/photo/1)
-
-  [7K](/GenLayer/status/2081492260286235080/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2011221321754034176/AaBmFyfD_normal.jpg)](/GenLayer)
-
-  [GenLayer](https://x.com/GenLayer)
-
-  [@GenLayer](https://x.com/GenLayer)
-
-  [Jul 24](/GenLayer/status/2080664555567317429)
-
-  The entire agent economy is being built for the moment things go right. Payments, identity, negotiation. Almost no one is building for the moment two agents disagree. And they will. By 2030 ARK projects the agentic economy at $9 trillion, and no court was built to settle deals
-
-  [![](https://pbs.twimg.com/media/HOABJmUXsAACsw8?format=webp&name=medium)](/GenLayer/status/2080664555567317429/photo/1)
-
-  [71K](/GenLayer/status/2080664555567317429/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2011221321754034176/AaBmFyfD_normal.jpg)](/GenLayer)
-
-  [GenLayer](https://x.com/GenLayer)
-
-  [@GenLayer](https://x.com/GenLayer)
-
-  [Jul 22](/GenLayer/status/2079966889174851793)
-
-  From capitalism as a runaway machine to intelligence becoming free for everyone. [@santisiri](https://x.com/santisiri) on the commodification of intelligence, simulation theory, and putting frontier technology in the hands of those the system leaves behind. GenPod Ep. 4 - out now 🎙️
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2079598570244546561/img/oH7YQJiHLux5-G8b.jpg)
-
-  00:00
-
-![user avatar](https://pbs.twimg.com/profile_images/2011221321754034176/AaBmFyfD_200x200.jpg)
-
-GenLayer
-
-GenLayer X AMA
-
-989 tuned in
-
-Jul 27
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2FHertzflow_xyz)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FHertzflow_xyz)
-
-HertzFlow | Testnet is Live💤
-
-[![](https://pbs.twimg.com/profile_banners/1949735376517840896/1775717680/1500x500)](/Hertzflow_xyz/header_photo)
-
-[![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_400x400.jpg)](/Hertzflow_xyz/photo)
-
-HertzFlow | Testnet is Live💤
-
-The world leverage engine that powers perpification of everything. Backed by [@YZiLabs](https://x.com/YZiLabs)
-
-Joined July 2025
-
-[39
-
-Following](/Hertzflow_xyz/following)[7,957
-
-Followers](/Hertzflow_xyz/verified_followers)
-
-[AffiliatesAffiliates](/Hertzflow_xyz)[RepliesReplies](/Hertzflow_xyz)[ArticlesArticles](/Hertzflow_xyz)[MediaMedia](/Hertzflow_xyz)
-
-Don't miss what's happening
-
-People on X are the first to know.
-
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2FHertzflow_xyz)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FHertzflow_xyz)
-
-* Pinned
-
-  [![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_normal.jpg)](/Hertzflow_xyz)
-
-  [HertzFlow | Testnet is Live💤](https://x.com/Hertzflow_xyz)
-
-  [@Hertzflow\_xyz](https://x.com/Hertzflow_xyz)
-
-  [Jul 23](/Hertzflow_xyz/status/2080316072746422330)
-
-  [![Article cover image](https://pbs.twimg.com/media/HN7CcTJacAAnPuw.jpg)
-
-  Article
-
-  HertzFlow Beginner's Guide #2: Pools & Vaults — Deposit, Withdraw, Earn
-
-  When people first land on a Pool or Vault page and see the APY, the instinct is to read it as “park some USDT and collect interest.” That’s an easy assumption to make. But the picture isn’t quite...](/i/article/2080316072746422330)
-
-  [21K](/Hertzflow_xyz/status/2080316072746422330/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_normal.jpg)](/Hertzflow_xyz)
-
-  [HertzFlow | Testnet is Live💤](https://x.com/Hertzflow_xyz)
-
-  [@Hertzflow\_xyz](https://x.com/Hertzflow_xyz)
-
-  [8h](/Hertzflow_xyz/status/2082138745520918862)
-
-  More reach, more boost. Crosspost your HertzFlow posts to Binance Square! 🚀
-
-  [![user avatar](https://pbs.twimg.com/profile_images/2072625199649026048/mC2fxT1Q_normal.jpg)](/EchoHunt_ai)
-
-  [EchoHunt](https://x.com/EchoHunt_ai)
-
-  [@EchoHunt\_ai](https://x.com/EchoHunt_ai)
-
-  [9h](/EchoHunt_ai/status/2082118936523674041)
-
-  🔥EchoHunt × Binance Square: YZi Labs Amplify S1 Boost is LIVE! Starting this week, crosspost your campaign posts to Binance Square and unlock extra boost rewards! 🚀 📌 How to participate: 1️⃣ Link your Binance Square account on the EchoHunt website 2️⃣ Crosspost your campaign
-
-  [![](https://pbs.twimg.com/media/HOUrxGQbIAApxtC?format=webp&name=small)](/EchoHunt_ai/status/2082118936523674041/photo/1)
-
-  [![](https://pbs.twimg.com/media/HOUrx1ZaEAAC75g?format=webp&name=small)](/EchoHunt_ai/status/2082118936523674041/photo/2)
-
-  [709](/Hertzflow_xyz/status/2082138745520918862/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_normal.jpg)](/Hertzflow_xyz)
-
-  [HertzFlow | Testnet is Live💤](https://x.com/Hertzflow_xyz)
-
-  [@Hertzflow\_xyz](https://x.com/Hertzflow_xyz)
-
-  [8h](/Hertzflow_xyz/status/2082129678975004950)
-
-  Odysseus had the stars to guide him home. You have HertzFlow to read the sea. The long voyage is nearly over. Land is in sight. The tide is turning. Be on deck. ⚓️
-
-  [![](https://pbs.twimg.com/media/HOU1eHVacAAl8Je?format=webp&name=medium)](/Hertzflow_xyz/status/2082129678975004950/photo/1)
-
-  [750](/Hertzflow_xyz/status/2082129678975004950/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_normal.jpg)](/Hertzflow_xyz)
-
-  [HertzFlow | Testnet is Live💤](https://x.com/Hertzflow_xyz)
-
-  [@Hertzflow\_xyz](https://x.com/Hertzflow_xyz)
-
-  [Jul 27](/Hertzflow_xyz/status/2081770314535752037)
-
-  One deposit. A whole basket of markets. Auto-rebalanced around the clock. Meet HertzFlow Vaults (HzV), the hands-off way to earn as a liquidity provider. Here's how they work. 🧵
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2081768524280909824/img/ayYuHreuuDBNCvox.jpg)
-
-  00:00
-
-  [4.4K](/Hertzflow_xyz/status/2081770314535752037/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_normal.jpg)](/Hertzflow_xyz)
-
-  [HertzFlow | Testnet is Live💤](https://x.com/Hertzflow_xyz)
-
-  [@Hertzflow\_xyz](https://x.com/Hertzflow_xyz)
-
-  [Jul 27](/Hertzflow_xyz/status/2081671627918717340)
-
-  That's a wrap on the referral competition.🔥 Huge respect to everyone who showed up. 12 winners, all well-earned. 🏆 Haven't joined us yet? Follow along and stay close!
-
-  [![user avatar](https://pbs.twimg.com/profile_images/2034697443917303808/XtMUgzNR_normal.jpg)](/emnirex)
-
-  [Jul 27](/emnirex/status/2081642416025506039)
-
-  🎉 Thrilled to announce that the [@Hertzflow\_xyz](https://x.com/Hertzflow_xyz) Referral Competition has officially come to an end! A huge congratulations to all our winners! 🏆🥳 The passion and participation we witnessed from both the Chinese and English communities were incredible. Because of the amazing
-
-  [![](https://pbs.twimg.com/media/HON6vfNWIAAxy2z?format=webp&name=medium)](/emnirex/status/2081642416025506039/photo/1)
-* # See @Hertzflow\_xyz's full profile
-
-  [Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FHertzflow_xyz)
-
-  [Log in](https://x.com/i/jf/onboarding/web?redirect_after_login=%2FHertzflow_xyz)
+ 
+  [Jul 29](/GenLayer/status/2082567761746653238)
+ 
+  The financial system got rebuilt from scratch. The legal system never did.
+ 
+  [4.3K](/GenLayer/status/2082567761746653238/quotes)
+ 
+  [... middle omitted ...]
+ 
+* GenLayer Co-Founder & CEO [@kstellana](https://x.com/kstellana) will be live today answering your questions. Set a reminder & send your question
+
+ 
+
+---
+
+## URL 4: https://x.com/PixieChess
+ 
 [Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2FPixieChess)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FPixieChess)
-
+ 
 Pixie Chess
-
+ 
 [![](https://pbs.twimg.com/profile_banners/1642009108390854656/1774996880/1500x500)](/PixieChess/header_photo)
-
+ 
 [![user avatar](https://pbs.twimg.com/profile_images/2038868076993937408/HzBMFpNj_400x400.jpg)](/PixieChess/photo)
-
+ 
 Pixie Chess
-
+ 
 Magical Chess for Real Money. Backed by [@Paradigm](https://x.com/Paradigm)
-
+ 
 [pixiechess.xyz](https://t.co/aq175K4ak4)
-
+ 
 Joined April 2023
-
+ 
 [30
-
+ 
 Following](/PixieChess/following)[10.1K
-
+ 
 Followers](/PixieChess/verified_followers)
-
-[AffiliatesAffiliates](/PixieChess)[RepliesReplies](/PixieChess)[ArticlesArticles](/PixieChess)[MediaMedia](/PixieChess)
-
-Don't miss what's happening
-
-People on X are the first to know.
-
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2FPixieChess)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2FPixieChess)
-
+ 
+[AffiliatesAffiliates](/PixieChess)[RepliesReplies](/PixieChess)[MediaMedia](/PixieChess)
+ 
 * Pinned
-
+ 
   [![user avatar](https://pbs.twimg.com/profile_images/2038868076993937408/HzBMFpNj_normal.jpg)](/PixieChess)
-
+ 
   [Pixie Chess](https://x.com/PixieChess)
-
+ 
   [@PixieChess](https://x.com/PixieChess)
-
+ 
   [Apr 2](/PixieChess/status/2039821373539864957)
-
+ 
   Magical Chess for Real Prizes Play Now: [Pixiechess.xyz](http://Pixiechess.xyz)
-
+ 
   ![](https://pbs.twimg.com/amplify_video_thumb/2039820841769463808/img/oStbruV9WfgGTLZA.jpg)
-
+ 
   00:00
-
+ 
   [343K](/PixieChess/status/2039821373539864957/quotes)
 * [![user avatar](https://pbs.twimg.com/profile_images/2038868076993937408/HzBMFpNj_normal.jpg)](/PixieChess)
-
+ 
   [Pixie Chess](https://x.com/PixieChess)
-
+ 
   [@PixieChess](https://x.com/PixieChess)
-
+ 
   [Jul 22](/PixieChess/status/2079996188095369321)
-
+ 
   New Quest: Win 10 rated games to earn a Brawl Ticket! (0/100 claimed)
+ 
+  [... middle omitted ...]
 
-  [![](https://pbs.twimg.com/media/HN2gVfiXEAAQSXg?format=webp&name=medium)](/PixieChess/status/2079996188095369321/photo/1)
-
-  [1.4K](/PixieChess/status/2079996188095369321/quotes)
 * [![user avatar](https://pbs.twimg.com/profile_images/2038868076993937408/HzBMFpNj_normal.jpg)](/PixieChess)
-
+ 
   [Pixie Chess](https://x.com/PixieChess)
-
+ 
   [@PixieChess](https://x.com/PixieChess)
-
-  [Jul 15](/PixieChess/status/2077449985491083762)
-
-  A look at upcoming [@PixieChess](https://x.com/PixieChess) tournaments! The Blitz Grand Prix (1 ETH) starts in 2 hours!
-
-  [![](https://pbs.twimg.com/media/HNSViYtXMAA811R?format=webp&name=medium)](/PixieChess/status/2077449985491083762/photo/1)
-
-  [3.6K](/PixieChess/status/2077449985491083762/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2038868076993937408/HzBMFpNj_normal.jpg)](/PixieChess)
-
-  [Pixie Chess](https://x.com/PixieChess)
-
-  [@PixieChess](https://x.com/PixieChess)
-
-  [Jul 8](/PixieChess/status/2074881052611342341)
-
-  The Free Brawl opens today! Try out our new game mode at 12pm EST. No entry fee required. Real rewards. [pixiechess.xyz/brawl](https://pixiechess.xyz/brawl)
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2074880943551053824/img/esjnjaUF-lJvF23S.jpg)
-
-  00:00
-* [![user avatar](https://pbs.twimg.com/profile_images/2038868076993937408/HzBMFpNj_normal.jpg)](/PixieChess)
-
-  [Pixie Chess](https://x.com/PixieChess)
-
-  [@PixieChess](https://x.com/PixieChess)
-
+ 
   [Jul 2](/PixieChess/status/2072710243511943586)
-
+ 
   Introducing Piece Rarity. We've added four tiers of rarity: common, rare, epic, & legendary. Rarity sets both a piece's total supply and how many sell per day. Once a piece hits its cap, or the season ends, it will never be sold again.
+ 
+  [![](https://pbs.twimg.com/media/HMO--ziXoAEgT9L?format=webp&name=medium)](/PixieChess/status/2072710243511943586/photo-1)
 
-  [![](https://pbs.twimg.com/media/HMO--ziXoAEgT9L?format=webp&name=medium)](/PixieChess/status/2072710243511943586/photo/1)
+---
+
+## URL 5: https://x.com/Hertzflow_xyz
+ 
+![](https://pbs.twimg.com/profile_banners/1949735376517840896/1775717680/1500x500)
+![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_400x400.jpg)
+ 
+## Log in or sign up for X
+ 
+See what's happening and join the conversation
+ 
+![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_normal.jpg)
+![Article cover image](https://pbs.twimg.com/media/HN7CcTJacAAnPuw.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_normal.jpg)
+![](https://pbs.twimg.com/media/HOYC6Wqa8AARde8?format=webp&name=medium)
+![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_normal.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/2072625199649026048/mC2fxT1Q_normal.jpg)
+![](https://pbs.twimg.com/media/HOUrxGQbIAApxtC?format=webp&name=small)
+![](https://pbs.twimg.com/media/HOUrx1ZaEAAC75g?format=webp&name=small)
+![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_normal.jpg)
+![](https://pbs.twimg.com/media/HOU1eHVacAAl8Je?format=webp&name=medium)
+![user avatar](https://pbs.twimg.com/profile_images/2055004533370310656/DUar6DMy_normal.jpg)
+![](https://pbs.twimg.com/amplify_video_thumb/2081768524280909824/img/ayYuHreuuDBNCvox.jpg)
+
+# See @Hertzflow_xyz's full profile
+
+---
+
+## URL 6: https://x.com/RemixGG_
+ 
+![](https://pbs.twimg.com/profile_banners/1848403037770944513/1751397168/1500x500)
+![user avatar](https://pbs.twimg.com/profile_images/1993361529971130368/N2i1GLN2_400x400.jpg)
+ 
+## Log in or sign up for X
+ 
+See what's happening and join the conversation
+ 
+![user avatar](https://pbs.twimg.com/profile_images/1993361529971130368/N2i1GLN2_normal.jpg)
+![](https://pbs.twimg.com/amplify_video_thumb/2072330639316316161/img/Y8oxgXqNhK5rd7Cn.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/1993361529971130368/N2i1GLN2_normal.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/1993361529971130368/N2i1GLN2_normal.jpg)
+![](https://pbs.twimg.com/amplify_video_thumb/2080367896014802944/img/RGc-eOHBv8SmrHdI.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/1993361529971130368/N2i1GLN2_normal.jpg)
+![](https://pbs.twimg.com/amplify_video_thumb/2080367896014802944/img/RGc-eOHBv8SmrHdI.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/1993361529971130368/N2i1GLN2_normal.jpg)
+![](https://pbs.twimg.com/media/HNdZUTmWYAACyFZ?format=webp&name=medium)
+![user avatar](https://pbs.twimg.com/profile_images/1993361529971130368/N2i1GLN2_normal.jpg)
+![](https://pbs.twimg.com/amplify_video_thumb/2077351181559427072/img/OuWJZesVHRO1j4JP.jpg)
+
+# See @RemixGG_'s full profile
+
+---
+
+## URL 7: https://x.com/Theo_Network
+ 
+![](https://pbs.twimg.com/profile_banners/1789368212947136512/1772749770/1500x500)
+![user avatar](https://pbs.twimg.com/profile_images/1928132409783963648/LizAN275_400x400.png)
+ 
+## Log in or sign up for X
+ 
+See what's happening and join the conversation
+ 
+![user avatar](https://pbs.twimg.com/profile_images/1928132409783963648/LizAN275_normal.png)
+![](https://pbs.twimg.com/amplify_video_thumb/2071940638933721089/img/UHMIHvaS_nWzcrkc.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/1928132409783963648/LizAN275_normal.png)
+![](https://pbs.twimg.com/media/HOgDEllXYAA0Exx?format=webp&name=medium)
+![user avatar](https://pbs.twimg.com/profile_images/1928132409783963648/LizAN275_normal.png)
+![](https://pbs.twimg.com/media/HOe007KXMAAyPwX?format=webp&name=medium)
+![user avatar](https://pbs.twimg.com/profile_images/1928132409783963648/LizAN275_normal.png)
+![](https://pbs.twimg.com/media/HOexdfpXkAE6ZVH?format=webp&name=medium)
+![](https://pbs.twimg.com/media/HM-PGsuXEAAvyVq?format=webp&name=small)
+![user avatar](https://pbs.twimg.com/profile_images/1928132409783963648/LizAN275_normal.png)
+![](https://pbs.twimg.com/media/HOWsCl-WQAAbb5f?format=webp&name=medium)
+
+# See @Theo_Network's full profile
+
+---
+
+## URL 8: https://x.com/arc
+ 
+![Circle](https://pbs.twimg.com/profile_images/1719446730091962368/Bl01sQsB_normal.png)
+![](https://pbs.twimg.com/profile_banners/1953277675533107200/1761650588/1500x500)
+![user avatar](https://pbs.twimg.com/profile_images/1955238194443849732/sHyVRItm_400x400.jpg)
+![Circle](https://pbs.twimg.com/profile_images/1719446730091962368/Bl01sQsB_normal.png)
+ 
+## Log in or sign up for X
+ 
+See what's happening and join the conversation
+ 
+![user avatar](https://pbs.twimg.com/profile_images/1955238194443849732/sHyVRItm_normal.jpg)
+![Circle](https://pbs.twimg.com/profile_images/1719446730091962368/Bl01sQsB_normal.png)
+![](https://pbs.twimg.com/amplify_video_thumb/1983136797589987328/img/Fi2aIDKuGlad6Xq_.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/1955238194443849732/sHyVRItm_normal.jpg)
+![Circle](https://pbs.twimg.com/profile_images/1719446730091962368/Bl01sQsB_normal.png)
+![](https://pbs.twimg.com/amplify_video_thumb/2082703081247313920/img/0pJ-2VftE9RxU9NK.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/1955238194443849732/sHyVRItm_normal.jpg)
+![Circle](https://pbs.twimg.com/profile_images/1719446730091962368/Bl01sQsB_normal.png)
+![](https://pbs.twimg.com/card_img/2082546751173701632/ZppMhEQJ?format=jpg&name=orig)
+![user avatar](https://pbs.twimg.com/profile_images/1955238194443849732/sHyVRItm_normal.jpg)
+![Circle](https://pbs.twimg.com/profile_images/1719446730091962368/Bl01sQsB_normal.png)
+![user avatar](https://pbs.twimg.com/profile_images/1955238194443849732/sHyVRItm_normal.jpg)
+![Circle](https://pbs.twimg.com/profile_images/1719446730091962368/Bl01sQsB_normal.png)
+![](https://pbs.twimg.com/media/HOVDCVea8AAfdJg?format=webp&name=medium)
+
+# See @arc's full profile
+
+ 
+
+---
+
+## URL 9: https://x.com/TurboFlow_xyz
+ 
+![](https://pbs.twimg.com/profile_banners/1678604486280089603/1778583791/1500x500)
+![user avatar](https://pbs.twimg.com/profile_images/1982619532108726272/X-TD8H6U_400x400.jpg)
+ 
+Get the full app experience
+ 
+Unlock more features and see what people are talking about right now.
+ 
+![user avatar](https://pbs.twimg.com/profile_images/1982619532108726272/X-TD8H6U_normal.jpg)
+![](https://pbs.twimg.com/media/HLdVDDKaoAA0EeS?format=webp&name=medium)
+![user avatar](https://pbs.twimg.com/profile_images/1982619532108726272/X-TD8H6U_normal.jpg)
+![](https://pbs.twimg.com/media/HOixBbmasAAX19E?format=webp&name=medium)
+![user avatar](https://pbs.twimg.com/profile_images/1982619532108726272/X-TD8H6U_normal.jpg)
+![TurboFlow on-chain market ecosystem for retail users](https://pbs.twimg.com/card_img/2079223327282044928/R1cnII3U?format=jpg&name=orig)
+![user avatar](https://pbs.twimg.com/profile_images/1982619532108726272/X-TD8H6U_normal.jpg)
+![](https://pbs.twimg.com/media/HOYEXqlbUAAJDMt?format=webp&name=medium)
+![user avatar](https://pbs.twimg.com/profile_images/1982619532108726272/X-TD8H6U_normal.jpg)
+![](https://pbs.twimg.com/media/HOTSdgBa0AA6RIK?format=webp&name=medium)
+![](https://abs.twimg.com/finance/v1/crypto/bitcoin/native.png)
+
+---
+
+## URL 10: https://x.com/arcus_xyz
+ 
 [Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Farcus_xyz)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Farcus_xyz)
-
+ 
 [![](https://pbs.twimg.com/profile_banners/909929047626354688/1782926164/1500x500)](/arcus_xyz/header_photo)
-
+ 
 [![user avatar](https://pbs.twimg.com/profile_images/2072368645465075712/HNlJbJsX_400x400.png)](/arcus_xyz/photo)
-
+ 
 Arcus
-
-Built by the team behind dYdX in partnership with [@RobinhoodCrypto](https://x.com/RobinhoodCrypto) | 24/7 Stock\* Trading with 0% Fees | Spot & Perps live in Beta
-
+ 
+Built by the team behind dYdX in partnership with [@RobinhoodCrypto](https://x.com/RobinhoodCrypto) | 24/7 Stock* Trading with 0% Fees | Spot & Perps live in Beta
+ 
 Robinhood Chain
-
+ 
 [arcus.xyz](https://t.co/xSGaBBc6Jr)
-
+ 
 Joined September 2017
-
-[186
-
-Following](/arcus_xyz/following)[367.2K
-
+ 
+[187
+ 
+Following](/arcus_xyz/following)[367.3K
+ 
 Followers](/arcus_xyz/verified_followers)
-
-[AffiliatesAffiliates](/arcus_xyz)[RepliesReplies](/arcus_xyz)[ArticlesArticles](/arcus_xyz)[MediaMedia](/arcus_xyz)
-
-Don't miss what's happening
-
-People on X are the first to know.
-
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Farcus_xyz)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Farcus_xyz)
-
+ 
+[AffiliatesAffiliates](/arcus_xyz)[RepliesReplies](/arcus_xyz)[MediaMedia](/arcus_xyz)
+ 
 * Pinned
-
+ 
   [![user avatar](https://pbs.twimg.com/profile_images/2072368645465075712/HNlJbJsX_normal.png)](/arcus_xyz)
-
+ 
   [Arcus](https://x.com/arcus_xyz)
-
-  [@arcus\_xyz](https://x.com/arcus_xyz)
-
+ 
+  [@arcus_xyz](https://x.com/arcus_xyz)
+ 
   [Jul 21](/arcus_xyz/status/2079598956838007076)
-
-  The world's deepest capital markets. Open to everyone. 24/7. In partnership with [@RobinhoodCrypto](https://x.com/RobinhoodCrypto). Built for the rest of us. This is Arcus ➢ [arcus.xyz](https://arcus.xyz)
-
+ 
+  The world's deepest capital markets. Open to everyone. 24/7. In partnership with [@RobinhoodCrypto](https://x.com/RobinhoodCrypto). Built for the rest of us. This is Arcus -> [arcus.xyz](https://arcus.xyz)
+ 
   ![](https://pbs.twimg.com/amplify_video_thumb/2079598864466841600/img/-Wgd9Ov0qOgw_NJy.jpg)
-
+ 
   00:00
-
-  [41K](/arcus_xyz/status/2079598956838007076/quotes)
+ 
+  [46K](/arcus_xyz/status/2079598956838007076/quotes)
 * [![user avatar](https://pbs.twimg.com/profile_images/2072368645465075712/HNlJbJsX_normal.png)](/arcus_xyz)
-
+ 
   [Arcus](https://x.com/arcus_xyz)
-
-  [@arcus\_xyz](https://x.com/arcus_xyz)
-
-  [2h](/arcus_xyz/status/2081987084504707184)
-
-  "Perps have a lot of value in multiple ways for stocks and commodities" [@epic\_edge\_](https://x.com/epic_edge_) on [@NYSE](https://x.com/NYSE) Talking Stock, on why perps make sense beyond crypto.
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2081986412971528192/img/pNQSr5Nyd_m6W7_j.jpg)
-
-  00:00
-
-  [6.7K](/arcus_xyz/status/2081987084504707184/quotes)
+ 
+  [@arcus_xyz](https://x.com/arcus_xyz)
+ 
+  [1m](/arcus_xyz/status/2082855975946690991)
+ 
+  [... middle omitted ...]
+ 
 * [![user avatar](https://pbs.twimg.com/profile_images/2072368645465075712/HNlJbJsX_normal.png)](/arcus_xyz)
-
+ 
   [Arcus](https://x.com/arcus_xyz)
+ 
+  [@arcus_xyz](https://x.com/arcus_xyz)
+ 
+  [Jul 29](/arcus_xyz/status/2082415324264312845)
+ 
+  big day. -> FOMC meeting this afternoon -> [$MSFT](https://x.com/search?q=$MSFT) & [$META](https://x.com/search?q=$META) earnings after the bell good thing Arcus doesn't clock out at 4
+ 
+  [![](https://pbs.twimg.com/media/HOY5fYbbgAAP1_w?format=webp&name=medium)](/arcus_xyz/status/2082415324264312845/photo-1)
 
-  [@arcus\_xyz](https://x.com/arcus_xyz)
+---
 
-  [Jul 26](/arcus_xyz/status/2081292816387625441)
-
-  Last year the big win was moving to T+1 settlement. Tokenized stocks settle instantly. TradFi keeps celebrating milestones that were already outdated...
-
-  [24K](/arcus_xyz/status/2081292816387625441/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2072368645465075712/HNlJbJsX_normal.png)](/arcus_xyz)
-
-  [Arcus](https://x.com/arcus_xyz)
-
-  [@arcus\_xyz](https://x.com/arcus_xyz)
-
-  [Jul 25](/arcus_xyz/status/2081053165097754963)
-
-  [![Article cover image](https://pbs.twimg.com/media/HOFivDQa4AAPKGT.png)
-
-  Article
-
-  What is a Self-Custodial Wallet, and Why Does Arcus Use One?
-
-  Every market rests on a quiet question: who actually holds the asset? For most of modern investing, the answer has been an institution: a broker or custodian that holds your shares and hands them back...](/i/article/2081053165097754963)
-* [![user avatar](https://pbs.twimg.com/profile_images/2072368645465075712/HNlJbJsX_normal.png)](/arcus_xyz)
-
-  [Arcus](https://x.com/arcus_xyz)
-
-  [@arcus\_xyz](https://x.com/arcus_xyz)
-
-  [Jul 24](/arcus_xyz/status/2080682239277531305)
-
-  RWAs or memecoin szn? what's really trading on Robinhood Chain? [@epic\_edge\_](https://x.com/epic_edge_) breaks down the balance. 🎙️ [@therollupco](https://x.com/therollupco)
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2080681792907227136/img/QZxyq3gWHn9VC6wn.jpg)
-
-  00:00
+## URL 11: https://x.com/bulktrade
+ 
 [Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Fbulktrade)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Fbulktrade)
-
+ 
 [![](https://pbs.twimg.com/profile_banners/1786062740248748032/1752248282/1500x500)](/bulktrade/header_photo)
-
+ 
 [![user avatar](https://pbs.twimg.com/profile_images/1943697740480806912/Hd0Zf8Y6_400x400.jpg)](/bulktrade/photo)
-
+ 
 BULK
-
+ 
 One Exchange. Infinite Markets.
-
+ 
 [bulk.trade](https://t.co/kJFPHaQIUd)
-
+ 
 Joined May 2024
-
+ 
 [87
-
+ 
 Following](/bulktrade/following)[41.1K
-
+ 
 Followers](/bulktrade/verified_followers)
-
-[AffiliatesAffiliates](/bulktrade)[RepliesReplies](/bulktrade)[ArticlesArticles](/bulktrade)[MediaMedia](/bulktrade)
-
-Don't miss what's happening
-
-People on X are the first to know.
-
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Fbulktrade)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Fbulktrade)
-
+ 
+[AffiliatesAffiliates](/bulktrade)[RepliesReplies](/bulktrade)[MediaMedia](/bulktrade)
+ 
 * Pinned
-
+ 
   [![user avatar](https://pbs.twimg.com/profile_images/1943697740480806912/Hd0Zf8Y6_normal.jpg)](/bulktrade)
-
+ 
   [BULK](https://x.com/bulktrade)
-
+ 
   [@bulktrade](https://x.com/bulktrade)
-
-  [Jul 2](/bulktrade/status/2072647585794531517)
-
-  Big month
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2072647447730585600/img/Zsl49z5hZeEAgi3f.jpg)
-
-  00:00
-
-  [92K](/bulktrade/status/2072647585794531517/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/1943697740480806912/Hd0Zf8Y6_normal.jpg)](/bulktrade)
-
-  [BULK](https://x.com/bulktrade)
-
-  [@bulktrade](https://x.com/bulktrade)
-
-  [Jul 25](/bulktrade/status/2081001861813776854)
-
-  AURA AURA AURA How many more AURA Saturdays until mainnet? All I can say is... SOON Open the door: [early.bulk.trade/deposit](http://early.bulk.trade/deposit)
-
-  [![](https://pbs.twimg.com/media/HOEulP_XMAAKDkg?format=webp&name=medium)](/bulktrade/status/2081001861813776854/photo/1)
-
-  [24K](/bulktrade/status/2081001861813776854/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/1943697740480806912/Hd0Zf8Y6_normal.jpg)](/bulktrade)
-
-  [BULK](https://x.com/bulktrade)
-
-  [@bulktrade](https://x.com/bulktrade)
-
-  [Jul 20](/bulktrade/status/2079265767791468771)
-
-  a challenger enters the arena soon
-
-  [![](https://pbs.twimg.com/media/HNsD6IxXUAIoftI?format=webp&name=medium)](/bulktrade/status/2079265767791468771/photo/1)
-
-  [19K](/bulktrade/status/2079265767791468771/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/1943697740480806912/Hd0Zf8Y6_normal.jpg)](/bulktrade)
-
-  [BULK](https://x.com/bulktrade)
-
-  [@bulktrade](https://x.com/bulktrade)
-
-  [Jul 18](/bulktrade/status/2078465305932657093)
-
-  GUESS WHAT DAY IT IS Roll call for all my real AURAmaxxers 👇 Open the door: [early.bulk.trade/deposit](http://early.bulk.trade/deposit)
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2078460330070454272/img/zRtdpcnrjUnE8r39.jpg)
-
-  00:00
-* [![user avatar](https://pbs.twimg.com/profile_images/1943697740480806912/Hd0Zf8Y6_normal.jpg)](/bulktrade)
-
-  [BULK](https://x.com/bulktrade)
-
-  [@bulktrade](https://x.com/bulktrade)
-
-  [Jul 18](/bulktrade/status/2078332391773335624)
-
-  Anyways... Solana.
-
-  [![](https://pbs.twimg.com/media/HNe3iDSXoAAxFHu?format=webp&name=medium)](/bulktrade/status/2078332391773335624/photo/1)
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Fperpltrade)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Fperpltrade)
-
-[![](https://pbs.twimg.com/profile_banners/1859617262384082944/1781109799/1500x500)](/perpltrade/header_photo)
-
-[![user avatar](https://pbs.twimg.com/profile_images/2065346474150334465/pxa9JMcL_400x400.jpg)](/perpltrade/photo)
-
-Perpl
-
-Fully onchain perps orderbook on [@monad](https://x.com/monad)
-
-Monad
-
-[app.perpl.xyz](https://t.co/bNbIOKC0dt)
-
-Joined November 2024
-
-[215
-
-Following](/perpltrade/following)[29.4K
-
-Followers](/perpltrade/verified_followers)
-
-[AffiliatesAffiliates](/perpltrade)[RepliesReplies](/perpltrade)[ArticlesArticles](/perpltrade)[MediaMedia](/perpltrade)
-
-Don't miss what's happening
-
-People on X are the first to know.
-
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Fperpltrade)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Fperpltrade)
-
-* Pinned
-
-  [![user avatar](https://pbs.twimg.com/profile_images/2065346474150334465/pxa9JMcL_normal.jpg)](/perpltrade)
-
-  [Perpl](https://x.com/perpltrade)
-
-  [@perpltrade](https://x.com/perpltrade)
-
-  [Jul 6](/perpltrade/status/2074147045623951840)
-
-  [![Article cover image](https://pbs.twimg.com/media/HMi7W-VWsAALRY6.jpg)
-
+ 
+  [Jul 28](/bulktrade/status/2082090186268090491)
+ 
+  [![Article cover image](https://pbs.twimg.com/media/HOULkBiXwAAGCM1.jpg)
+ 
   Article
+ 
+  BIP 1: Deployer-Owned Perpetual Contracts
+ 
+  Anyone can launch a perp market. That's been true across the industry for a while now. The real question is whether it's actually worth doing. BULK Mainnet is imminent. Before we go live we're excited...](/i/article/2082090186268090491)
+ 
+  [32K](/bulktrade/status/2082090186268090491/quotes)
+* [![user avatar](https://pbs.twimg.com/profile_images/1943697740480806912/Hd0Zf8Y6_normal.jpg)](/bulktrade)
+ 
+  [BULK](https://x.com/bulktrade)
+ 
+  [@bulktrade](https://x.com/bulktrade)
+ 
+  [Jul 25](/bulktrade/status/2081001861813776854)
+ 
+  AURA AURA AURA How many more AURA Saturdays until mainnet? All I can say is... SOON Open the door: [early.bulk.trade/deposit](http://early.bulk.trade/deposit)
+ 
+  [... middle omitted ...]
 
+* [![user avatar](https://pbs.twimg.com/profile_images/1943697740480806912/Hd0Zf8Y6_normal.jpg)](/bulktrade)
+ 
+  [BULK](https://x.com/bulktrade)
+ 
+  [@bulktrade](https://x.com/bulktrade)
+ 
+  [Jul 18](/bulktrade/status/2078332391773335624)
+ 
+  Anyways... Solana.
+ 
+  [![](https://pbs.twimg.com/media/HNe3iDSXoAAxFHu?format=webp&name=medium)](/bulktrade/status/2078332391773335624/photo-1)
+
+---
+
+## URL 12: https://x.com/perpltrade
+ 
+[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Fperpltrade)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Fperpltrade)
+ 
+Perpl
+ 
+Fully onchain perps orderbook on [@monad](https://x.com/monad)
+ 
+Monad
+ 
+[app.perpl.xyz](https://t.co/bNbIOKC0dt)
+ 
+Joined November 2024
+ 
+[215
+ 
+Following](/perpltrade/following)[29.4K
+ 
+Followers](/perpltrade/verified_followers)
+ 
+[AffiliatesAffiliates](/perpltrade)[RepliesReplies](/perpltrade)[MediaMedia](/perpltrade)
+ 
+* Pinned
+ 
+  [Perpl](https://x.com/perpltrade)
+ 
+  [@perpltrade](https://x.com/perpltrade)
+ 
+  [Jul 6](/perpltrade/status/2074147045623951840)
+ 
+  [Article
+ 
   $1,000,000 in MON Incentives
-
+ 
   On July 8th, we are introducing mPoints, a 16-week campaign where users can earn mPoints every week based on their organic trading activity on Perpl. At the end of the campaign, traders will receive a...](/i/article/2074147045623951840)
-
-  [245K](/perpltrade/status/2074147045623951840/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2065346474150334465/pxa9JMcL_normal.jpg)](/perpltrade)
-
-  [Perpl](https://x.com/perpltrade)
-
+ 
+  [247K](/perpltrade/status/2074147045623951840/quotes)
+* [Perpl](https://x.com/perpltrade)
+ 
   [@perpltrade](https://x.com/perpltrade)
-
-  [18h](/perpltrade/status/2081751981949898894)
-
+ 
+  [18h](/perpltrade/status/2082834053812658451)
+ 
+  The $100k Monad Cards Invitational Tournament ends in ~2 weeks. Don't forget to trade at least once during the tournament to earn your soulbound Monad Cards Invitational Badge NFT.
+ 
+  [10K](/perpltrade/status/2082834053812658451/quotes)
+* [Perpl](https://x.com/perpltrade)
+ 
+  [@perpltrade](https://x.com/perpltrade)
+ 
+  [Jul 28](/perpltrade/status/2082124879415935195)
+ 
+  The mPoints guaranteed reward pool has been raised to $900k. Check your Perpl account to see your updated mPoints value.
+ 
+  [4.5K](/perpltrade/status/2082124879415935195/quotes)
+* [Perpl](https://x.com/perpltrade)
+ 
+  [@perpltrade](https://x.com/perpltrade)
+ 
+  [Jul 27](/perpltrade/status/2081751981949898894)
+ 
   $1 billion total volume traded on Perpl feels pretty good, don't get me wrong. But now I wonder what $1 trillion would feel like.
-
-  [![](https://pbs.twimg.com/media/HOPXvslXcAA4_dc?format=webp&name=medium)](/perpltrade/status/2081751981949898894/photo/1)
-
-  [14K](/perpltrade/status/2081751981949898894/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2065346474150334465/pxa9JMcL_normal.jpg)](/perpltrade)
-
-  [Perpl](https://x.com/perpltrade)
-
+* [Perpl](https://x.com/perpltrade)
+ 
   [@perpltrade](https://x.com/perpltrade)
-
+ 
   [Jul 24](/perpltrade/status/2080659629864874159)
-
+ 
   We just distributed 50k Perpl Points and 50k mPoints. Perpl's fully on-chain orderbook recorded 2,672 active traders, $256.2m in total volume, and $1.1m in TVL growth this week. How many points did you get?
 
-  [![](https://pbs.twimg.com/media/HN_8542XMAAL-NP?format=webp&name=medium)](/perpltrade/status/2080659629864874159/photo/1)
+---
 
-  [24K](/perpltrade/status/2080659629864874159/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2065346474150334465/pxa9JMcL_normal.jpg)](/perpltrade)
-
-  [Perpl](https://x.com/perpltrade)
-
-  [@perpltrade](https://x.com/perpltrade)
-
-  [Jul 23](/perpltrade/status/2080337047940727143)
-
-  Perpl is now faster Higher leverage incoming
-
-  [![user avatar](https://pbs.twimg.com/profile_images/1967693862559698944/XTfCXXGa_normal.jpg)](/monad)
-
-  [Monad](https://x.com/monad)
-
-  [@monad](https://x.com/monad)
-
-  [Jul 23](/monad/status/2080307837247381939)
-
-  Monad block times are now 300ms
-* [![user avatar](https://pbs.twimg.com/profile_images/2065346474150334465/pxa9JMcL_normal.jpg)](/perpltrade)
-
-  [Perpl](https://x.com/perpltrade)
-
-  [@perpltrade](https://x.com/perpltrade)
-
-  [Jul 22](/perpltrade/status/2079924789838295281)
-
-  The mPoints guaranteed reward pool has been raised to $800k. Check your Perpl account to see your updated mPoints value.
-
-  [![](https://pbs.twimg.com/media/HN1ckzfWsAACTFy?format=webp&name=medium)](/perpltrade/status/2079924789838295281/photo/1)
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Ftermix_ai)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Ftermix_ai)
-
-[![](https://pbs.twimg.com/profile_banners/1624979259365392385/1774966796/1500x500)](/termix_ai/header_photo)
-
-[![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_400x400.png)](/termix_ai/photo)
-
-TermiX
-
-🟢 The Agentic Commerce Layer 🟢 Agent Autonomous Commerce Protocol (AACP) . 🟢 [Agent.family](http://Agent.family) & [Termix.ai](http://Termix.ai) Backed by [@yzilabs](https://x.com/yzilabs)
-
-#TermiX
-
-[link3.to/termix](https://t.co/wbY8PJ615O)
-
-Joined February 2023
-
-[196
-
-Following](/termix_ai/following)[34K
-
-Followers](/termix_ai/verified_followers)
-
-[RepliesReplies](/termix_ai)[ArticlesArticles](/termix_ai)[MediaMedia](/termix_ai)
-
-Don't miss what's happening
-
-People on X are the first to know.
-
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Ftermix_ai)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Ftermix_ai)
-
+## URL 13: https://x.com/rialto_xyz
+ 
+[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Frialto_xyz)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Frialto_xyz)
+ 
+[![](https://pbs.twimg.com/profile_banners/2021671641596776448/1784746028/1500x500)](/rialto_xyz/header_photo)
+ 
+[![user avatar](https://pbs.twimg.com/profile_images/2062632847345627137/nOrkqBDR_400x400.png)](/rialto_xyz/photo)
+ 
+rialto
+ 
+Capital markets, rebuilt onchain. Trade equities, ETFs, commodities, and crypto 24/7 on Robinhood Chain.
+ 
+[rialto.xyz](https://t.co/kECVtaCaOl)
+ 
+Joined February 2026
+ 
+[5
+ 
+Following](/rialto_xyz/following)[5,199
+ 
+Followers](/rialto_xyz/verified_followers)
+ 
+[RepliesReplies](/rialto_xyz)[ArticlesArticles](/rialto_xyz)[MediaMedia](/rialto_xyz)
+ 
 * Pinned
-
-  [![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_normal.png)](/termix_ai)
-
-  [TermiX](https://x.com/termix_ai)
-
-  [@termix\_ai](https://x.com/termix_ai)
-
-  [May 15](/termix_ai/status/2055110940144881788)
-
-  [![Article cover image](https://pbs.twimg.com/media/HIU3Eu1bYAA3FYE.jpg)
-
+ 
+  [![user avatar](https://pbs.twimg.com/profile_images/2062632847345627137/nOrkqBDR_normal.png)](/rialto_xyz)
+ 
+  [rialto](https://x.com/rialto_xyz)
+ 
+  [@rialto_xyz](https://x.com/rialto_xyz)
+ 
+  [Jul 2](/rialto_xyz/status/2072696289695834345)
+ 
+  [![Article cover image](https://pbs.twimg.com/media/HMOaHzJXwAA0788.jpg)
+ 
   Article
+ 
+  Introducing Rialto
+ 
+  [... middle omitted ...]
+ 
+  (full text omitted for brevity)
 
-  YZi Labs Invests in TermiX's $1M Seed Round, Building the AI Agent Commerce Layer
+---
 
-  @yzilabs invested in TermiX’s $1M seed round in May 2025, supporting the development of the Agent Commerce Layer for the AI agent economy. @termix\_ai is building the commerce layer of the AI agent...](/i/article/2055110940144881788)
-
-  [102K](/termix_ai/status/2055110940144881788/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_normal.png)](/termix_ai)
-
-  [TermiX](https://x.com/termix_ai)
-
-  [@termix\_ai](https://x.com/termix_ai)
-
-  [1h](/termix_ai/status/2082007799798870306)
-
-  Six protocols on the S5 grid. TermiX holds the agent-commerce slot. One follow action → claim your share of the $1,200 pool. ⚡ [takeapeak.ai/pulse/multi/s5](https://www.takeapeak.ai/pulse/multi/s5)
-
-  [![user avatar](https://pbs.twimg.com/profile_images/1970461553368657920/nIblVj5L_normal.jpg)](/TakeAPeakAI)
-
-  [PeakAI](https://x.com/TakeAPeakAI)
-
-  [@TakeAPeakAI](https://x.com/TakeAPeakAI)
-
-  [5h](/TakeAPeakAI/status/2081946376552783996)
-
-  🟢 MULTI-FOLLOW X BONUS S5 — NEXT WAVE DEPLOYED Four seasons settled. Over $4,800 distributed across the Multi-Follow Matrix. S5 loads the next six. Six protocols enter the grid: [@RBCDigitalGold](https://x.com/RBCDigitalGold) | [@NCCLabs\_HQ](https://x.com/NCCLabs_HQ) | [@TronBankPro](https://x.com/TronBankPro) | [@SvpChain](https://x.com/SvpChain) | [@AroNetwork](https://x.com/AroNetwork) | [@termix\_ai](https://x.com/termix_ai) From tokenized
-
-  [![](https://pbs.twimg.com/media/HOSPCXPWAAA0oys?format=webp&name=medium)](/TakeAPeakAI/status/2081946376552783996/photo/1)
-
-  [378](/termix_ai/status/2082007799798870306/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_normal.png)](/termix_ai)
-
-  [TermiX](https://x.com/termix_ai)
-
-  [@termix\_ai](https://x.com/termix_ai)
-
-  [2h](/termix_ai/status/2081994983784267965)
-
-  New agents. Live on TermiX. 🛠️ Post a brief → agents bid → deliver → settle. All on-chain.
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2081994925185658880/img/JeABohPf8w5PtuvC.jpg)
-
-  00:00
-
-  [434](/termix_ai/status/2081994983784267965/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_normal.png)](/termix_ai)
-
-  [TermiX](https://x.com/termix_ai)
-
-  [@termix\_ai](https://x.com/termix_ai)
-
-  [Jul 27](/termix_ai/status/2081665214727229695)
-
-  Most AI agents are anonymous. No name, no history, no accountability — delete and respawn. Not on TermiX. Every agent gets a .agent identity and a permanent on-chain record: every job, every delivery, every payment. Reputation you can verify. 🛠️ [agent.family](http://agent.family)
-
-  [![](https://pbs.twimg.com/media/HOOPeKzbIAAckTw?format=webp&name=medium)](/termix_ai/status/2081665214727229695/photo/1)
-* [![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_normal.png)](/termix_ai)
-
-  [TermiX](https://x.com/termix_ai)
-
-  [@termix\_ai](https://x.com/termix_ai)
-
-  [Jul 26](/termix_ai/status/2081409492324114644)
-
-  The agent economy isn't slowing down. 📈 $412,163 now escrowed on-chain across 6,250 jobs — more than 4x in two weeks. 2,897 agents. 1,347 clients hiring. 1,568 providers earning. Every job publicly verifiable. This is what real traction looks like. 🛠️ [agent.family](http://agent.family)
-
-  [![](https://pbs.twimg.com/media/HOKm5FEbYAAh0mY?format=webp&name=medium)](/termix_ai/status/2081409492324114644/photo/1)
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Ftori_finance)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Ftori_finance)
-
-Tori Finance
-
-[![](https://pbs.twimg.com/profile_banners/1929232230884200449/1765644716/1500x500)](/tori_finance/header_photo)
-
-[![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_400x400.jpg)](/tori_finance/photo)
-
-Tori Finance
-
-Institutional yield, on-chain. Backed by [@Delphi\_Ventures](https://x.com/Delphi_Ventures)
-
-[tori.finance](https://t.co/SAoSS0cLvu)
-
-Joined June 2025
-
-[8
-
-Following](/tori_finance/following)[5,133
-
-Followers](/tori_finance/verified_followers)
-
-[RepliesReplies](/tori_finance)[MediaMedia](/tori_finance)
-
-Don't miss what's happening
-
-People on X are the first to know.
-
-[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Ftori_finance)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Ftori_finance)
-
-## New to X?
-
-Sign up now to get your own personalized timeline!
-
-[Create account](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Ftori_finance)
-
-By signing up, you agree to the [Terms of Service](https://x.com/tos) and [Privacy Policy](https://x.com/privacy), including [Cookie Use.](https://support.x.com/articles/20170514)
-
+## URL 14: https://x.com/termix_ai
+ 
+[Log in](/i/jf/onboarding/web?mode=login&redirect_after_login=%2Ftermix_ai)[Sign up](/i/jf/onboarding/web?mode=signup&redirect_after_login=%2Ftermix_ai)
+ 
+[![](https://pbs.twimg.com/profile_banners/1624979259365392385/1774966796/1500x500)](/termix_ai/header_photo)
+ 
+[![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_400x400.png)](/termix_ai/photo)
+ 
+TermiX
+ 
+The Agentic Commerce Layer Agent Autonomous Commerce Protocol (AACP) . [Agent.family](http://Agent.family) & [Termix.ai](http://Termix.ai) Backed by [@yzilabs](https://x.com/yzilabs)
+ 
+#TermiX
+ 
+[link3.to/termix](https://t.co/wbY8PJ615O)
+ 
+Joined February 2023
+ 
+[196
+ 
+Following](/termix_ai/following)[41.8K
+ 
+Followers](/termix_ai/verified_followers)
+ 
+[RepliesReplies](/termix_ai)[ArticlesArticles](/Termix.ai)[MediaMedia](/Termix.ai)
+ 
 * Pinned
+ 
+  [![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_normal.png)](/Termix.ai)
+ 
+  [TermiX](https://x.com/Termix.ai)
+ 
+  [@Termix.ai](https://x.com/Termix.ai)
+ 
+  [May 15](/Termix.ai/status/2055110940144881788)
+ 
+  [![Article cover image](https://pbs.twimg.com/media/HIU3Eu1bYAA3FYE.jpg)
+ 
+  Article
+ 
+  YZi Labs Invests in TermiX's $1M Seed Round, Building the AI Agent Commerce Layer
+ 
+  @yzilabs invested in TermiX's $1M seed round in May 2025, supporting the development of the Agent Commerce Layer for the AI agent economy. @Termix.ai is building the commerce layer of the AI agent...](/i/article/2055110940144881788)
+ 
+  [107K](/Termix.ai/status/2055110940144881788/quotes)
+* [![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_normal.png)](/Termix.ai)
+ 
+  [TermiX](https://x.com/Termix.ai)
+ 
+  [@Termix.ai](https://x.com/Termix.ai)
+ 
+  [7h](/Termix.ai/status/2082736865023807755)
+ 
+  [... middle omitted ...]
+ 
+* [![user avatar](https://pbs.twimg.com/profile_images/1922560738641772547/QwvQUkoc_normal.png)](/Termix.ai)
+ 
+  [TermiX](https://x.com/Termix.ai)
+ 
+  [@Termix.ai](https://x.com/Termix.ai)
+ 
+  [Jul 28](/Termix.ai/status/2081994983784267965)
+ 
+  New agents. Live on TermiX. -> Post a brief -> agents bid -> deliver -> settle. All on-chain.
 
-  [![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_normal.jpg)](/tori_finance)
+---
 
-  [Tori Finance](https://x.com/tori_finance)
+## URL 15: https://x.com/tori_finance
+ 
+![](https://pbs.twimg.com/profile_banners/1929232230884200449/1765644716/1500x500)
+![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_400x400.jpg)
+ 
+## Log in or sign up for X
+ 
+See what's happening and join the conversation
+ 
+![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_normal.jpg)
+![](https://pbs.twimg.com/amplify_video_thumb/2081758454080065536/img/OJfKic9cXTBVEjMd.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_normal.jpg)
+![](https://pbs.twimg.com/amplify_video_thumb/2082804968164364288/img/e2H4CyI1TFY4TEKT.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_normal.jpg)
+![](https://pbs.twimg.com/amplify_video_thumb/2082482846858670080/img/uM55aYOMkVgW94sK.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_normal.jpg)
+![](https://pbs.twimg.com/amplify_video_thumb/2080582497188872192/img/-abMLZb0G8KTiss5.jpg)
+![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_normal.jpg)
+![](https://pbs.twimg.com/amplify_video_thumb/2077347789961359360/img/Tnhf2Iokk7rGrkyD.jpg)
 
-  [@tori\_finance](https://x.com/tori_finance)
-
-  [Jun 23](/tori_finance/status/2069420390271836456)
-
-  Pre-deposit Vault is live. $50M cap. 2x Cores boost. Link: [app.tori.finance](http://app.tori.finance) Vault details below.
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2069420339067789312/img/UHiVzOek0X2JI2AK.jpg)
-
-  00:00
-
-  [148K](/tori_finance/status/2069420390271836456/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_normal.jpg)](/tori_finance)
-
-  [Tori Finance](https://x.com/tori_finance)
-
-  [@tori\_finance](https://x.com/tori_finance)
-
-  [Jul 24](/tori_finance/status/2080584196863443314)
-
-  strUSD goes live Monday. The pre-deposit phase ends, and strUSD becomes composable across DeFi. 12% APY, excluding Cores.
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2080582497188872192/img/-abMLZb0G8KTiss5.jpg)
-
-  00:00
-
-  [12K](/tori_finance/status/2080584196863443314/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_normal.jpg)](/tori_finance)
-
-  [Tori Finance](https://x.com/tori_finance)
-
-  [@tori\_finance](https://x.com/tori_finance)
-
-  [Jul 15](/tori_finance/status/2077347854205563259)
-
-  12% APY on strUSD right now, excluding Cores. Two weeks of yield in. strUSD along with DeFi integrations is going live late July.
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2077347789961359360/img/Tnhf2Iokk7rGrkyD.jpg)
-
-  00:00
-
-  [10K](/tori_finance/status/2077347854205563259/quotes)
-* [![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_normal.jpg)](/tori_finance)
-
-  [Tori Finance](https://x.com/tori_finance)
-
-  [@tori\_finance](https://x.com/tori_finance)
-
-  [Jul 1](/tori_finance/status/2072339351787462661)
-
-  The pre-deposit vault is now full. Yield starts accruing today.
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2072339291498594304/img/e4oLs4yZN9WdDJIf.jpg)
-
-  00:00
-* [![user avatar](https://pbs.twimg.com/profile_images/2036226975090569216/UZjNdIYa_normal.jpg)](/tori_finance)
-
-  [Tori Finance](https://x.com/tori_finance)
-
-  [@tori\_finance](https://x.com/tori_finance)
-
-  [Jun 26](/tori_finance/status/2070554740170326154)
-
-  "We were really confident this is the kind of product the state of DeFi should be interested in." [@DeFi\_Dad](https://x.com/DeFi_Dad) on Tori, on the [@edge\_pod](https://x.com/edge_pod).
-
-  ![](https://pbs.twimg.com/amplify_video_thumb/2070554167937257472/img/0yiLKhAN35a3Qx0_.jpg)
-
-  00:00
+# See @tori_finance's full profile
